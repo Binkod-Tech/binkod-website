@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Family Path Locator — Connected Families, Always Safe</title>
-  <meta name="description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family chat, Safety Alerts and more.">
+  <meta name="description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family messages, Safety Alerts and more.">
   <meta name="theme-color" content="#2563eb">
   <script>
     document.documentElement.classList.add('js');
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BINKOD Tech">
   <meta property="og:title" content="Family Path Locator — Connected Families, Always Safe">
-  <meta property="og:description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family chat, Safety Alerts and more.">
+  <meta property="og:description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family messages, Safety Alerts and more.">
   <!-- TODO: Add og:image once the production domain is confirmed. -->
   <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
   <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
@@ -47,11 +47,10 @@
       </button>
       <nav class="site-nav" id="primary-navigation" aria-label="Primary">
         <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="/family-path-locator/" aria-current="page">Home</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/#home" aria-current="page">Home</a></li>
           <li><a class="site-nav__link" href="/family-path-locator/#features">Features</a></li>
           <li><a class="site-nav__link" href="/family-path-locator/#how-it-works">How It Works</a></li>
-          <li><a class="site-nav__link" href="/family-path-locator/#screenshots">Screenshots</a></li>
-          <li><a class="site-nav__link" href="/family-path-locator/privacy-policy/">Privacy</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/#privacy">Privacy</a></li>
           <li><a class="site-nav__link" href="/family-path-locator/contact/">Contact</a></li>
         </ul>
         <!-- Play Store link opens in a new tab (URL configured in js/global.js). -->
@@ -65,33 +64,42 @@
 
   <main id="main-content">
     <!-- ============================ HERO ============================ -->
-    <section class="fp-hero">
+    <section class="fp-hero" id="home">
       <div class="hero-bg" aria-hidden="true">
         <span class="hero-blob hero-blob--primary"></span>
         <span class="hero-blob hero-blob--accent"></span>
         <span class="hero-blob hero-blob--sky"></span>
         <span class="hero-map-grid"></span>
+        <!-- Decorative, map-inspired artwork only — not a real map, and never a
+             visitor's or family member's actual location. -->
         <svg class="hero-map" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" focusable="false">
           <path class="map-road" d="M-40 420 C 220 380, 300 210, 560 240 C 820 270, 900 140, 1240 170"/>
-          <path class="map-route map-route--blue" d="M-40 420 C 220 380, 300 210, 560 240 C 820 270, 900 140, 1240 170"/>
+          <path class="map-route map-route--leaf" d="M-40 420 C 220 380, 300 210, 560 240 C 820 270, 900 140, 1240 170"/>
           <path class="map-road" d="M-40 140 C 260 180, 380 330, 640 350 C 900 370, 1040 470, 1240 440"/>
-          <path class="map-route map-route--accent" d="M-40 140 C 260 180, 380 330, 640 350 C 900 370, 1040 470, 1240 440"/>
+          <path class="map-route map-route--forest" d="M-40 140 C 260 180, 380 330, 640 350 C 900 370, 1040 470, 1240 440"/>
           <path class="map-road" d="M200 600 C 260 440, 480 430, 560 240 C 620 100, 760 60, 840 -40"/>
-          <path class="map-route map-route--mint" d="M200 600 C 260 440, 480 430, 560 240 C 620 100, 760 60, 840 -40"/>
-          <circle class="map-point map-point--blue" cx="360" cy="300" r="4"/>
-          <circle class="map-point map-point--accent" cx="770" cy="432" r="4"/>
-          <circle class="map-point map-point--blue" cx="995" cy="146" r="3.5"/>
-          <g class="map-pin map-pin--blue" transform="translate(560 240)">
+          <path class="map-route map-route--teal" d="M200 600 C 260 440, 480 430, 560 240 C 620 100, 760 60, 840 -40"/>
+          <circle class="map-point map-point--leaf" cx="360" cy="300" r="4"/>
+          <circle class="map-point map-point--forest" cx="770" cy="432" r="4"/>
+          <circle class="map-point map-point--leaf" cx="995" cy="146" r="3.5"/>
+          <circle class="map-point map-point--teal" cx="165" cy="176" r="3.5"/>
+          <circle class="map-point map-point--forest" cx="1085" cy="352" r="4"/>
+          <g class="map-pin map-pin--leaf" transform="translate(560 240)">
             <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
             <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
             <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
           </g>
-          <g class="map-pin map-pin--accent" transform="translate(640 350)">
+          <g class="map-pin map-pin--forest" transform="translate(640 350)">
             <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
             <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
             <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
           </g>
-          <g class="map-pin map-pin--mint" transform="translate(300 505)">
+          <g class="map-pin map-pin--teal" transform="translate(300 505)">
+            <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
+            <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
+            <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
+          </g>
+          <g class="map-pin map-pin--leaf" transform="translate(945 400)">
             <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
             <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
             <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
@@ -120,52 +128,92 @@
           </div>
         </div>
         <div class="fp-hero__visual anim-in anim-in--delay">
-          <!-- Animated phone preview. Motion (float + tilt) and the cycling
-               feature tags reuse the shared showcase animation classes from
-               global.css: .phone-float, .phone-tilt, .app-ui__pills (sc-pill).
-
-               Screen layout, top to bottom:
-                 1. animated feature tags
-                 2. reserved screenshot area (placeholder for now)
-                 3. animated feature tags
-
-               Future screenshot: swap the .fp-preview__shot-frame contents for
-               a single image — the frame already clips it to the phone screen
-               with rounded corners, keeps it responsive, and
-               .fp-preview__shot-frame > img handles the fit:
-               <img class="fp-preview__shot-img"
-                    src="/public/assets/family-path/screenshots/home-map.png"
-                    alt="Family Path home screen showing the family map"
-                    width="540" height="1140" loading="lazy"> -->
+          <!-- Hero presentation — a single tilted phone mockup following the
+               root homepage's phone pattern (.phone-float > .phone-tilt >
+               .phone from css/global.css). The app identity, Play install CTA,
+               screenshot slider and feature tabs all live inside the phone
+               screen; none of them appear outside the frame. Carousel slides
+               reuse the genuine product images shipped in
+               /public/assets/family-path/images/. When real application
+               screenshots are added to /public/assets/family-path/screenshots/,
+               swap each slide's <img> src and alt text — keep width/height and
+               the loading attribute. -->
           <div class="fp-preview">
             <div class="phone-float">
               <div class="phone-tilt">
-                <div class="device device--hero">
-                  <div class="device__screen fp-preview__screen">
-                    <!-- Top area — animated feature tags -->
-                    <div class="fp-preview__area">
-                      <ul class="app-ui__pills fp-preview__tags fp-preview__tags--top" role="list">
-                        <li>Location Sharing</li>
-                        <li>Family Groups</li>
-                        <li>Safety Alerts</li>
-                      </ul>
+                <div class="phone">
+                  <span class="phone__btn phone__btn--vol" aria-hidden="true"></span>
+                  <span class="phone__btn phone__btn--power" aria-hidden="true"></span>
+                  <div class="phone__screen">
+                    <!-- Decorative status bar (hidden from assistive technology) -->
+                    <div class="app-ui__bar" aria-hidden="true">
+                      <span>9:41</span>
+                      <span class="app-ui__sys">
+                        <svg viewBox="0 0 12 8" focusable="false"><rect x="0" y="5.2" width="2.2" height="2.8" rx="0.6"/><rect x="3.4" y="3.6" width="2.2" height="4.4" rx="0.6"/><rect x="6.8" y="1.8" width="2.2" height="6.2" rx="0.6"/><rect x="10" y="0" width="2" height="8" rx="0.6"/></svg>
+                        <svg viewBox="0 0 12 8" focusable="false"><path d="M6 7.7 0.7 2.5A7.5 7.5 0 0 1 11.3 2.5Z"/></svg>
+                        <svg viewBox="0 0 11 7" focusable="false"><rect x="0" y="0.8" width="8.6" height="5.4" rx="1.6"/><rect x="9.4" y="2.3" width="1.6" height="2.4" rx="0.8"/></svg>
+                      </span>
                     </div>
 
-                    <!-- Middle area — reserved for the future Home/Map screenshot -->
-                    <div class="fp-preview__shot">
-                      <div class="fp-preview__shot-frame">
-                        <svg class="fp-preview__shot-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                        <p class="fp-preview__shot-title">Home Screenshot Coming Soon</p>
+                    <!-- Top of the screen — app identity + compact install prompt -->
+                    <div class="fp-app__identity">
+                      <div class="app-ui__head">
+                        <img class="app-ui__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="34" height="34">
+                        <div class="app-ui__titles">
+                          <span class="app-ui__name">Family Path Locator</span>
+                          <span class="app-ui__avail">
+                            <svg class="app-ui__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+                            Available on Google Play
+                          </span>
+                        </div>
+                      </div>
+                      <a class="btn btn--play btn--sm fp-app__cta" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+                        <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+                        Get it on Google Play
+                      </a>
+                    </div>
+
+                    <!-- Middle of the screen — automatic screenshot slider -->
+                    <div class="fp-carousel" data-carousel role="group" aria-roledescription="carousel" aria-label="Family Path Locator highlights">
+                      <div class="fp-carousel__viewport">
+                        <div class="fp-carousel__slide is-active">
+                          <img src="/public/assets/family-path/images/flash1%20create%20family%20and%20members.png" alt="Illustration of a family creating a group and connecting with each other" width="500" height="500" decoding="async">
+                        </div>
+                        <div class="fp-carousel__slide">
+                          <img src="/public/assets/family-path/images/flash2%20location%20sharing.png" alt="Illustration of family members' current locations shown as pins on a map" width="500" height="500" loading="lazy" decoding="async">
+                        </div>
+                        <div class="fp-carousel__slide">
+                          <img src="/public/assets/family-path/images/location-messages.png" alt="Illustration of family members sending each other short messages from map pins" width="500" height="500" loading="lazy" decoding="async">
+                        </div>
+                        <div class="fp-carousel__slide">
+                          <img src="/public/assets/family-path/images/flash3%20safety%20alert.png" alt="Illustration of a phone showing a Family Path safety alert on a map" width="500" height="500" loading="lazy" decoding="async">
+                        </div>
+                        <div class="fp-carousel__slide">
+                          <img src="/public/assets/family-path/images/flash4%20app%20features.png" alt="Illustration of Family Path Locator features arranged around a map pin" width="500" height="500" loading="lazy" decoding="async">
+                        </div>
+                      </div>
+                      <div class="fp-carousel__controls">
+                        <button class="fp-carousel__toggle" type="button" data-carousel-pause aria-pressed="false" aria-label="Pause slideshow">
+                          <svg class="fp-carousel__icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+                          <svg class="fp-carousel__icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z"/></svg>
+                        </button>
+                        <div class="fp-carousel__dots">
+                          <button class="fp-carousel__dot is-active" type="button" data-carousel-dot aria-current="true" aria-label="Show slide 1 of 5"></button>
+                          <button class="fp-carousel__dot" type="button" data-carousel-dot aria-label="Show slide 2 of 5"></button>
+                          <button class="fp-carousel__dot" type="button" data-carousel-dot aria-label="Show slide 3 of 5"></button>
+                          <button class="fp-carousel__dot" type="button" data-carousel-dot aria-label="Show slide 4 of 5"></button>
+                          <button class="fp-carousel__dot" type="button" data-carousel-dot aria-label="Show slide 5 of 5"></button>
+                        </div>
                       </div>
                     </div>
 
-                    <!-- Bottom area — animated feature tags -->
-                    <div class="fp-preview__area">
-                      <ul class="app-ui__pills fp-preview__tags fp-preview__tags--bottom" role="list">
-                        <li>Weather</li>
-                        <li>GeoTag</li>
-                        <li>Current Location</li>
-                      </ul>
+                    <!-- Bottom of the screen — feature tabs, synced to the slider -->
+                    <div class="fp-app__tabs" role="group" aria-label="Feature highlights">
+                      <button class="fp-app__tab" type="button" data-feature-tab data-slide="1" aria-pressed="false">Location Sharing</button>
+                      <button class="fp-app__tab" type="button" data-feature-tab data-slide="2" aria-pressed="false">Family Messages</button>
+                      <button class="fp-app__tab" type="button" data-feature-tab data-slide="3" aria-pressed="false">Safety Alerts</button>
+                      <button class="fp-app__tab" type="button" data-feature-tab data-slide="1" aria-pressed="false">GeoTag Camera</button>
+                      <button class="fp-app__tab" type="button" data-feature-tab data-slide="4" aria-pressed="false">Privacy & User Control</button>
                     </div>
                   </div>
                 </div>
@@ -216,8 +264,8 @@
           <span class="eyebrow">Features</span>
           <h2 id="features-title">Everything a family needs to stay connected</h2>
           <p class="lead">
-            Verified features from the Family Path Locator Android app —
-            described accurately, with limitations included.
+            A clear look at what Family Path Locator can do for your family —
+            what each feature does and what it depends on.
           </p>
         </div>
 
@@ -230,16 +278,17 @@
             <div class="spotlight-card__body">
               <h3>Family Location Sharing</h3>
               <p>
-                See your family on a shared map with clear location freshness.
-                Members appear with avatar markers, distance, and accuracy
-                information — so you always know when a location was last
+                See your family on a shared map. Every member who has location
+                sharing switched on appears with their current location, so you
+                can check where everyone is and when their location last
                 updated.
               </p>
               <p class="note">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                Updates follow the app's configured update and movement policy —
-                approximately hourly, or when a member moves — not
-                second-by-second tracking.
+                Each member stays in control of whether they share. Sharing
+                needs location permission and the right device settings, so
+                what you see depends on the other person's device and
+                connection.
               </p>
             </div>
           </article>
@@ -251,14 +300,14 @@
             <div class="spotlight-card__body">
               <h3>Family Code</h3>
               <p>
-                Create a family and receive an 8-character Family Code. Share
-                the code with the people you trust — family members join simply
-                by entering it.
+                Create a family and receive an eight-character Family Code.
+                Share the code with the people you trust — anyone with the
+                code can join your family by entering it, and you stay
+                connected with the members of your family.
               </p>
               <div class="chip-row">
-                <span class="chip">8-character code</span>
-                <span class="chip">Up to 6 members per family</span>
-                <span class="chip">Up to 2 families per person</span>
+                <span class="chip">Eight-character code</span>
+                <span class="chip">Join with a code</span>
               </div>
             </div>
           </article>
@@ -270,9 +319,10 @@
             <div class="spotlight-card__body">
               <h3>Safety Alerts</h3>
               <p>
-                Send a Safety Alert with a predefined alert type and an optional
-                custom message. Each alert includes your current address and
-                coordinates, and reaches your family as a push notification.
+                Send a Safety Alert to your family when you need attention or
+                assistance. Choose an alert type, add an optional message, and
+                include your current location so your family knows where you
+                are.
               </p>
               <p class="note">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -287,15 +337,19 @@
               <img src="/public/assets/family-path/images/location-messages.png" alt="" width="500" height="500" loading="lazy" decoding="async">
             </div>
             <div class="spotlight-card__body">
-              <h3>Family Chat</h3>
+              <h3>Family Messages</h3>
               <p>
-                Group family conversations and one-to-one chats, with text
-                and emoji, delivered within the app.
+                Send a message to an individual member of your family or to
+                your whole family group. Only members of your family are
+                available for messaging, and messages are exchanged within the
+                application.
               </p>
               <p class="note">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                Text and emoji only — up to 500 characters. No chat push
-                notifications, typing indicators, or read receipts.
+                While the application is open you may hear incoming message
+                sounds, depending on your device's sound settings. Ordinary
+                messages do not send push notifications when you are not using
+                the application.
               </p>
             </div>
           </article>
@@ -306,29 +360,27 @@
           <div class="geotag-card__copy">
             <h3>GeoTag Camera</h3>
             <p>
-              Stamp useful details directly onto your photos — name, family,
-              address, latitude and longitude, and date/time.
+              Take photos with location-related details attached, so every
+              photo is tied to the place where it was captured. The details are
+              stamped onto the picture itself: your name, family, address,
+              coordinates, and the date and time.
             </p>
             <ul class="check-list">
               <li>
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-                The stamp is burned into the image pixels.
+                Works when location permission and the relevant device settings are enabled.
               </li>
               <li>
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-                Photos are saved on your device.
+                Photos are stored on your device — the application does not upload them to a server or cloud.
               </li>
               <li>
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-                Share through your device's usual share options.
+                Manage and delete your stored photos whenever you like.
               </li>
               <li>
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-                Photos are never uploaded to the Family Path cloud.
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
-                No GPS EXIF metadata is added to the image.
+                Share with others using your device's usual share options — copies you share are then handled by the apps you share them with.
               </li>
             </ul>
           </div>
@@ -348,15 +400,15 @@
             </span>
             <h3>Background Location Sharing</h3>
             <p>
-              Family Path can keep sharing your location while the app is
-              closed, using Android background location.
+              Allow background location access so your current location can
+              keep sharing while the application is not on screen.
             </p>
             <p class="note">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              Requires background location and notification permissions. Android
-              shows an active foreground-service notification. Sharing stays
-              under your control and does not restart automatically after a
-              reboot until you open the app.
+              Depends on your permissions, your device's settings and its
+              operating-system restrictions, so it may not continue on every
+              device. Sharing stays under your control and can be switched off
+              at any time.
             </p>
           </article>
 
@@ -397,12 +449,14 @@
             </span>
             <h3>Offline AI Assistant</h3>
             <p>
-              A built-in help assistant that works without internet, answering
-              app-related questions from a bundled knowledge base.
+              A built-in assistant that helps you with supported questions
+              about the application, without needing an internet connection
+              for that offline functionality.
             </p>
             <p class="note">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              It runs entirely on your device as an in-app help assistant.
+              It runs on your device for its supported functionality — not
+              every possible question is available offline.
             </p>
           </article>
 
@@ -412,14 +466,14 @@
             </span>
             <h3>Privacy &amp; User Control</h3>
             <p>
-              Control location sharing, battery-status sharing, and weather
-              updates. Leave a family whenever you like, and delete your
-              account at any time.
+              Manage your preferences in Settings — location sharing,
+              battery-status sharing, weather updates, and more. Leave a
+              family whenever you like, and delete your account at any time.
             </p>
             <p class="note">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-              Only current location is stored — there is no location history or
-              timeline.
+              Only current location is stored — Family Path Locator does not
+              save a location history or timeline.
             </p>
           </article>
 
@@ -437,14 +491,6 @@
               Account deletion is available in the application.
             </p>
           </article>
-
-          <article class="feature-card">
-            <span class="feature-card__icon feature-card__icon--accent" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-            </span>
-            <h3>Free Application</h3>
-            <p>Family Path is designed as a free application.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -454,33 +500,73 @@
       <div class="container">
         <div class="section-head" data-reveal>
           <span class="eyebrow">How it works</span>
-          <h2 id="how-title">Up and running in four simple steps</h2>
+          <h2 id="how-title">Up and running in five simple steps</h2>
+          <p class="lead">
+            From installing the application to exploring its features — the
+            whole Family Path Locator journey.
+          </p>
         </div>
         <ol class="steps" data-reveal-group>
           <li class="step">
             <span class="step__num" aria-hidden="true">1</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </span>
             <h3>Install Family Path Locator</h3>
-            <p>Download the app on your Android phone.</p>
+            <p>
+              Get started by installing the application from
+              <a href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>Google Play</a>
+              on your device.
+            </p>
           </li>
           <li class="step">
             <span class="step__num" aria-hidden="true">2</span>
-            <h3>Sign in</h3>
-            <p>Continue with Google, or use email and password.</p>
+            <span class="step__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            </span>
+            <h3>Sign in or create an account</h3>
+            <p>
+              Sign in with Google, or with your email address and password.
+              New to the application? Create an account first, then sign in.
+            </p>
           </li>
           <li class="step">
             <span class="step__num" aria-hidden="true">3</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+            </span>
             <h3>Create or join a family</h3>
             <p>
-              Create a family and share its 8-character Family Code — or enter
-              a Family Code from your family.
+              Create a new family and the application generates an
+              eight-character Family Code to share — or join an existing
+              family by entering the Family Code someone you trust sent you.
             </p>
           </li>
           <li class="step">
             <span class="step__num" aria-hidden="true">4</span>
-            <h3>Stay connected</h3>
+            <span class="step__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3>Connect with your family members</h3>
             <p>
-              View family members, share your current location, chat, and send
-              Safety Alerts.
+              Share your Family Code with the people you trust so they can
+              join. Once your family is connected, you can stay in touch with
+              the members of your family through the application's features.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">5</span>
+            <span class="step__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </span>
+            <h3>Explore the features</h3>
+            <p>
+              Try live location sharing with family members who have sharing
+              enabled, Family Messages for individual and family-group
+              messages, GeoTag Camera photos stored on your device, Safety
+              Alerts for your family, the Offline AI Assistant for supported
+              questions, and Settings that keep your preferences under your
+              control.
             </p>
           </li>
         </ol>
@@ -494,8 +580,9 @@
           <span class="eyebrow">Screenshots</span>
           <h2 id="shots-title">A look inside Family Path Locator</h2>
           <p class="lead">
-            Real application screenshots will be placed here. Each frame below
-            is a labelled placeholder.
+            Each frame below is a labelled preview of an application screen.
+            Real screenshots will replace these frames as they become
+            available.
           </p>
         </div>
         <!-- To add a real screenshot, replace the .device__screen contents with:
@@ -553,13 +640,13 @@
           </figure>
 
           <figure class="shot">
-            <div class="device" role="img" aria-label="Placeholder screenshot: Chat">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Messages">
               <div class="device__screen">
                 <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                 <span class="device__pending">Coming soon</span>
               </div>
             </div>
-            <figcaption><h3 class="shot__label">Chat</h3></figcaption>
+            <figcaption><h3 class="shot__label">Messages</h3></figcaption>
           </figure>
 
           <figure class="shot">
@@ -604,6 +691,12 @@
           <p class="lead">
             Family Path is designed around current location sharing within your
             family — with clear controls for what you share.
+          </p>
+          <p>
+            Family Path Locator does not save or maintain historical location
+            records or a location timeline. It stores current location
+            information for the live location-sharing feature — not a record
+            of where someone has been.
           </p>
           <ul class="check-list">
             <li>
@@ -661,9 +754,9 @@
           <article class="note-card">
             <h3>Location updates</h3>
             <p>
-              Family Path is not a continuous, second-by-second tracker.
-              Location updates follow the application's configured update and
-              movement policy.
+              Family Path Locator shows current shared locations rather than
+              second-by-second tracking. Locations update as your device
+              provides them while location sharing is on.
             </p>
           </article>
           <article class="note-card">
@@ -693,10 +786,11 @@
             <p>The current application is available for Android.</p>
           </article>
           <article class="note-card">
-            <h3>Chat</h3>
+            <h3>Messages</h3>
             <p>
-              Chat currently supports text and emoji and does not provide
-              message push notifications.
+              Messages arrive within the application rather than as push
+              notifications. Incoming message sounds may play while the
+              application is open, depending on your device's sound settings.
             </p>
           </article>
         </div>
@@ -736,8 +830,8 @@
             </span>
           </a>
           <p class="footer-brand__text">
-            Private family location sharing, Safety Alerts, family chat, and
-            more — for Android.
+            Private family location sharing, Safety Alerts, family messages,
+            and more — for Android.
           </p>
           <a class="binkod-link" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
             <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="150" height="68" loading="lazy">

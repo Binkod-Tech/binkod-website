@@ -60,6 +60,9 @@
   --gutter: clamp(1rem, 4vw, 1.75rem);
   --section-y: clamp(3.5rem, 2rem + 6vw, 5.75rem);
   --header-h: 4.5rem;
+  /* Rendered height of the mobile install bar; js/global.js replaces this
+     fallback with the measured pixel height at runtime. */
+  --install-bar-h: 3.75rem;
 
   /* Motion */
   --t-fast: 150ms ease;
@@ -347,6 +350,7 @@ main[id] {
 
 .btn--sm {
   padding: 0.55rem 1.15rem;
+  min-height: 2.75rem; /* 44px touch target (contact/header/footer CTAs) */
   font-size: var(--fs-sm);
 }
 
@@ -439,6 +443,170 @@ main[id] {
 :focus-visible {
   outline: 3px solid var(--c-primary);
   outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll-to-top control — shared by every page and injected by js/global.js
+   (one instance per page, hidden until the visitor scrolls down). Sits at
+   the bottom-right inside the page gutter, above page content and the
+   sticky header but below the skip link, so it never covers navigation.
+   -------------------------------------------------------------------------- */
+.scroll-top {
+  position: fixed;
+  right: var(--gutter);
+  bottom: calc(var(--gutter) + env(safe-area-inset-bottom, 0px));
+  z-index: 65;
+  display: grid;
+  place-items: center;
+  width: 2.75rem; /* 44px — matches the nav toggle hit area */
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--c-primary-strong);
+  border-radius: var(--r-pill);
+  background-color: var(--c-primary);
+  color: #ffffff;
+  box-shadow: var(--sh-2);
+  cursor: pointer;
+  /* Hidden state: opacity 0 keeps it out of sight while visibility: hidden
+     removes it from pointer interaction and the tab order entirely. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition: opacity var(--t), transform var(--t-fast),
+    background-color var(--t), box-shadow var(--t);
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.scroll-top__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Hover feedback only where the device actually supports hovering. */
+@media (hover: hover) {
+  .scroll-top:hover {
+    background-color: var(--c-primary-strong);
+    box-shadow: var(--sh-3);
+    transform: translateY(-2px);
+  }
+}
+
+.scroll-top:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Keyboard focus uses the site-wide :focus-visible outline defined above. */
+
+/* --------------------------------------------------------------------------
+   Mobile install bar — Family Path Locator pages only. js/global.js injects
+   a single .install-bar element (never when the verified Play Store URL is
+   missing, never on the root showcase or BINKOD ABC) and toggles
+   html.install-bar-visible once the visitor passes 300px of scroll.
+   html.has-install-bar is set once at creation, so the reserved footer
+   space below exists from first paint — revealing the bar shifts nothing
+   and footer, legal and interactive content always stays above it.
+   -------------------------------------------------------------------------- */
+.install-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 55; /* below the sticky header (60) and scroll-to-top (65) */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem var(--gutter) calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  background-color: var(--c-bg);
+  border-top: 1px solid var(--c-line);
+  box-shadow: var(--sh-2);
+  /* Hidden state: opacity hides it while visibility: hidden keeps it out
+     of pointer interaction and the tab order until it is revealed. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: transform var(--t), opacity var(--t), visibility var(--t);
+}
+
+.install-bar__icon {
+  width: 2.375rem; /* matches the header brand icon */
+  height: 2.375rem;
+  flex: none;
+}
+
+.install-bar__text {
+  display: grid;
+  gap: 0.1rem;
+  /* Let long text ellipsize instead of pushing the CTA off-screen. */
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.install-bar__name {
+  color: var(--c-ink);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.install-bar__label {
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.install-bar__cta {
+  flex: none;
+}
+
+@media (max-width: 25em) {
+  /* Keep icon + CTA visible down to 320px, including under enlarged text:
+     at 200% root size the rem-based gutter and button padding alone would
+     push the action off-screen. Slightly tighter spacing, same layout. */
+  .install-bar {
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .install-bar__cta {
+    padding-inline: 14px;
+  }
+}
+
+@media (max-width: 47.99em) {
+  html.install-bar-visible .install-bar {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  /* Reserve the bar's real height inside the footer — the padding sits on
+     the footer's own background, so there is no seam when it shows. */
+  html.has-install-bar .site-footer {
+    padding-bottom: calc(var(--install-bar-h) + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Lift the scroll-to-top control clear of the bar while both show. */
+  html.install-bar-visible .scroll-top {
+    bottom: calc(
+      var(--gutter) + var(--install-bar-h) + env(safe-area-inset-bottom, 0px)
+    );
+  }
+}
+
+@media (min-width: 48em) {
+  .install-bar {
+    display: none; /* desktop never shows the install bar */
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -599,6 +767,24 @@ main[id] {
     background-color: var(--c-bg);
     border-bottom: 1px solid var(--c-line);
     box-shadow: var(--sh-2);
+    /* Viewport-aware cap so the open menu always fits below the sticky
+       header, including short landscape phones. 100% is the *actual* header
+       height (the panel is absolutely positioned inside .header-inner), so
+       the cap stays correct even when the header grows — e.g. at 200% text
+       zoom, where the --header-h token alone would under-size it. 100dvh
+       tracks the visible viewport as mobile browser chrome shows and hides;
+       the 100vh line is the fallback for browsers without dvh. Content
+       taller than the cap scrolls inside the panel instead of being cut off,
+       so every link and the Play Store button stay reachable. */
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    /* Keep 8px in reserve when keyboard focus scrolls a link into view, so
+       the 3px focus outline + 2px offset is never clipped at the panel edge. */
+    scroll-padding-block: 0.5rem;
   }
 
   .site-nav.is-open {
@@ -856,10 +1042,17 @@ main[id] {
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 0.65rem;
+  /* Tight gap because each link is a full 44px touch row (see below), so the
+     rows themselves provide the separation without an oversized list. */
+  gap: 0.15rem;
 }
 
 .footer-links a {
+  /* 44 x 44 minimum touch target: full column width x 2.75rem tall, with the
+     label vertically centred so the visual design stays unchanged. */
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: var(--c-ink-soft);
   font-weight: 600;
   text-decoration: none;
