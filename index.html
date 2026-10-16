@@ -3,247 +3,1401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BINKOD Tech — Applications</title>
-  <meta name="description" content="BINKOD Tech builds useful digital products — Family Path Locator, a family location-sharing app for Android, and BINKOD ABC, a pre-primary learning app in development.">
-  <meta name="theme-color" content="#2563eb">
-  <!-- TODO: Add canonical URL and og:url once the production domain is confirmed. -->
+  <title>BINKOD Tech — Building Useful Products with Intelligent Technology</title>
+  <meta name="description" content="BINKOD Tech builds practical mobile and web products — including Family Path Locator on Google Play — and explores AI engineering, cloud and modern software development.">
+  <meta name="theme-color" content="#f4f7fc">
+  <script>
+    /* Apply the saved colour theme before first paint to avoid a flash of
+       the wrong theme. Light is the default when nothing is saved. */
+    (function () {
+      try {
+        var saved = localStorage.getItem('binkod.theme');
+        document.documentElement.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+      } catch (error) {
+        /* Storage unavailable — the light default stands. */
+      }
+    })();
+  </script>
+  <link rel="canonical" href="https://app.binkod.in/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BINKOD Tech">
-  <meta property="og:title" content="BINKOD Tech — Applications">
-  <meta property="og:description" content="BINKOD Tech builds useful digital products — Family Path Locator for Android and BINKOD ABC, in development.">
-  <!-- TODO: Add og:image once the production domain is confirmed. -->
+  <meta property="og:title" content="BINKOD Tech — Building Useful Products with Intelligent Technology">
+  <meta property="og:description" content="Practical mobile and web products, reliable software systems, and explorations in AI engineering — from a small product team.">
+  <meta property="og:url" content="https://app.binkod.in/">
+  <meta property="og:image" content="https://app.binkod.in/public/assets/shared/binkod-header-1600x639.jpeg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="639">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BINKOD Tech — Building Useful Products with Intelligent Technology">
+  <meta name="twitter:description" content="Practical mobile and web products, reliable software systems, and explorations in AI engineering.">
+  <meta name="twitter:image" content="https://app.binkod.in/public/assets/shared/binkod-header-1600x639.jpeg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BINKOD Tech",
+      "url": "https://app.binkod.in/",
+      "email": "binkodtech@gmail.com",
+      "logo": "https://app.binkod.in/public/assets/shared/binkod-logo-500x500.png",
+      "sameAs": ["https://www.binkod.in/"]
+    }
+  </script>
   <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
   <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/global.css">
+  <!-- Homepage-only styling. This file is loaded on the homepage only, so the
+       product pages and their shared components are never affected. -->
+  <link rel="stylesheet" href="/css/home.css">
+  <script>
+    /* Progressive-enhancement marker for the homepage reveal animation.
+       If the homepage script never runs (or errors), the marker is removed
+       after three seconds so every section stays fully visible without
+       JavaScript. */
+    document.documentElement.classList.add('home-js');
+    window.setTimeout(function () {
+      if (!document.documentElement.classList.contains('home-reveal-ready')) {
+        document.documentElement.classList.remove('home-js');
+      }
+    }, 3000);
+  </script>
   <script src="/js/global.js" defer></script>
+  <script src="/js/home.js" defer></script>
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- ============================ HEADER ============================ -->
-  <header class="site-header root-header">
+  <!-- Transparent over the hero, then settles into a glass surface while
+       scrolling (html class toggled in js/home.js). -->
+  <header class="site-header home-header" id="home-header">
     <div class="container header-inner">
-      <!-- Primary brand: the BINKOD wordmark links to www.binkod.in -->
-      <a class="root-logo" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
-        <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="150" height="68">
+      <!-- BINKOD wordmark — always links to binkod.in -->
+      <a class="home-brand" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer" aria-label="BINKOD — binkod.in (opens in a new tab)">
+        <span class="home-brand__plate">
+          <img src="/public/assets/shared/binkod-wordmark-473x135.png" alt="BINKOD Tech" width="473" height="135">
+        </span>
       </a>
 
-      <!-- Applications: grouped product navigation -->
-      <details class="nav-apps" id="nav-apps">
-        <summary class="nav-apps__toggle">
-          Applications
-          <svg class="nav-apps__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-        </summary>
-        <div class="nav-apps__panel">
-          <ul class="nav-apps__list">
-            <li>
-              <a class="nav-apps__item" href="/family-path-locator/">
-                <img class="nav-apps__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="36" height="36">
-                <span class="nav-apps__meta">
-                  <span class="nav-apps__name">Family Path Locator</span>
-                  <span class="nav-apps__desc">Family location &amp; safety</span>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="nav-apps__item" href="/binkod-abc/">
-                <img class="nav-apps__icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="36" height="36" loading="lazy">
-                <span class="nav-apps__meta">
-                  <span class="nav-apps__name">
-                    BINKOD ABC
-                    <span class="nav-apps__badge">Under development</span>
-                  </span>
-                  <span class="nav-apps__desc">Pre-primary learning</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </details>
+      <button class="nav-toggle home-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav home-nav" id="primary-navigation" aria-label="Primary">
+        <ul class="site-nav__list home-nav__list">
+          <li class="home-nav__products">
+            <!-- Product dropdown — same <details> behaviour as before, closed
+                 by js/global.js on Escape or an outside click. -->
+            <details class="nav-apps home-nav__apps">
+              <summary class="nav-apps__toggle home-nav__apps-toggle">
+                Products
+                <svg class="nav-apps__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="nav-apps__panel home-nav__apps-panel">
+                <ul class="nav-apps__list">
+                  <li>
+                    <a class="nav-apps__item home-nav__apps-item" href="/family-path-locator/">
+                      <img class="nav-apps__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="36" height="36">
+                      <span class="nav-apps__meta">
+                        <span class="nav-apps__name">
+                          Family Path Locator
+                          <span class="home-mini home-mini--live">On Google Play</span>
+                        </span>
+                        <span class="nav-apps__desc">Family location &amp; safety · Android</span>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-apps__item home-nav__apps-item" href="/binkod-abc/">
+                      <img class="nav-apps__icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="36" height="36">
+                      <span class="nav-apps__meta">
+                        <span class="nav-apps__name">
+                          BINKOD ABC
+                          <span class="home-mini home-mini--dev">In development</span>
+                        </span>
+                        <span class="nav-apps__desc">Pre-primary learning</span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <a class="home-nav__apps-all" href="#products">See all products <span aria-hidden="true">→</span></a>
+              </div>
+            </details>
+          </li>
+          <li><a class="site-nav__link home-nav__link" href="#technology">Technology</a></li>
+          <li><a class="site-nav__link home-nav__link" href="#ai-lab">AI Engineering</a></li>
+          <li><a class="site-nav__link home-nav__link" href="#architecture">Architecture</a></li>
+          <li class="home-nav__theme">
+            <span class="theme-switch" role="group" aria-label="Colour theme">
+              <button type="button" class="theme-switch__btn" data-theme-choice="light" aria-pressed="true" aria-label="Switch to light mode" title="Switch to light mode">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2"/><path d="M12 19.2v2.2"/><path d="M2.6 12h2.2"/><path d="M19.2 12h2.2"/><path d="M5.2 5.2 6.8 6.8"/><path d="M17.2 17.2l1.6 1.6"/><path d="M5.2 18.8 6.8 17.2"/><path d="M17.2 6.8l1.6-1.6"/></svg>
+              </button>
+              <button type="button" class="theme-switch__btn" data-theme-choice="dark" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 14.2A8.6 8.6 0 0 1 9.8 3.4a8.6 8.6 0 1 0 10.8 10.8z"/></svg>
+              </button>
+            </span>
+          </li>
+        </ul>
+        <a class="btn btn--primary btn--sm home-nav__cta" href="#products">Explore Our Products</a>
+      </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- ============================ APPLICATION SHOWCASE (first content) ============================ -->
-    <section class="root-hero" aria-labelledby="applications-title">
-      <div class="container">
-        <div class="showcase">
-          <!-- ============ LEFT — Family Path Locator (Android phone) ============ -->
-          <div class="showcase__slot anim-in--left">
-            <div class="showcase__panel showcase__panel--fp">
-              <!-- Map-inspired backdrop: soft coordinate grid + flowing routes -->
-              <span class="fp-deco fp-deco--grid" aria-hidden="true"></span>
-              <svg class="fp-deco fp-deco__routes" viewBox="0 0 300 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                <path class="fp-route fp-route--a" d="M-24 92 C 60 44, 140 152, 232 98 S 336 54, 372 128"/>
-                <path class="fp-route fp-route--b" d="M-24 374 C 70 424, 152 318, 246 382 S 348 402, 372 344"/>
-                <circle class="fp-route-dot fp-route-dot--a" cx="66" cy="64" r="4.5"/>
-                <circle class="fp-route-dot fp-route-dot--b" cx="236" cy="392" r="4.5"/>
-              </svg>
+    <!-- ============================ HERO ============================ -->
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="home-hero__bg" aria-hidden="true">
+        <span class="home-hero__grid"></span>
+        <span class="home-hero__orb home-hero__orb--a"></span>
+        <span class="home-hero__orb home-hero__orb--b"></span>
+      </div>
 
-              <!-- Android phone mockup -->
-              <div class="fp-stage">
-                <span class="fp-stage__glow" aria-hidden="true"></span>
-                <div class="phone-float">
-                  <div class="phone-tilt">
-                    <div class="phone">
-                      <span class="phone__btn phone__btn--vol" aria-hidden="true"></span>
-                      <span class="phone__btn phone__btn--power" aria-hidden="true"></span>
-                      <div class="phone__screen">
-                        <div class="app-ui">
-                          <div class="app-ui__bar">
-                            <span>9:41</span>
-                            <span class="app-ui__sys" aria-hidden="true">
-                              <svg viewBox="0 0 12 8" focusable="false"><rect x="0" y="5.2" width="2.2" height="2.8" rx="0.6"/><rect x="3.4" y="3.6" width="2.2" height="4.4" rx="0.6"/><rect x="6.8" y="1.8" width="2.2" height="6.2" rx="0.6"/><rect x="10" y="0" width="2" height="8" rx="0.6"/></svg>
-                              <svg viewBox="0 0 12 8" focusable="false"><path d="M6 7.7 0.7 2.5A7.5 7.5 0 0 1 11.3 2.5Z"/></svg>
-                              <svg viewBox="0 0 11 7" focusable="false"><rect x="0" y="0.8" width="8.6" height="5.4" rx="1.6"/><rect x="9.4" y="2.3" width="1.6" height="2.4" rx="0.8"/></svg>
-                            </span>
-                          </div>
-                          <div class="app-ui__head">
-                            <img class="app-ui__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="34" height="34">
-                            <div class="app-ui__titles">
-                              <span class="app-ui__name">Family Path Locator</span>
-                              <span class="app-ui__avail">
-                                <svg class="app-ui__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
-                                Available on Google Play
-                              </span>
-                            </div>
-                          </div>
-                          <div class="app-ui__map">
-                            <svg class="app-ui__map-svg" viewBox="0 0 200 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                              <path class="app-road" d="M-14 36 C 44 8, 88 66, 142 40 S 196 18, 224 44"/>
-                              <path class="app-road" d="M-14 100 C 52 120, 116 80, 166 104 S 214 112, 232 94"/>
-                              <path class="app-road" d="M20 -14 C 34 40, 10 84, 40 148"/>
-                              <path class="app-route" d="M26 106 C 58 88, 66 52, 108 46 S 158 38, 174 22"/>
-                              <circle class="app-route-start" cx="26" cy="106" r="4"/>
-                              <g class="app-pin" transform="translate(174 22)">
-                                <circle class="app-pin__ping" cx="0" cy="-14" r="6"/>
-                                <path class="app-pin__shape" d="M0 0 C-6 -8.5 -8.5 -11.5 -8.5 -15.5 A8.5 8.5 0 1 1 8.5 -15.5 C8.5 -11.5 6 -8.5 0 0 Z"/>
-                                <circle class="app-pin__dot" cx="0" cy="-15.5" r="3.2"/>
-                              </g>
-                            </svg>
-                          </div>
-                          <ul class="app-ui__pills">
-                            <li>Location Sharing</li>
-                            <li>Family Groups</li>
-                            <li>Safety Alerts</li>
-                            <li>Weather</li>
-                            <li>GeoTag</li>
-                            <li>Current Location</li>
-                          </ul>
+      <div class="container home-hero__layout">
+        <div class="home-hero__copy" data-home-reveal>
+          <p class="home-eyebrow">
+            <span class="home-eyebrow__dot" aria-hidden="true"></span>
+            Product engineering · AI engineering · Cloud
+          </p>
+          <h1 id="hero-title" class="home-title">
+            Building useful products with
+            <span class="home-title__grad">intelligent technology.</span>
+          </h1>
+          <p class="home-hero__lead">
+            We create practical mobile and web applications, develop reliable
+            software systems, and explore AI technologies that make
+            information and everyday tasks more useful.
+          </p>
+          <div class="actions home-hero__actions">
+            <a class="btn btn--primary" href="#products">
+              Explore Products
+              <span class="home-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href="#technology">Explore Technology</a>
+          </div>
+          <ul class="home-hero__badges">
+            <li>
+              <a class="home-release" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+                <img src="/public/assets/family-path/icons/familypath.png" alt="" width="26" height="26" loading="lazy">
+                <span class="home-release__text">
+                  <strong>Family Path Locator</strong>
+                  Get it on Google Play Store
+                </span>
+                <span class="home-release__more" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <span class="home-devbadge">
+                <span class="home-devbadge__dot" aria-hidden="true"></span>
+                More products in development
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Product / AI composition — the surrounding copy already carries
+             all of this information, so the visual itself is decorative. -->
+        <div class="home-hero__visual" data-home-reveal aria-hidden="true">
+          <div class="home-orbit">
+            <span class="home-orbit__ring home-orbit__ring--a"></span>
+            <span class="home-orbit__ring home-orbit__ring--b"></span>
+            <span class="home-orbit__glow"></span>
+
+            <!-- Abstract node network with travelling data pulses -->
+            <svg class="home-net" viewBox="0 0 560 560" fill="none" focusable="false">
+              <g class="home-net__links">
+                <path d="M96 168 C 190 120, 330 120, 452 178"/>
+                <path d="M92 356 C 180 420, 360 424, 470 348"/>
+                <path d="M120 470 C 120 380, 96 300, 96 224"/>
+                <path d="M456 128 C 496 208, 498 292, 462 396"/>
+                <path d="M120 120 C 230 60, 350 62, 448 116"/>
+                <path d="M132 452 C 240 516, 356 514, 452 444"/>
+                <path d="M96 260 C 150 330, 190 350, 250 356"/>
+                <path d="M330 362 C 380 344, 430 316, 462 268"/>
+              </g>
+              <g class="home-net__pulses">
+                <path class="home-net__pulse" pathLength="100" d="M96 168 C 190 120, 330 120, 452 178"/>
+                <path class="home-net__pulse" pathLength="100" d="M92 356 C 180 420, 360 424, 470 348"/>
+                <path class="home-net__pulse" pathLength="100" d="M120 120 C 230 60, 350 62, 448 116"/>
+                <path class="home-net__pulse" pathLength="100" d="M132 452 C 240 516, 356 514, 452 444"/>
+                <path class="home-net__pulse" pathLength="100" d="M96 260 C 150 330, 190 350, 250 356"/>
+                <path class="home-net__pulse" pathLength="100" d="M330 362 C 380 344, 430 316, 462 268"/>
+              </g>
+              <g class="home-net__nodes">
+                <circle cx="96" cy="168" r="5"/>
+                <circle cx="452" cy="178" r="5"/>
+                <circle cx="92" cy="356" r="5"/>
+                <circle cx="470" cy="348" r="5"/>
+                <circle cx="120" cy="120" r="4"/>
+                <circle cx="448" cy="116" r="4"/>
+                <circle cx="132" cy="452" r="4"/>
+                <circle cx="452" cy="444" r="4"/>
+                <circle cx="96" cy="260" r="4"/>
+                <circle cx="462" cy="268" r="4"/>
+              </g>
+            </svg>
+
+            <!-- Central device mockup: the family map experience -->
+            <div class="home-device">
+              <div class="phone-float">
+                <div class="phone-tilt">
+                  <div class="phone">
+                    <span class="phone__btn phone__btn--vol" aria-hidden="true"></span>
+                    <span class="phone__btn phone__btn--power" aria-hidden="true"></span>
+                    <div class="phone__screen">
+                      <div class="home-screen">
+                        <div class="home-screen__bar">
+                          <span>9:41</span>
+                          <span class="home-screen__sys">
+                            <svg viewBox="0 0 12 8" focusable="false"><rect x="0" y="5.2" width="2.2" height="2.8" rx="0.6"/><rect x="3.4" y="3.6" width="2.2" height="4.4" rx="0.6"/><rect x="6.8" y="1.8" width="2.2" height="6.2" rx="0.6"/><rect x="10" y="0" width="2" height="8" rx="0.6"/></svg>
+                            <svg viewBox="0 0 12 8" focusable="false"><path d="M6 7.7 0.7 2.5A7.5 7.5 0 0 1 11.3 2.5Z"/></svg>
+                            <svg viewBox="0 0 11 7" focusable="false"><rect x="0" y="0.8" width="8.6" height="5.4" rx="1.6"/><rect x="9.4" y="2.3" width="1.6" height="2.4" rx="0.8"/></svg>
+                          </span>
                         </div>
-                        <span class="phone__cam" aria-hidden="true"></span>
-                        <span class="phone__glare" aria-hidden="true"></span>
+                        <div class="home-screen__head">
+                          <img class="home-screen__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="30" height="30" loading="lazy">
+                          <span class="home-screen__titles">
+                            <span class="home-screen__name">Family Path Locator</span>
+                            <span class="home-screen__sub">Family map · Location sharing</span>
+                          </span>
+                        </div>
+                        <div class="home-screen__map">
+                          <svg class="home-screen__map-svg" viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <path class="home-map__road" d="M-14 40 C 44 10, 88 72, 142 44 S 196 20, 224 48"/>
+                            <path class="home-map__road" d="M-14 112 C 52 132, 116 88, 166 114 S 214 122, 232 102"/>
+                            <path class="home-map__road" d="M24 -14 C 38 44, 12 92, 44 160"/>
+                            <path class="home-map__route" d="M28 118 C 60 98, 68 58, 110 50 S 158 42, 176 24"/>
+                            <circle class="home-map__start" cx="28" cy="118" r="4"/>
+                            <g class="home-map__pin home-map__pin--a" transform="translate(176 24)">
+                              <circle class="home-map__ping" cx="0" cy="-14" r="6"/>
+                              <path class="home-map__shape" d="M0 0 C-6 -8.5 -8.5 -11.5 -8.5 -15.5 A8.5 8.5 0 1 1 8.5 -15.5 C8.5 -11.5 6 -8.5 0 0 Z"/>
+                              <circle class="home-map__dot" cx="0" cy="-15.5" r="3.2"/>
+                            </g>
+                            <g class="home-map__pin home-map__pin--b" transform="translate(84 96)">
+                              <circle class="home-map__shape" cx="0" cy="-12" r="6"/>
+                              <circle class="home-map__dot" cx="0" cy="-12" r="2.4"/>
+                            </g>
+                            <g class="home-map__pin home-map__pin--c" transform="translate(138 74)">
+                              <circle class="home-map__shape" cx="0" cy="-10" r="5"/>
+                              <circle class="home-map__dot" cx="0" cy="-10" r="2"/>
+                            </g>
+                          </svg>
+                        </div>
+                        <ul class="home-screen__chips">
+                          <li>Location Sharing</li>
+                          <li>Safety Alerts</li>
+                          <li>GeoTag</li>
+                        </ul>
                       </div>
+                      <span class="phone__cam" aria-hidden="true"></span>
+                      <span class="phone__glare" aria-hidden="true"></span>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div class="showcase__info">
-                <h2 class="showcase__title">Family Path Locator</h2>
-                <p class="showcase__desc">A private family location-sharing and safety app for Android.</p>
-                <div class="showcase__actions">
-                  <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
-                    <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
-                    Get it on Google Play
-                  </a>
-                  <a class="btn btn--primary" href="/family-path-locator/">
-                    Open Family Path Locator
-                    <span class="showcase__arrow" aria-hidden="true">→</span>
-                  </a>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- ============ RIGHT — BINKOD ABC (under development) ============ -->
-          <div class="showcase__slot anim-in--right">
-            <div class="showcase__panel showcase__panel--abc">
-              <!-- Blueprint-inspired backdrop -->
-              <span class="abc-deco abc-deco--grid" aria-hidden="true"></span>
-              <span class="abc-dot abc-dot--1" aria-hidden="true"></span>
-              <span class="abc-dot abc-dot--2" aria-hidden="true"></span>
-              <span class="abc-dot abc-dot--3" aria-hidden="true"></span>
-              <span class="abc-dot abc-dot--4" aria-hidden="true"></span>
-
-              <p class="abc-status">
-                <span class="abc-status__dot" aria-hidden="true"></span>
-                Under development
-              </p>
-
-              <div class="abc-stage">
-                <span class="abc-stage__glow" aria-hidden="true"></span>
-
-                <span class="abc-frag abc-frag--a" aria-hidden="true">A</span>
-                <span class="abc-frag abc-frag--b" aria-hidden="true">B</span>
-                <span class="abc-frag abc-frag--c" aria-hidden="true">C</span>
-                <span class="abc-frag abc-frag--d" aria-hidden="true">1</span>
-                <span class="abc-frag abc-frag--e" aria-hidden="true">2</span>
-
-                <span class="abc-wire abc-wire--a" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="abc-wire abc-wire--b" aria-hidden="true"><i></i><i></i><i></i></span>
-
-                <div class="abc-orbit">
-                  <span class="abc-orbit__ring abc-orbit__ring--dashed" aria-hidden="true"></span>
-                  <span class="abc-orbit__ring abc-orbit__ring--sweep" aria-hidden="true"></span>
-                  <span class="abc-orbit__halo" aria-hidden="true"></span>
-                  <div class="abc-icon-intro">
-                    <div class="abc-icon-float">
-                      <img class="abc-icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="BINKOD ABC app icon" width="156" height="156" loading="lazy">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="abc-build" aria-hidden="true">
-                  <span class="abc-build__label">Building</span>
-                  <span class="abc-build__steps"><i></i><i></i><i></i><i></i><i></i></span>
-                </div>
-              </div>
-
-              <div class="showcase__info">
-                <h2 class="showcase__title">BINKOD ABC</h2>
-                <p class="showcase__desc">A pre-primary learning and practice application designed for Nursery, LKG and UKG children.</p>
-                <ul class="showcase__tags">
-                  <li>Nursery</li>
-                  <li>LKG</li>
-                  <li>UKG</li>
-                  <li>English</li>
-                  <li>Hindi</li>
-                  <li>Phonics</li>
-                  <li>Practice</li>
-                  <li>Educational Games</li>
-                </ul>
-                <div class="showcase__actions">
-                  <a class="showcase__link" href="/binkod-abc/">
-                    Explore BINKOD ABC
-                    <span class="showcase__arrow" aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
+            <!-- Floating spotlight + supporting area cards. The spotlight
+                 card rotates through three short slides (js/home.js). The
+                 copy column above already carries the Google Play link as
+                 real content, so these decorative cards are pointer-only. -->
+            <a class="home-fcard home-fcard--fp home-fcard--spot" id="home-spotlight" href="/family-path-locator/" data-play-link tabindex="-1">
+              <span class="home-spot__icons" aria-hidden="true">
+                <img class="home-spot__icon is-active" src="/public/assets/family-path/icons/familypath.png" alt="" width="34" height="34" loading="lazy">
+                <img class="home-spot__icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="34" height="34" loading="lazy">
+                <span class="home-spot__icon home-fcard__glyph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6.5 3.5h7l5 5v12a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5.5 20.5v-15A2 2 0 0 1 7.5 3.5z"/><path d="M13.5 3.5v5h5"/><path d="M9 13h6"/><path d="M9 16.4h4"/></svg>
+                </span>
+              </span>
+              <span class="home-fcard__body">
+                <span class="home-spot__lines">
+                  <span class="home-spot__line is-active">
+                    <span class="home-fcard__name">Family Path Locator</span>
+                    <span class="home-fcard__meta"><i class="home-dot home-dot--live"></i>Released — get it on Google Play</span>
+                  </span>
+                  <span class="home-spot__line" data-href="/binkod-abc/">
+                    <span class="home-fcard__name">BINKOD ABC</span>
+                    <span class="home-fcard__meta"><i class="home-dot home-dot--dev"></i>In development</span>
+                  </span>
+                  <span class="home-spot__line" data-href="#products">
+                    <span class="home-fcard__name">Product concepts</span>
+                    <span class="home-fcard__meta"><i class="home-dot home-dot--explore"></i>Ideas we're exploring</span>
+                  </span>
+                </span>
+                <span class="home-spot__dots" aria-hidden="true"><i class="is-active"></i><i></i><i></i></span>
+              </span>
+            </a>
+            <div class="home-fcard home-fcard--abc">
+              <span class="home-fcard__glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="9" cy="8.2" r="3.1"/><path d="M3.8 19a5.4 5.4 0 0 1 10.4 0"/><circle cx="16.8" cy="9.4" r="2.3"/><path d="M15.5 14.6a4.4 4.4 0 0 1 4.7 4.4"/></svg>
+              </span>
+              <span class="home-fcard__body">
+                <span class="home-fcard__name">CRM Development</span>
+                <span class="home-fcard__meta"><i class="home-dot home-dot--dev"></i>Working on practical business solutions</span>
+              </span>
+            </div>
+            <div class="home-fcard home-fcard--ai">
+              <span class="home-fcard__glyph home-fcard__glyph--blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="13" rx="2.2"/><path d="M3 9h18"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/></svg>
+              </span>
+              <span class="home-fcard__body">
+                <span class="home-fcard__name">Web &amp; Android Applications</span>
+                <span class="home-fcard__meta"><i class="home-dot home-dot--build"></i>Building accessible digital tools</span>
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Applications heading + subtitle — intentionally placed AFTER the showcase -->
-      <div class="container root-hero__inner root-hero__apps">
-        <h1 id="applications-title" class="anim-in">Applications</h1>
-        <p class="lead anim-in anim-in--delay">Explore our current applications, with more useful and engaging experiences coming in the future.</p>
+      <!-- Three pillars — the homepage story in one row -->
+      <div class="container home-pillars" data-home-reveal>
+        <a class="home-pillar" href="#products">
+          <span class="home-pillar__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="2.4"/><line x1="10.5" y1="18.4" x2="13.5" y2="18.4"/></svg>
+          </span>
+          <span class="home-pillar__body">
+            <span class="home-pillar__name">Product engineering</span>
+            <span class="home-pillar__desc">Mobile applications and digital products designed around real, everyday use.</span>
+          </span>
+          <span class="home-pillar__go" aria-hidden="true">→</span>
+        </a>
+        <a class="home-pillar" href="#ai-lab">
+          <span class="home-pillar__icon home-pillar__icon--violet" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="8" r="2.4"/><circle cx="12" cy="18" r="2.4"/><line x1="8.1" y1="7" x2="15.8" y2="7.6"/><line x1="7" y1="8.2" x2="10.9" y2="15.7"/><line x1="16.8" y1="10.2" x2="13.2" y2="15.9"/></svg>
+          </span>
+          <span class="home-pillar__body">
+            <span class="home-pillar__name">AI engineering</span>
+            <span class="home-pillar__desc">Exploring AI-powered applications and intelligent systems, one experiment at a time.</span>
+          </span>
+          <span class="home-pillar__go" aria-hidden="true">→</span>
+        </a>
+        <a class="home-pillar" href="#technology">
+          <span class="home-pillar__icon home-pillar__icon--cyan" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 8.7 4.5 4.5 0 0 0 7 18z"/></svg>
+          </span>
+          <span class="home-pillar__body">
+            <span class="home-pillar__name">Cloud &amp; system architecture</span>
+            <span class="home-pillar__desc">Connected application systems: secure data flows and scalable services.</span>
+          </span>
+          <span class="home-pillar__go" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================ PRODUCTS ============================ -->
+    <section class="home-products" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="home-sechead" data-home-reveal>
+          <p class="home-eyebrow">Products</p>
+          <h2 id="products-title">What we're building</h2>
+          <p class="home-sechead__lead">
+            Practical software for everyday problems. Family Path Locator is
+            live on Google Play today; BINKOD ABC is in development, and the
+            concepts below are directions we're exploring.
+          </p>
+        </div>
+
+        <!-- Featured product — Family Path Locator (on Google Play) -->
+        <article class="home-feature" data-home-reveal>
+          <div class="home-feature__media">
+            <span class="home-feature__grid" aria-hidden="true"></span>
+            <span class="home-feature__glow" aria-hidden="true"></span>
+            <div class="home-feature__phone">
+              <div class="phone-float">
+                <div class="phone-tilt">
+                  <div class="phone">
+                    <span class="phone__btn phone__btn--vol" aria-hidden="true"></span>
+                    <span class="phone__btn phone__btn--power" aria-hidden="true"></span>
+                    <div class="phone__screen">
+                      <!-- Real product illustrations shipped with Family Path
+                           Locator, softly cross-fading inside the device.
+                           The first stays visible when animation is disabled. -->
+                      <div class="home-shots">
+                        <img class="home-shots__img home-shots__img--1" src="/public/assets/family-path/images/location-sharing.png" alt="Family Path Locator illustration: a family standing together on a map path under a location pin" width="500" height="500" loading="lazy" decoding="async">
+                        <img class="home-shots__img home-shots__img--2" src="/public/assets/family-path/images/flash2%20location%20sharing.png" alt="Family Path Locator illustration: family members shown as pins on a shared map" width="500" height="500" loading="lazy" decoding="async">
+                        <img class="home-shots__img home-shots__img--3" src="/public/assets/family-path/images/flash3%20safety%20alert.png" alt="Family Path Locator illustration: a safety alert shown on a phone map" width="500" height="500" loading="lazy" decoding="async">
+                        <img class="home-shots__img home-shots__img--4" src="/public/assets/family-path/images/location-messages.png" alt="Family Path Locator illustration: family members exchanging short messages from the map" width="500" height="500" loading="lazy" decoding="async">
+                      </div>
+                      <span class="home-shots__label">Inside the app</span>
+                      <span class="phone__cam" aria-hidden="true"></span>
+                      <span class="phone__glare" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-feature__body">
+            <div class="home-productid">
+              <img class="home-productid__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="56" height="56" loading="lazy">
+              <span class="home-productid__text">
+                <span class="home-productid__name">Family Path Locator</span>
+                <span class="home-productid__tag">Connected Families, Always Safe</span>
+              </span>
+              <span class="home-status home-status--live">
+                <span class="home-status__dot" aria-hidden="true"></span>
+                On Google Play
+              </span>
+            </div>
+
+            <p class="home-feature__summary">
+              A private family location-sharing and safety app for Android —
+              a shared family map, family messages, Safety Alerts, a GeoTag
+              camera and more. Free to install from Google Play.
+            </p>
+
+            <ul class="home-highlights">
+              <li>
+                <span class="home-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                </span>
+                Family location sharing on a shared map
+              </li>
+              <li>
+                <span class="home-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/></svg>
+                </span>
+                Family group and individual messages
+              </li>
+              <li>
+                <span class="home-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12.4"/><line x1="12" y1="15.8" x2="12.01" y2="15.8"/></svg>
+                </span>
+                Safety Alerts that carry your current location
+              </li>
+              <li>
+                <span class="home-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 8.5h3l2-3h6l2 3h3a1.5 1.5 0 0 1 1.5 1.5v8A1.5 1.5 0 0 1 20 19.5H4A1.5 1.5 0 0 1 2.5 18v-8A1.5 1.5 0 0 1 4 8.5z"/><circle cx="12" cy="13.4" r="3.4"/></svg>
+                </span>
+                GeoTag camera — photos with place details
+              </li>
+              <li>
+                <span class="home-highlights__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="1.5" y="7" width="16" height="10" rx="2.2"/><line x1="20.5" y1="10.5" x2="20.5" y2="13.5"/><rect x="4.2" y="9.7" width="5.5" height="4.6" rx="1"/></svg>
+                </span>
+                Weather, battery and member status at a glance
+              </li>
+              <li>
+                <span class="home-highlights__icon home-highlights__icon--violet" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3v2.6"/><path d="M12 18.4V21"/><path d="M4.2 12H6.8"/><path d="M17.2 12h2.6"/><path d="M6.5 6.5 8.3 8.3"/><path d="M15.7 15.7l1.8 1.8"/><path d="M6.5 17.5l1.8-1.8"/><path d="M15.7 8.3l1.8-1.8"/><circle cx="12" cy="12" r="3"/></svg>
+                </span>
+                On-device AI assistant for app questions
+              </li>
+            </ul>
+
+            <div class="actions home-feature__actions">
+              <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+                <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+                Get it on Google Play
+              </a>
+              <a class="btn btn--outline" href="/family-path-locator/">
+                Explore the product
+                <span class="home-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <p class="home-feature__note">
+              Android · Free on Google Play. Every member of a family controls
+              whether they share; Safety Alerts need internet connectivity and
+              notification permissions, and they are not a replacement for
+              emergency services.
+            </p>
+          </div>
+        </article>
+
+        <!-- The wider portfolio: one product in development and the concept
+             directions we're exploring. Statuses stay honest — nothing here
+             reads as a released product unless it is one. -->
+        <div class="home-explore">
+          <a class="home-explore__card home-explore__link" href="/binkod-abc/" data-home-reveal>
+            <span class="home-explore__head">
+              <img class="home-explore__appicon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="48" height="48" loading="lazy">
+              <span class="home-status home-status--dev">
+                <span class="home-status__dot" aria-hidden="true"></span>
+                In development
+              </span>
+            </span>
+            <h3 class="home-explore__name">BINKOD ABC</h3>
+            <p class="home-explore__desc">
+              Pre-primary learning and practice for Nursery, LKG and UKG
+              children — currently being developed.
+            </p>
+            <span class="home-explore__go">View product <span aria-hidden="true">→</span></span>
+          </a>
+          <article class="home-explore__card" data-home-reveal>
+            <div class="home-explore__head">
+              <span class="home-explore__icon home-explore__icon--cyan" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="13" rx="2.2"/><path d="M3 9h18"/><path d="M12 17.5V21"/><path d="M8.5 21h7"/></svg>
+              </span>
+              <span class="home-status home-status--concept">
+                <span class="home-status__dot" aria-hidden="true"></span>
+                Concept
+              </span>
+            </div>
+            <h3 class="home-explore__name">Digital Productivity</h3>
+            <p class="home-explore__desc">
+              Small applications that help people get everyday work done with
+              less friction.
+            </p>
+          </article>
+        </div>
+        <p class="home-explore__note" data-home-reveal>
+          Concept cards are directions we're exploring — not released products.
+          We share progress as things take shape, with no invented roadmaps.
+        </p>
+
+        <div class="home-smart" data-home-reveal>
+          <h3 class="home-smart__title">General smart applications</h3>
+          <p class="home-smart__lead">
+            Beyond our own products, we build custom smart applications for
+            digital productivity — such as CRM systems, SaaS applications and
+            tailored solutions for shopkeepers, schools, organisations and
+            other teams. Each one is shaped around the real workflow rather
+            than a fixed template.
+          </p>
+          <ul class="home-tags home-smart__tags">
+            <li>CRM systems</li>
+            <li>SaaS applications</li>
+            <li>Shopkeeper tools</li>
+            <li>School &amp; institution tools</li>
+            <li>Organisation workflows</li>
+            <li>Custom internal apps</li>
+            <li>…and more, shaped around your needs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== TECHNOLOGY ========================== -->
+    <section class="home-tech" id="technology" aria-labelledby="tech-title">
+      <div class="home-techs__backdrop" aria-hidden="true">
+        <span class="home-techs__grid"></span>
+        <span class="home-techs__orb"></span>
+      </div>
+      <div class="container">
+        <div class="home-sechead home-sechead--dark" data-home-reveal>
+          <p class="home-eyebrow">Technology</p>
+          <h2 id="tech-title">The technology we work with</h2>
+          <p class="home-sechead__lead">
+            The languages, platforms and services behind our work — and
+            the ones we are actively exploring. A general map of the
+            ecosystem, not a claim that everything is running in
+            production.
+          </p>
+        </div>
+
+        <div class="home-techs">
+          <article class="home-techs__card" data-home-reveal>
+            <header class="home-techs__head">
+              <span class="home-techs__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="7" y="2.8" width="10" height="18.4" rx="2.4"/><path d="M10.4 5.6h3.2"/><path d="M12 18.4h.01"/></svg>
+              </span>
+              <div>
+                <h3>Mobile applications</h3>
+                <p>Flutter and React Native are the main cross-platform approaches we work with, alongside native Android development.</p>
+              </div>
+            </header>
+            <ul class="home-techs__tiles">
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/flutter.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Flutter</strong><small>Cross-platform apps</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#61dafb" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><ellipse cx="12" cy="12" rx="9" ry="3.5" stroke-width="1.3"/><ellipse cx="12" cy="12" rx="9" ry="3.5" stroke-width="1.3" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.5" stroke-width="1.3" transform="rotate(120 12 12)"/><rect x="9.6" y="8.8" width="4.8" height="8.4" rx="1.5" fill="#61dafb" stroke="none"/></svg></span>
+            <span class="home-techs__meta"><strong>React Native</strong><small>Cross-platform apps</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/android.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Android</strong><small>Native Android apps</small></span>
+          </li>
+            </ul>
+          </article>
+          <article class="home-techs__card" data-home-reveal>
+            <header class="home-techs__head">
+              <span class="home-techs__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M8.2 8 4 12l4.2 4"/><path d="M15.8 8 20 12l-4.2 4"/></svg>
+              </span>
+              <div>
+                <h3>Backend &amp; API development</h3>
+                <p>Backend APIs connect the app interface to business logic, data, authentication and other systems — integrated over REST or MCP.</p>
+              </div>
+            </header>
+            <ul class="home-techs__tiles">
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/dotnet.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>.NET &amp; ASP.NET Core</strong><small>APIs &amp; services</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/python.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Python</strong><small>Services &amp; automation</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/nodedotjs.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Node.js</strong><small>APIs &amp; tooling</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6bef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3.5" y="4" width="9" height="6.6" rx="1.6"/><rect x="3.5" y="13.4" width="9" height="6.6" rx="1.6"/><path d="M7 7.3h.01"/><path d="M7 16.7h.01"/><path d="M12.5 7.3h6.7"/><path d="M12.5 16.7h6.7"/></svg></span>
+            <span class="home-techs__meta"><strong>REST API development</strong><small>Clear, dependable interfaces</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0e7490" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="5.6" cy="12" r="2.6"/><circle cx="18.4" cy="6.4" r="2.6"/><circle cx="18.4" cy="17.6" r="2.6"/><path d="M7.9 10.8 16.1 7.4"/><path d="M7.9 13.2l8.2 3.4"/></svg></span>
+            <span class="home-techs__meta"><strong>API &amp; MCP integrations</strong><small>Connecting services and tools</small></span>
+          </li>
+            </ul>
+          </article>
+          <article class="home-techs__card" data-home-reveal>
+            <header class="home-techs__head">
+              <span class="home-techs__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="15" rx="2.2"/><path d="M3 9h18"/><path d="M6.4 6.8h.01"/><path d="M8.8 6.8h.01"/></svg>
+              </span>
+              <div>
+                <h3>Web application development</h3>
+                <p>A single concise web stack on .NET — structured MVC applications, page-focused Razor Pages and interactive Blazor components.</p>
+              </div>
+            </header>
+            <ul class="home-techs__tiles">
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/dotnet.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>ASP.NET MVC</strong><small>Structured web apps</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6bef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6.5 3.5h7l5 5v12a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5.5 20.5v-15A2 2 0 0 1 7.5 3.5z"/><path d="M13.5 3.5v5h5"/><path d="M9 13h6"/><path d="M9 16.4h4"/></svg></span>
+            <span class="home-techs__meta"><strong>Razor Pages</strong><small>Page-focused web apps</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4.5" width="18" height="15" rx="2.2"/><path d="M3 9h18"/><path d="M12 11.6l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9 2.2-.9z"/></svg></span>
+            <span class="home-techs__meta"><strong>Blazor</strong><small>Interactive .NET UIs</small></span>
+          </li>
+            </ul>
+          </article>
+          <article class="home-techs__card" data-home-reveal>
+            <header class="home-techs__head">
+              <span class="home-techs__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 8.7 4.5 4.5 0 0 0 7 18z"/></svg>
+              </span>
+              <div>
+                <h3>Cloud &amp; infrastructure <span class="home-techs__tag">Azure focus</span></h3>
+                <p>Microsoft technologies are a primary focus — Azure for hosting, data, identity, monitoring and AI services — alongside AWS, Cloudflare and Firebase for cloud hosting, edge networking and app services.</p>
+              </div>
+            </header>
+            <ul class="home-techs__tiles">
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/microsoftazure.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Microsoft Azure</strong><small>Primary cloud focus</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/aws.svg" alt="" width="30" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>AWS</strong><small>Hosting, storage &amp; serverless</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/cloudflare.svg" alt="" width="26" height="26" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Cloudflare</strong><small>DNS, CDN &amp; edge</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/firebase.svg" alt="" width="24" height="24" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>Firebase</strong><small>App backend services</small></span>
+          </li>
+            </ul>
+          </article>
+          <article class="home-techs__card home-techs__card--wide" data-home-reveal>
+            <header class="home-techs__head">
+              <span class="home-techs__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3.6l1.7 4.5 4.5 1.7-4.5 1.7L12 16l-1.7-4.5L5.8 9.8l4.5-1.7z"/><path d="M18.4 15.4l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg>
+              </span>
+              <div>
+                <h3>AI &amp; emerging technologies <span class="home-techs__tag home-techs__tag--alt">Exploring</span></h3>
+                <p>An area of engineering and exploration — retrieval, embeddings, agentic workflows and model integration, including Azure AI and MCP tools. Explored, not claimed as production systems.</p>
+              </div>
+            </header>
+            <ul class="home-techs__tiles">
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#0e7490" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6.5 3.5h8l4 4v13.5h-12z"/><path d="M14.5 3.5v4h4"/><path d="M9.5 12h5"/><path d="M9.5 15h3.2"/><circle cx="15.4" cy="17.2" r="1.6"/></svg></span>
+            <span class="home-techs__meta"><strong>RAG</strong><small>Grounded answers from your own content</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="5.5" cy="7" r="1.4"/><circle cx="9.8" cy="13.6" r="1.4"/><circle cx="16.4" cy="6.2" r="1.4"/><circle cx="18.4" cy="15.4" r="1.4"/><circle cx="12" cy="10.8" r="2.1"/><path d="M6.6 8.1l3.6 1.9"/><path d="M13.4 9.9l2.3-2.6"/><path d="M13.8 11.9l3.2 2.7"/></svg></span>
+            <span class="home-techs__meta"><strong>Embeddings &amp; vector search</strong><small>Matching meaning, not just words</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><ellipse cx="12" cy="5.6" rx="7" ry="2.6"/><path d="M5 5.6V18c0 1.5 3.1 2.7 7 2.7s7-1.2 7-2.7V5.6"/><circle cx="9.4" cy="11.6" r="1.1"/><circle cx="12.6" cy="14.4" r="1.1"/><circle cx="14.8" cy="10.6" r="1.1"/></svg></span>
+            <span class="home-techs__meta"><strong>Vector databases</strong><small>Semantic indexes</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6bef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="6" cy="6.2" r="2.4"/><circle cx="18" cy="6.2" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8.1 7.3l2.8 8.4"/><path d="M15.9 7.3l-2.8 8.4"/><path d="M8.4 6.2h7.2"/></svg></span>
+            <span class="home-techs__meta"><strong>AI agents &amp; workflows</strong><small>Multi-step, tool-aware tasks</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><img src="/public/assets/tech/openai.svg" alt="" width="24" height="24" loading="lazy"></span>
+            <span class="home-techs__meta"><strong>AI model integration</strong><small>For example, OpenAI GPT-family models</small></span>
+          </li>
+          <li class="home-techs__tile">
+            <span class="home-techs__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#2f6bef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 16.5h10a3.8 3.8 0 0 0 .6-7.55A5.6 5.6 0 0 0 6.4 7.6 4.2 4.2 0 0 0 7 16.5z"/><path d="M12 9.2l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z"/></svg></span>
+            <span class="home-techs__meta"><strong>Azure AI services</strong><small>Explored AI platform capabilities</small></span>
+          </li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="home-techs__note" data-home-reveal>
+          No vendor partnerships or certifications are implied by any
+          name on this page. Logos belong to their respective owners.
+        </p>
+      </div>
+    </section>
+
+    <!-- =============== AI ENGINEERING — WHAT WE'RE LEARNING =============== -->
+    <section class="home-lab" id="ai-lab" aria-labelledby="lab-title">
+      <div class="home-lab__bg" aria-hidden="true">
+        <span class="home-lab__grid"></span>
+        <span class="home-lab__orb home-lab__orb--violet"></span>
+        <span class="home-lab__orb home-lab__orb--cyan"></span>
+      </div>
+      <div class="container">
+        <div class="home-sechead home-sechead--dark" data-home-reveal>
+          <p class="home-eyebrow home-eyebrow--violet">AI Engineering Lab</p>
+          <h2 id="lab-title">How intelligent applications work</h2>
+          <p class="home-sechead__lead">
+            Explore the building blocks behind AI-powered applications — from
+            language models and knowledge retrieval to tool-enabled workflows
+            and evaluation. Educational notes from our learning journey.
+          </p>
+          <p class="home-disclaimer">
+            This section explains general patterns we're studying. Nothing
+            here claims that a particular model or system powers a live
+            BINKOD product.
+          </p>
+        </div>
+
+        <article class="home-lab-card home-lab-card--lm" data-home-reveal>
+          <header class="home-lab-card__head">
+            <span class="home-lab-card__num" aria-hidden="true">01</span>
+            <div>
+              <h3>Understanding language models</h3>
+              <p>What a model actually does with a prompt — and why context matters.</p>
+            </div>
+          </header>
+          <div class="home-lab-split">
+            <div>
+              <p class="home-lab-card__text">
+                A language model predicts text token by token. Given a prompt
+                — your instructions plus any context the system supplies — it
+                generates a response one piece at a time, informed by patterns
+                learned during training. OpenAI's GPT-family models are one
+                example of the hosted model services in this space.
+              </p>
+              <p class="home-lab-card__text">
+                The output is only as good as the instructions and the context
+                it receives. A vague prompt with thin context produces a vague
+                result, and because models generate text rather than look up
+                facts, they can also produce answers that sound right but are
+                not supported — so developers evaluate outputs against test
+                questions instead of trusting them.
+              </p>
+            </div>
+            <ul class="home-notes">
+              <li>A prompt includes the instructions, the question and any context the system chooses to supply.</li>
+              <li>Generation is probabilistic — the same prompt can produce different wording each time.</li>
+              <li>Clear instructions and relevant context improve reliability more than clever wording.</li>
+              <li>Models can be confidently wrong; grounding and evaluation are how applications compensate.</li>
+              <li>Developers test representative questions and check whether answers are supported by the source material.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="home-lab-card home-lab-card--rag" data-home-reveal>
+          <header class="home-lab-card__head">
+            <span class="home-lab-card__num" aria-hidden="true">02</span>
+            <div>
+              <h3>Retrieval-Augmented Generation (RAG)</h3>
+              <p>Giving a model the right context to answer with — and showing where answers come from.</p>
+            </div>
+          </header>
+
+          <div class="home-rag">
+            <div class="home-rag__flow">
+              <span class="home-rag__line" aria-hidden="true"></span>
+              <ol class="home-rag__steps">
+              <li class="home-rag__step">
+                <span class="home-rag__node" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3.5 6.8A1.8 1.8 0 0 1 5.3 5h4l2 2.2h7.4a1.8 1.8 0 0 1 1.8 1.8v8.2a1.8 1.8 0 0 1-1.8 1.8H5.3a1.8 1.8 0 0 1-1.8-1.8z"/></svg>
+                </span>
+                <span class="home-rag__name">Approved sources</span>
+                <span class="home-rag__sub">Documents from places you control.</span>
+              </li>
+              <li class="home-rag__step">
+                <span class="home-rag__node" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M7 5.5h10"/><path d="M7 9.5h6"/><path d="M4 3.5h13a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M9 15.5h6"/></svg>
+                </span>
+                <span class="home-rag__name">Prepare &amp; chunk</span>
+                <span class="home-rag__sub">Split into meaningful passages.</span>
+              </li>
+              <li class="home-rag__step">
+                <span class="home-rag__node" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg>
+                </span>
+                <span class="home-rag__name">Embed &amp; index</span>
+                <span class="home-rag__sub">Passages become searchable vectors.</span>
+              </li>
+              <li class="home-rag__step">
+                <span class="home-rag__node" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>
+                </span>
+                <span class="home-rag__name">Retrieve &amp; rank</span>
+                <span class="home-rag__sub">The closest, allowed passages are chosen.</span>
+              </li>
+              <li class="home-rag__step">
+                <span class="home-rag__node" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8"/><path d="M8 12h5"/></svg>
+                </span>
+                <span class="home-rag__name">Ground &amp; answer</span>
+                <span class="home-rag__sub">The model answers from that context.</span>
+              </li>
+            </ol>
+            <p class="home-rag__query">
+              <span class="home-rag__query-dot" aria-hidden="true"></span>
+              A question travels down this path — retrieval decides what the model gets to see.
+            </p>
+            </div>
+            <div class="home-rag__detail">
+              <details class="home-acc home-acc--dark">
+                <summary>Data preparation &amp; parsing</summary>
+                <p>
+                  Documents are collected from approved sources, extracted to
+                  text and normalised. Access rules are applied from
+                  ingestion onward, so restricted content never becomes
+                  answerable by accident.
+                </p>
+              </details>
+              <details class="home-acc home-acc--dark">
+                <summary>Chunking strategies &amp; metadata</summary>
+                <p>
+                  Content is split into meaningful chunks — by structure, by
+                  semantic boundaries, or with deliberate overlap — and each
+                  chunk keeps metadata such as source, section and
+                  permissions that later supports filtering and traceability.
+                </p>
+              </details>
+              <details class="home-acc home-acc--dark">
+                <summary>Embedding generation</summary>
+                <p>
+                  Each chunk is converted into a vector embedding that
+                  captures its meaning rather than its exact words, then
+                  stored in a search index or vector database.
+                </p>
+              </details>
+              <details class="home-acc home-acc--dark">
+                <summary>Retrieval, ranking &amp; reranking</summary>
+                <p>
+                  The query is embedded and the index returns candidates by
+                  similarity. Keyword search, metadata filters and access
+                  rules can narrow those candidates, and a reranking step can
+                  reorder them by relevance.
+                </p>
+              </details>
+              <details class="home-acc home-acc--dark">
+                <summary>Context construction &amp; generation</summary>
+                <p>
+                  The best passages are assembled into a grounded prompt
+                  alongside the question. The model answers from that context,
+                  and citations can point back to the sources where supported.
+                </p>
+              </details>
+              <details class="home-acc home-acc--dark">
+                <summary>Access control &amp; quality evaluation</summary>
+                <p>
+                  Retrieval only exposes content the requester is allowed to
+                  see, and answers are evaluated for grounding and relevance.
+                  When answers miss, retrieval quality is usually the first
+                  thing to improve.
+                </p>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <article class="home-lab-card home-lab-card--vec" data-home-reveal>
+          <header class="home-lab-card__head">
+            <span class="home-lab-card__num" aria-hidden="true">03</span>
+            <div>
+              <h3>Embeddings &amp; vector search</h3>
+              <p>Finding content by meaning, not just by matching words.</p>
+            </div>
+          </header>
+
+          <div class="home-seg">
+            <input class="visually-hidden" type="radio" name="home-vec" id="home-vec-all" checked>
+            <input class="visually-hidden" type="radio" name="home-vec" id="home-vec-fam">
+            <div class="home-seg__bar" role="presentation">
+              <label class="home-seg__opt" for="home-vec-all">All content</label>
+              <label class="home-seg__opt" for="home-vec-fam">Metadata filter applied</label>
+            </div>
+
+            <div class="home-vec">
+              <svg class="home-vec__svg" viewBox="0 0 380 260" role="img" aria-label="Scatter-style diagram: a query embedding sits closest to related content, which is retrieved; unrelated content sits further away and can be excluded with a metadata filter.">
+                <circle class="home-vec__halo" cx="168" cy="126" r="58"/>
+                <g class="home-vec__dots">
+                  <circle class="home-vec__dot home-vec__dot--fam" cx="128" cy="148" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--fam" cx="162" cy="112" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--fam" cx="198" cy="138" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--fam" cx="150" cy="168" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--other" cx="252" cy="196" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--other" cx="298" cy="150" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--other" cx="270" cy="86" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--other" cx="322" cy="110" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--other" cx="232" cy="64" r="5"/>
+                  <circle class="home-vec__dot home-vec__dot--other" cx="312" cy="206" r="5"/>
+                </g>
+                <g class="home-vec__close">
+                  <line x1="64" y1="196" x2="128" y2="148"/>
+                  <line x1="64" y1="196" x2="150" y2="168"/>
+                  <line x1="64" y1="196" x2="162" y2="112"/>
+                </g>
+                <g class="home-vec__query">
+                  <circle cx="64" cy="196" r="8"/>
+                  <circle class="home-vec__query-dot" cx="64" cy="196" r="3.6"/>
+                </g>
+                <text class="home-vec__label home-vec__label--q" x="64" y="226" text-anchor="middle">Query embedding</text>
+                <text class="home-vec__label home-vec__label--close" x="168" y="210" text-anchor="middle">Close in meaning</text>
+                <text class="home-vec__label home-vec__label--far" x="282" y="52" text-anchor="middle">Further away</text>
+              </svg>
+
+              <ul class="home-vec__legend">
+                <li><span><span class="home-vec__swatch home-vec__swatch--q"></span>Query embedding</span></li>
+                <li><span><span class="home-vec__swatch home-vec__swatch--fam"></span>Closest matches</span></li>
+                <li><span><span class="home-vec__swatch home-vec__swatch--other"></span>Further away / filtered out</span></li>
+              </ul>
+
+              <ul class="home-vec__steps">
+                <li>A user submits a question.</li>
+                <li>The question is turned into an embedding — a numeric representation of meaning.</li>
+                <li>Search retrieves the closest content by similarity, not just shared keywords.</li>
+                <li>Metadata filters and access rules constrain which results are eligible.</li>
+                <li>Candidates are ranked — and reranked where the extra step adds value.</li>
+                <li>The retrieved passages ground the model's answer.</li>
+              </ul>
+
+              <p class="home-vec__caption">
+                A conceptual illustration of a vector space — not a projection
+                of a real embedding store. With a metadata filter applied,
+                content outside the eligible set stops being retrievable.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="home-lab-card home-lab-card--agent" data-home-reveal>
+          <header class="home-lab-card__head">
+            <span class="home-lab-card__num" aria-hidden="true">04</span>
+            <div>
+              <h3>AI agents &amp; MCP</h3>
+              <p>When a model uses approved tools to get things done.</p>
+            </div>
+          </header>
+
+          <div class="home-agent">
+            <div class="home-agent__flow">
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">01</span>
+                <span class="home-agent__label">Receive a request</span>
+              </div>
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">02</span>
+                <span class="home-agent__label">Interpret intent</span>
+              </div>
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">03</span>
+                <span class="home-agent__label">Retrieve knowledge</span>
+              </div>
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">04</span>
+                <span class="home-agent__label">Select an approved tool</span>
+              </div>
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">05</span>
+                <span class="home-agent__label">Run an authorised action</span>
+              </div>
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">06</span>
+                <span class="home-agent__label">Check the result</span>
+              </div>
+              <div class="home-agent__step">
+                <span class="home-agent__idx" aria-hidden="true">07</span>
+                <span class="home-agent__label">Return a grounded response</span>
+              </div>
+            </div>
+
+            <div class="home-agent__copy">
+              <p>
+                A basic model call answers from its prompt and context. A RAG
+                workflow adds retrieval so answers are grounded in your own
+                content. An agentic workflow goes further: it can interpret a
+                request, decide what it needs, choose from a fixed set of
+                approved tools and check its own result before responding.
+              </p>
+              <p>
+                MCP (Model Context Protocol) is an open way for AI
+                applications to connect to compatible tools and context
+                sources through a consistent interface. Every tool an agent
+                may call is authorised for that workflow — nothing is
+                reachable by default.
+              </p>
+              <p class="home-agent__note">
+                Not every AI feature needs an agent. Many useful features are
+                a single grounded model call — the simplest approach that
+                works is usually the right one.
+              </p>
+            </div>
+          </div>
+
+          <div class="home-cmp">
+            <div class="home-cmp__item">
+              <strong>Model call</strong>
+              <span>One prompt, one response.</span>
+            </div>
+            <div class="home-cmp__item">
+              <strong>RAG</strong>
+              <span>Adds retrieved context for grounding.</span>
+            </div>
+            <div class="home-cmp__item">
+              <strong>Agent</strong>
+              <span>Adds approved tools and multi-step actions.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="home-lab-card home-lab-card--eval" data-home-reveal>
+          <header class="home-lab-card__head">
+            <span class="home-lab-card__num" aria-hidden="true">05</span>
+            <div>
+              <h3>Evaluation, security &amp; reliability</h3>
+              <p>The engineering that makes an AI feature dependable.</p>
+            </div>
+          </header>
+          <div class="home-lab-split">
+            <div>
+              <p class="home-lab-card__text">
+                An AI feature is only useful if it is dependable. That means
+                measuring the quality of answers, protecting private data and
+                watching how the system behaves in real use — the same
+                discipline as any other part of software.
+              </p>
+            </div>
+            <div class="home-lab-split__lists">
+              <ul class="home-notes">
+                <li>Test representative questions, not just easy ones.</li>
+                <li>Evaluate retrieval relevance and whether answers are grounded in sources.</li>
+                <li>Use human review where the stakes are higher.</li>
+                <li>Watch latency, errors and cost like any other system metric.</li>
+              </ul>
+              <ul class="home-notes">
+                <li>Protect private data and apply access controls at retrieval time.</li>
+                <li>Treat prompt injection and untrusted input as real risks.</li>
+                <li>Keep a human in the loop before sensitive actions.</li>
+                <li>Log enough to debug failures without storing what you should not keep.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- ================= LANGUAGE MODELS & AI ARCHITECTURE ================= -->
+    <section class="home-arch" id="architecture" aria-labelledby="arch-title">
+      <div class="container">
+        <div class="home-sechead home-sechead--dark" data-home-reveal>
+          <p class="home-eyebrow home-eyebrow--cyan">AI architecture</p>
+          <h2 id="arch-title">Architecture behind intelligent software</h2>
+          <p class="home-sechead__lead">
+            Most applications — mobile, web, SaaS, CRM or internal tools —
+            share the same basic layers. This is the general picture, with the
+            AI parts clearly marked as optional.
+          </p>
+        </div>
+
+        <div class="home-arch__chain" data-home-reveal>
+          <ol class="home-chain" aria-label="An example request flowing through the layers">
+            <li class="home-chain__item">
+              <span class="home-chain__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="8" r="3.4"/><path d="M5.4 19.6a6.6 6.6 0 0 1 13.2 0"/></svg>
+              </span>
+              User interface
+            </li>
+            <li class="home-chain__item">
+              <span class="home-chain__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3.4" y="4" width="17.2" height="6.4" rx="1.8"/><rect x="3.4" y="13.6" width="17.2" height="6.4" rx="1.8"/><path d="M7 7.2h.01"/><path d="M7 16.8h.01"/></svg>
+              </span>
+              API &amp; backend
+            </li>
+            <li class="home-chain__item">
+              <span class="home-chain__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6"/><path d="M19 12h2.6"/><path d="M19 17.4h2.6"/></svg>
+              </span>
+              Data &amp; integrations
+            </li>
+            <li class="home-chain__item home-chain__item--opt">
+              <span class="home-chain__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3.6l1.7 4.5 4.5 1.7-4.5 1.7L12 16l-1.7-4.5L5.8 9.8l4.5-1.7z"/><path d="M18.4 15.4l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/></svg>
+              </span>
+              AI orchestration <em class="home-chain__opt">optional</em>
+            </li>
+            <li class="home-chain__item home-chain__item--opt">
+              <span class="home-chain__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="6.5" y="6.5" width="11" height="11" rx="2.6"/><path d="M10 2.8v3.7"/><path d="M14 2.8v3.7"/><path d="M10 17.5v3.7"/><path d="M14 17.5v3.7"/><path d="M2.8 10h3.7"/><path d="M2.8 14h3.7"/><path d="M17.5 10h3.7"/><path d="M17.5 14h3.7"/></svg>
+              </span>
+              Model &amp; retrieval <em class="home-chain__opt">optional</em>
+            </li>
+            <li class="home-chain__item">
+              <span class="home-chain__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3l7 3v5.4c0 4.4-3 7.9-7 9.6-4-1.7-7-5.2-7-9.6V6z"/><path d="M9.2 11.8l2 2 3.6-4"/></svg>
+              </span>
+              Validated response
+            </li>
+          </ol>
+          <p class="home-arch__loop">
+            <span class="home-arch__loop-dash" aria-hidden="true"></span>
+            An example request: someone asks a question in the interface, the
+            backend validates it and gathers permitted data, the AI layers
+            (when present) retrieve context and call the model, and a checked
+            response travels back — with security and operations wrapping
+            every layer.
+          </p>
+        </div>
+
+        <div class="home-arch__grid">
+          <details class="home-acc home-acc--dark" data-home-reveal>
+            <summary>Layer 1 — User interface</summary>
+            <p>
+              People interact through a mobile app, a website, a desktop
+              client or another interface. It collects the request, shows
+              progress and presents the answer — including sources or
+              uncertainty where they matter.
+            </p>
+          </details>
+          <details class="home-acc home-acc--dark" data-home-reveal>
+            <summary>Layer 2 — API &amp; application backend</summary>
+            <p>
+              The backend receives requests, applies business rules and
+              validation, checks identity and permissions, and coordinates
+              every other component. It is the control point of the
+              application.
+            </p>
+          </details>
+          <details class="home-acc home-acc--dark" data-home-reveal>
+            <summary>Layer 3 — Data &amp; integration</summary>
+            <p>
+              Databases, document stores, queues and external APIs hold the
+              information and connect the system to other services. Data
+              access is governed here by permissions and schema rules.
+            </p>
+          </details>
+          <details class="home-acc home-acc--dark" data-home-reveal>
+            <summary>Layer 4 — AI orchestration <span class="home-acc__tag">optional</span></summary>
+            <p>
+              Only for AI-enabled features: this layer prepares prompts,
+              retrieves relevant context, selects approved tools and
+              coordinates model calls. Applications without AI simply do not
+              have this layer.
+            </p>
+          </details>
+          <details class="home-acc home-acc--dark" data-home-reveal>
+            <summary>Layer 5 — Model &amp; retrieval systems <span class="home-acc__tag">optional</span></summary>
+            <p>
+              Language models, embeddings, search indexes and vector databases
+              perform the AI and retrieval work the orchestration layer asks
+              for. A vector database is only useful when a feature genuinely
+              needs semantic search.
+            </p>
+          </details>
+          <details class="home-acc home-acc--dark" data-home-reveal>
+            <summary>Layer 6 — Security &amp; operations</summary>
+            <p>
+              Identity, authorisation, secrets, logging, monitoring, testing
+              and deployment practices support every layer at once. Security
+              is not a component added at the end — it wraps the whole system.
+            </p>
+          </details>
+        </div>
+
+        <p class="home-disclaimer home-disclaimer--wide" data-home-reveal>
+          A reference view of how software is usually layered. Not every
+          mobile, web, CRM or SaaS application needs a vector database or an
+          AI agent — and this is general education, not a description of a
+          deployed system.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== PRODUCT ENGINEERING ==================== -->
+    <section class="home-eng" id="engineering" aria-labelledby="eng-title">
+      <div class="container">
+        <div class="home-sechead home-sechead--dark" data-home-reveal>
+          <p class="home-eyebrow">Product engineering</p>
+          <h2 id="eng-title">Building software people can use</h2>
+          <p class="home-sechead__lead">
+            The practical principles behind how we design, develop, test and
+            release software — a general approach that stays the same whether
+            the product is mobile, web or a service.
+          </p>
+        </div>
+
+        <ol class="home-flow" data-home-reveal>
+          <li class="home-flow__step">
+            <span class="home-flow__num" aria-hidden="true">01</span>
+            <h3>Understand</h3>
+            <p>Start from the real problem and who it is actually for.</p>
+          </li>
+          <li class="home-flow__step">
+            <span class="home-flow__num" aria-hidden="true">02</span>
+            <h3>Design</h3>
+            <p>Shape the experience and the system before writing code.</p>
+          </li>
+          <li class="home-flow__step">
+            <span class="home-flow__num" aria-hidden="true">03</span>
+            <h3>Build</h3>
+            <p>Small, reviewable steps built from reusable pieces.</p>
+          </li>
+          <li class="home-flow__step">
+            <span class="home-flow__num" aria-hidden="true">04</span>
+            <h3>Test</h3>
+            <p>Check the edge cases and the errors, not just the happy path.</p>
+          </li>
+          <li class="home-flow__step">
+            <span class="home-flow__num" aria-hidden="true">05</span>
+            <h3>Release</h3>
+            <p>Ship when it is genuinely ready — updates and fixes included.</p>
+          </li>
+          <li class="home-flow__step">
+            <span class="home-flow__num" aria-hidden="true">06</span>
+            <h3>Improve</h3>
+            <p>Learn from real use, fix what matters, refine and repeat.</p>
+          </li>
+        </ol>
+
+        <div class="home-eng__grid">
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="8" r="3.4"/><path d="M5.4 19.6a6.6 6.6 0 0 1 13.2 0"/></svg>
+            </span>
+            <h3>Understand the problem</h3>
+            <p>
+              Talk to the people who will use it, and build the smallest
+              thing that genuinely helps.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="7" y="2.8" width="10" height="18.4" rx="2.4"/><path d="M10.4 5.6h3.2"/><path d="M12 18.4h.01"/></svg>
+            </span>
+            <h3>Mobile-first &amp; responsive</h3>
+            <p>
+              Start from the device people actually carry, then adapt cleanly
+              to larger screens.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M2.8 12S6.4 6.4 12 6.4 21.2 12 21.2 12 17.6 17.6 12 17.6 2.8 12 2.8 12z"/><circle cx="12" cy="12" r="2.8"/></svg>
+            </span>
+            <h3>Simple, accessible interfaces</h3>
+            <p>
+              Plain language, strong contrast, and keyboard- and
+              screen-reader-friendly interactions.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M8.4 7.2 4.6 12l3.8 4.8"/><path d="M15.6 7.2 19.4 12l-3.8 4.8"/></svg>
+            </span>
+            <h3>Reusable, maintainable code</h3>
+            <p>
+              Readable components and sensible structure so the next change
+              stays easy.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3.4" y="4" width="17.2" height="6.4" rx="1.8"/><rect x="3.4" y="13.6" width="17.2" height="6.4" rx="1.8"/><path d="M7 7.2h.01"/><path d="M7 16.8h.01"/></svg>
+            </span>
+            <h3>Reliable APIs &amp; data</h3>
+            <p>
+              Clear interfaces, careful validation and predictable error
+              handling on every path.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3l7 3v5.4c0 4.4-3 7.9-7 9.6-4-1.7-7-5.2-7-9.6V6z"/><path d="M9.2 11.8l2 2 3.6-4"/></svg>
+            </span>
+            <h3>Secure by default</h3>
+            <p>
+              Authentication, authorisation and least-privilege access as
+              defaults, not add-ons.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="8.2"/><path d="M8.4 12.2l2.4 2.4 4.8-5.2"/></svg>
+            </span>
+            <h3>Testing &amp; release validation</h3>
+            <p>
+              Automated checks where practical, honest testing before release,
+              and learning from what breaks.
+            </p>
+          </article>
+          <article class="home-eng-card" data-home-reveal>
+            <span class="home-eng-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.4 15.5a8.2 8.2 0 1 1 15.2 0"/><path d="M12 13.4 15 9.6"/><circle cx="12" cy="14.6" r="1.4"/></svg>
+            </span>
+            <h3>Privacy, performance &amp; battery</h3>
+            <p>
+              Collect only what a feature needs, and keep background work
+              light and battery-aware.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="home-closing" id="contact" aria-labelledby="closing-title">
+      <div class="home-closing__bg" aria-hidden="true">
+        <span class="home-closing__orb home-closing__orb--a"></span>
+        <span class="home-closing__orb home-closing__orb--b"></span>
+        <span class="home-closing__ring"></span>
+      </div>
+      <div class="container home-closing__inner" data-home-reveal>
+        <p class="home-eyebrow">Contact</p>
+        <h2 id="closing-title">Good technology starts with thoughtful engineering.</h2>
+        <p class="home-closing__lead">
+          Have a question, an idea or feedback about something we've built?
+          Email us — we're a small team and we read everything that comes in.
+        </p>
+        <div class="actions home-closing__actions">
+          <a class="btn btn--primary" href="#products">
+            Explore Our Products
+            <span class="home-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="mailto:binkodtech@gmail.com">Email Us</a>
+        </div>
+        <p class="home-closing__mail">
+          Write to
+          <a class="home-closing__email" href="mailto:binkodtech@gmail.com">binkodtech@gmail.com</a>
+        </p>
       </div>
     </section>
   </main>
 
   <!-- ============================ FOOTER ============================ -->
-  <footer class="site-footer">
+  <footer class="site-footer home-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="brand__name">BINKOD Tech</span>
+          <span class="home-footer__name">BINKOD Tech</span>
           <p class="footer-brand__text">
             Useful digital products built by BINKOD Tech.
           </p>
           <a class="binkod-link" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
-            <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="160" height="70" loading="lazy">
+            <img src="/public/assets/shared/binkod-wordmark-473x135.png" alt="BINKOD Tech" width="473" height="135" loading="lazy">
           </a>
           <p class="made-in">Made in India <span class="made-in__heart" aria-hidden="true">❤️</span></p>
         </div>
@@ -252,6 +1406,23 @@
           <ul class="footer-links">
             <li><a href="/family-path-locator/">Family Path Locator</a></li>
             <li><a href="/binkod-abc/">BINKOD ABC</a></li>
+            <li><a href="#products">All products</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#ai-lab">AI Engineering</a></li>
+            <li><a href="#architecture">AI architecture</a></li>
+            <li><a href="#engineering">Product engineering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Support</h2>
+          <ul class="footer-links">
+            <li><a href="mailto:binkodtech@gmail.com">binkodtech@gmail.com</a></li>
+            <li><a href="/family-path-locator/contact/">Family Path Locator support</a></li>
           </ul>
         </div>
       </div>
