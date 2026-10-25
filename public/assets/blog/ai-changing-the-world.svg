@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title desc">
+  <title id="title">AI connecting with everyday life</title>
+  <desc id="desc">An abstract illustration of an AI core linked to learning, creativity, communication and problem solving.</desc>
+  <defs>
+    <linearGradient id="world-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071022"/>
+      <stop offset="0.58" stop-color="#0a1730"/>
+      <stop offset="1" stop-color="#0c1e3e"/>
+    </linearGradient>
+    <radialGradient id="world-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#4f9dff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#4f9dff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="world-core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7db2ff"/>
+      <stop offset="1" stop-color="#6ee7f9"/>
+    </linearGradient>
+    <pattern id="world-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0v36" fill="none" stroke="#8db8ff" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#world-bg)"/>
+  <rect width="800" height="450" fill="url(#world-grid)"/>
+  <circle cx="242" cy="224" r="188" fill="url(#world-glow)"/>
+
+  <g fill="none" stroke="#8db8ff" stroke-opacity=".2">
+    <circle cx="242" cy="224" r="142" stroke-dasharray="3 9"/>
+    <circle cx="242" cy="224" r="108" stroke-dasharray="2 7"/>
+    <ellipse cx="242" cy="224" rx="176" ry="70" transform="rotate(-18 242 224)" stroke-opacity=".13"/>
+    <path d="M365 155c62 8 91 36 108 70" stroke-dasharray="4 8"/>
+    <path d="M373 290c64-4 94-28 112-56" stroke-dasharray="4 8"/>
+    <path d="M360 226h64" stroke-dasharray="4 8"/>
+  </g>
+
+  <g>
+    <circle cx="242" cy="224" r="66" fill="#0d1c36" stroke="#7db2ff" stroke-opacity=".55"/>
+    <circle cx="242" cy="224" r="54" fill="none" stroke="#6ee7f9" stroke-opacity=".25"/>
+    <path d="M215 242c-8-20 1-45 24-56M269 206c10 20 3 46-19 58" fill="none" stroke="#7db2ff" stroke-opacity=".45" stroke-width="1.5"/>
+    <text x="242" y="232" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="29" font-weight="800" fill="url(#world-core)">AI</text>
+    <circle cx="242" cy="158" r="5" fill="#6ee7f9"/>
+    <circle cx="349" cy="250" r="4" fill="#7db2ff"/>
+    <circle cx="152" cy="279" r="3.5" fill="#a78bfa"/>
+  </g>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <g>
+      <rect x="493" y="65" width="235" height="74" rx="16" fill="#0b1830" stroke="#8db8ff" stroke-opacity=".18"/>
+      <circle cx="528" cy="102" r="15" fill="#173263"/>
+      <path d="M521 108l7-14 7 14M523 103h10" fill="none" stroke="#7db2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="555" y="98" fill="#f2f6ff" font-size="15" font-weight="700">Learn</text>
+      <text x="555" y="117" fill="#8899ba" font-size="11">Ask, practise, understand</text>
+    </g>
+    <g>
+      <rect x="493" y="154" width="235" height="74" rx="16" fill="#0b1830" stroke="#8db8ff" stroke-opacity=".18"/>
+      <circle cx="528" cy="191" r="15" fill="#2a1f53"/>
+      <path d="M521 184h8l6 6v10h-14zM529 184v6h6" fill="none" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="555" y="187" fill="#f2f6ff" font-size="15" font-weight="700">Create</text>
+      <text x="555" y="206" fill="#8899ba" font-size="11">Words, images, ideas</text>
+    </g>
+    <g>
+      <rect x="493" y="243" width="235" height="74" rx="16" fill="#0b1830" stroke="#8db8ff" stroke-opacity=".18"/>
+      <circle cx="528" cy="280" r="15" fill="#123b4a"/>
+      <path d="M520 274h16v11h-10l-4 3v-3h-2z" fill="none" stroke="#6ee7f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="555" y="276" fill="#f2f6ff" font-size="15" font-weight="700">Connect</text>
+      <text x="555" y="295" fill="#8899ba" font-size="11">Voice and conversation</text>
+    </g>
+    <g>
+      <rect x="493" y="332" width="235" height="74" rx="16" fill="#0b1830" stroke="#8db8ff" stroke-opacity=".18"/>
+      <circle cx="528" cy="369" r="15" fill="#3b2a13"/>
+      <path d="M521 370l4 4 8-9" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="555" y="365" fill="#f2f6ff" font-size="15" font-weight="700">Solve</text>
+      <text x="555" y="384" fill="#8899ba" font-size="11">Find, compare, recommend</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#6ee7f9" stroke-opacity=".55" stroke-linecap="round">
+    <path d="M302 181c50-40 105-66 180-71"/>
+    <path d="M308 211c54-14 107-18 172-13"/>
+    <path d="M307 255c55 11 108 20 172 18"/>
+    <path d="M295 288c58 40 120 62 184 74"/>
+  </g>
+  <g fill="#6ee7f9">
+    <circle cx="365" cy="150" r="3.5"/>
+    <circle cx="381" cy="203" r="3"/>
+    <circle cx="374" cy="263" r="3.5"/>
+    <circle cx="352" cy="318" r="3"/>
+  </g>
+</svg>

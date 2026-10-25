@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title desc">
+  <title id="title">A product development blueprint</title>
+  <desc id="desc">A blueprint-style flow from idea to plan, design, build and release, above an application wireframe.</desc>
+  <defs>
+    <linearGradient id="lab-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061021"/>
+      <stop offset="1" stop-color="#0b1b36"/>
+    </linearGradient>
+    <linearGradient id="lab-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f9dff"/>
+      <stop offset=".55" stop-color="#6ee7f9"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="lab-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0v34" fill="none" stroke="#9bc4ff" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#lab-bg)"/>
+  <rect width="800" height="450" fill="url(#lab-grid)"/>
+  <g stroke="#7db2ff" stroke-opacity=".12">
+    <path d="M40 60h28M54 46v28" />
+    <path d="M730 60h28M744 46v28" />
+    <path d="M40 396h28" />
+    <path d="M730 396h28" />
+  </g>
+
+  <text x="62" y="62" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#6f83a8">PRODUCT WORKBENCH</text>
+
+  <g fill="none" stroke="#8db8ff" stroke-opacity=".2">
+    <path d="M90 124h620" stroke-dasharray="3 8"/>
+  </g>
+  <path d="M90 124h620" fill="none" stroke="url(#lab-line)" stroke-width="2.5" stroke-dasharray="2 12" stroke-linecap="round"/>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif" text-anchor="middle">
+    <g>
+      <circle cx="112" cy="124" r="24" fill="#0d2546" stroke="#7db2ff" stroke-opacity=".8" stroke-width="2"/>
+      <circle cx="112" cy="124" r="6" fill="#7db2ff"/>
+      <text x="112" y="173" fill="#eef4ff" font-size="12" font-weight="700">Idea</text>
+    </g>
+    <g>
+      <circle cx="256" cy="124" r="24" fill="#0d2546" stroke="#68d8ea" stroke-opacity=".8" stroke-width="2"/>
+      <path d="M247 124h18M256 115v18" stroke="#6ee7f9" stroke-width="2" stroke-linecap="round"/>
+      <text x="256" y="173" fill="#eef4ff" font-size="12" font-weight="700">Plan</text>
+    </g>
+    <g>
+      <circle cx="400" cy="124" r="24" fill="#171f4b" stroke="#a78bfa" stroke-opacity=".8" stroke-width="2"/>
+      <path d="M391 130l7-14 9 8-9 8z" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="400" y="173" fill="#eef4ff" font-size="12" font-weight="700">Design</text>
+    </g>
+    <g>
+      <circle cx="544" cy="124" r="24" fill="#0d2546" stroke="#7db2ff" stroke-opacity=".8" stroke-width="2"/>
+      <path d="M535 132l6-16 6 16M538 126h8" fill="none" stroke="#7db2ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="544" y="173" fill="#eef4ff" font-size="12" font-weight="700">Build</text>
+    </g>
+    <g>
+      <circle cx="688" cy="124" r="24" fill="#143046" stroke="#6ee7f9" stroke-opacity=".8" stroke-width="2"/>
+      <path d="M679 127l6 6 12-13" fill="none" stroke="#6ee7f9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="688" y="173" fill="#eef4ff" font-size="12" font-weight="700">Release</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="90" y="213" width="390" height="176" rx="16" fill="#08172e" stroke="#8db8ff" stroke-opacity=".24"/>
+    <rect x="90" y="213" width="390" height="34" rx="16" fill="#0d1f3b"/>
+    <circle cx="113" cy="230" r="4" fill="#ef6f6c"/>
+    <circle cx="128" cy="230" r="4" fill="#fbbf24"/>
+    <circle cx="143" cy="230" r="4" fill="#34d399"/>
+    <rect x="112" y="268" width="118" height="86" rx="9" fill="#0c203d" stroke="#7db2ff" stroke-opacity=".2"/>
+    <rect x="126" y="282" width="68" height="7" rx="3.5" fill="#7db2ff" fill-opacity=".6"/>
+    <rect x="126" y="298" width="88" height="5" rx="2.5" fill="#7db2ff" fill-opacity=".18"/>
+    <rect x="126" y="310" width="76" height="5" rx="2.5" fill="#7db2ff" fill-opacity=".18"/>
+    <rect x="126" y="327" width="58" height="15" rx="7.5" fill="#2b6cf2" fill-opacity=".75"/>
+    <rect x="248" y="268" width="100" height="43" rx="9" fill="#0c203d" stroke="#7db2ff" stroke-opacity=".2"/>
+    <rect x="260" y="280" width="47" height="6" rx="3" fill="#6ee7f9" fill-opacity=".55"/>
+    <rect x="260" y="294" width="66" height="4" rx="2" fill="#7db2ff" fill-opacity=".18"/>
+    <rect x="362" y="268" width="100" height="43" rx="9" fill="#0c203d" stroke="#7db2ff" stroke-opacity=".2"/>
+    <rect x="374" y="280" width="38" height="6" rx="3" fill="#c4b5fd" fill-opacity=".55"/>
+    <rect x="374" y="294" width="61" height="4" rx="2" fill="#7db2ff" fill-opacity=".18"/>
+    <rect x="248" y="326" width="214" height="28" rx="8" fill="#0c203d" stroke="#7db2ff" stroke-opacity=".16"/>
+    <path d="M262 340h120" stroke="#7db2ff" stroke-opacity=".28" stroke-width="4" stroke-linecap="round"/>
+    <path d="M262 340h74" stroke="#7db2ff" stroke-opacity=".62" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <rect x="520" y="213" width="190" height="82" rx="14" fill="#0b1b34" stroke="#8db8ff" stroke-opacity=".22"/>
+    <text x="540" y="242" font-family="system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="#6f83a8">NEXT STEP</text>
+    <text x="540" y="264" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#eef4ff">Review the result</text>
+    <path d="M540 279h92" stroke="#6ee7f9" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+    <path d="M540 279h48" stroke="#6ee7f9" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <rect x="520" y="314" width="190" height="75" rx="14" fill="#101d3c" stroke="#a78bfa" stroke-opacity=".25"/>
+    <path d="M543 337l6-10 6 10M579 337l6-10 6 10M615 337l6-10 6 10" fill="none" stroke="#c4b5fd" stroke-opacity=".65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="540" y="363" font-family="system-ui, sans-serif" font-size="11" fill="#8899ba">AI assists, we review.</text>
+  </g>
+</svg>

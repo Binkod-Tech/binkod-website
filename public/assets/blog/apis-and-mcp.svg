@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title desc">
+  <title id="title">An AI application connected through MCP to tools</title>
+  <desc id="desc">Blocks for an AI application, MCP client, MCP server, tools and an API linked by request and response lines.</desc>
+  <defs>
+    <linearGradient id="mcp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061021"/>
+      <stop offset=".6" stop-color="#081831"/>
+      <stop offset="1" stop-color="#0b2035"/>
+    </linearGradient>
+    <linearGradient id="mcp-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f9dff"/>
+      <stop offset=".55" stop-color="#6ee7f9"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <pattern id="mcp-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#8db8ff" stroke-opacity=".07"/>
+    </pattern>
+    <filter id="mcp-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#mcp-bg)"/>
+  <rect width="800" height="450" fill="url(#mcp-grid)"/>
+  <circle cx="392" cy="225" r="128" fill="#4f9dff" fill-opacity=".11" filter="url(#mcp-glow)"/>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <g>
+      <rect x="54" y="160" width="140" height="130" rx="18" fill="#0b1a33" stroke="#7db2ff" stroke-opacity=".35"/>
+      <rect x="76" y="183" width="96" height="60" rx="10" fill="#0e2444" stroke="#7db2ff" stroke-opacity=".18"/>
+      <path d="M88 202h58M88 214h44M88 226h50" stroke="#7db2ff" stroke-opacity=".3" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="124" cy="258" r="9" fill="#2b6cf2" fill-opacity=".7"/>
+      <text x="124" y="262" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">AI</text>
+      <text x="124" y="311" text-anchor="middle" fill="#eef4ff" font-size="13" font-weight="700">AI application</text>
+    </g>
+
+    <g>
+      <rect x="241" y="181" width="126" height="88" rx="16" fill="#0b1f3b" stroke="#6ee7f9" stroke-opacity=".4"/>
+      <path d="M268 211h72M268 224h54M268 237h62" stroke="#6ee7f9" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+      <text x="304" y="291" text-anchor="middle" fill="#eef4ff" font-size="12" font-weight="700">MCP client</text>
+    </g>
+
+    <g>
+      <rect x="413" y="155" width="162" height="140" rx="18" fill="#102a42" stroke="#6ee7f9" stroke-opacity=".5"/>
+      <circle cx="494" cy="196" r="18" fill="none" stroke="#6ee7f9" stroke-opacity=".45"/>
+      <path d="M486 196h16M494 188v16" stroke="#6ee7f9" stroke-width="2" stroke-linecap="round"/>
+      <rect x="446" y="228" width="34" height="28" rx="6" fill="#0b1c34" stroke="#7db2ff" stroke-opacity=".3"/>
+      <rect x="490" y="228" width="34" height="28" rx="6" fill="#0b1c34" stroke="#7db2ff" stroke-opacity=".3"/>
+      <rect x="534" y="228" width="22" height="28" rx="6" fill="#0b1c34" stroke="#7db2ff" stroke-opacity=".15"/>
+      <text x="494" y="320" text-anchor="middle" fill="#eef4ff" font-size="13" font-weight="700">MCP server</text>
+    </g>
+
+    <g>
+      <rect x="622" y="106" width="126" height="76" rx="16" fill="#0b1b34" stroke="#a7f3d0" stroke-opacity=".32"/>
+      <path d="M644 135h28v18h-18l-6 5v-5h-4z" fill="none" stroke="#a7f3d0" stroke-opacity=".7" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="685" y="153" text-anchor="middle" fill="#eef4ff" font-size="11" font-weight="700">Weather tool</text>
+    </g>
+    <g>
+      <rect x="622" y="212" width="126" height="76" rx="16" fill="#0b1b34" stroke="#fbbf24" stroke-opacity=".3"/>
+      <path d="M646 250c0-8 8-13 18-10 3-7 14-6 16 2 7 0 11 4 11 9H646z" fill="none" stroke="#fbbf24" stroke-opacity=".65" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="685" y="279" text-anchor="middle" fill="#fff4dc" font-size="11" font-weight="700">External API</text>
+    </g>
+    <g>
+      <rect x="622" y="318" width="126" height="76" rx="16" fill="#0b1b34" stroke="#a78bfa" stroke-opacity=".34"/>
+      <path d="M644 347h14M658 340v14M676 347h14M676 361h10" stroke="#c4b5fd" stroke-opacity=".7" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="685" y="387" text-anchor="middle" fill="#eef4ff" font-size="11" font-weight="700">Data source</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M194 225h40" stroke="url(#mcp-accent)" stroke-width="2" stroke-dasharray="4 7"/>
+    <path d="M367 225h40" stroke="url(#mcp-accent)" stroke-width="2" stroke-dasharray="4 7"/>
+    <path d="M575 205c20-18 26-35 47-35" stroke="url(#mcp-accent)" stroke-width="2" stroke-dasharray="4 7"/>
+    <path d="M575 235c20 11 26 20 47 20" stroke="#fbbf24" stroke-opacity=".65" stroke-width="2" stroke-dasharray="4 7"/>
+    <path d="M575 263c20 29 24 71 47 91" stroke="#a78bfa" stroke-opacity=".55" stroke-width="2" stroke-dasharray="4 7"/>
+  </g>
+  <g fill="#6ee7f9">
+    <path d="M234 220l8 5-8 5z"/>
+    <path d="M407 220l8 5-8 5z"/>
+    <path d="M622 165l-8 5 8 5z"/>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="605" cy="250" r="3"/>
+    <circle cx="592" cy="242" r="2.4"/>
+  </g>
+  <g fill="#c4b5fd">
+    <circle cx="602" cy="287" r="2.6"/>
+  </g>
+
+  <g>
+    <rect x="58" y="360" width="266" height="46" rx="23" fill="#0a192f" stroke="#6ee7f9" stroke-opacity=".2"/>
+    <circle cx="82" cy="383" r="4" fill="#6ee7f9"/>
+    <text x="96" y="387" font-family="system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" fill="#a9c8e8">REQUEST → RESPONSE</text>
+  </g>
+</svg>
