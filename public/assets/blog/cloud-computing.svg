@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title desc">
+  <title id="title">Devices connected through the internet to cloud services</title>
+  <desc id="desc">A phone and a laptop connect through the internet to a cloud application, a database, file storage and an AI service, with a response returning to the devices.</desc>
+  <defs>
+    <linearGradient id="cloud-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061021"/>
+      <stop offset=".58" stop-color="#081831"/>
+      <stop offset="1" stop-color="#0a2036"/>
+    </linearGradient>
+    <linearGradient id="cloud-line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f9dff"/>
+      <stop offset=".55" stop-color="#6ee7f9"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="cloud-globe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12395f"/>
+      <stop offset="1" stop-color="#0a1d35"/>
+    </linearGradient>
+    <pattern id="cloud-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0v34" fill="none" stroke="#8db8ff" stroke-opacity=".07"/>
+    </pattern>
+    <filter id="cloud-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#cloud-bg)"/>
+  <rect width="800" height="450" fill="url(#cloud-grid)"/>
+  <ellipse cx="392" cy="225" rx="176" ry="120" fill="#2f7bff" fill-opacity=".09" filter="url(#cloud-glow)"/>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <text x="54" y="54" font-size="11" font-weight="700" letter-spacing="2" fill="#6f83a8">DEVICES</text>
+    <text x="300" y="54" font-size="11" font-weight="700" letter-spacing="2" fill="#6f83a8">INTERNET</text>
+    <text x="548" y="54" font-size="11" font-weight="700" letter-spacing="2" fill="#6f83a8">CLOUD SERVICES</text>
+
+    <g>
+      <rect x="48" y="128" width="104" height="190" rx="18" fill="#0b1a33" stroke="#7db2ff" stroke-opacity=".38"/>
+      <rect x="61" y="148" width="78" height="132" rx="10" fill="#0d2341" stroke="#7db2ff" stroke-opacity=".18"/>
+      <circle cx="100" cy="298" r="5" fill="#7db2ff" fill-opacity=".55"/>
+      <rect x="72" y="164" width="56" height="7" rx="3.5" fill="#7db2ff" fill-opacity=".55"/>
+      <rect x="72" y="180" width="42" height="5" rx="2.5" fill="#7db2ff" fill-opacity=".2"/>
+      <rect x="72" y="203" width="56" height="30" rx="6" fill="#123152" stroke="#6ee7f9" stroke-opacity=".25"/>
+      <rect x="72" y="243" width="56" height="8" rx="4" fill="#7db2ff" fill-opacity=".16"/>
+      <rect x="72" y="257" width="38" height="8" rx="4" fill="#7db2ff" fill-opacity=".12"/>
+      <text x="100" y="354" text-anchor="middle" fill="#eef4ff" font-size="13" font-weight="700">Phone</text>
+    </g>
+
+    <g>
+      <rect x="177" y="205" width="124" height="86" rx="10" fill="#0b1a33" stroke="#7db2ff" stroke-opacity=".34"/>
+      <path d="M177 292h124" stroke="#7db2ff" stroke-opacity=".28"/>
+      <rect x="189" y="218" width="100" height="56" rx="5" fill="#0d2341"/>
+      <rect x="199" y="228" width="58" height="5" rx="2.5" fill="#7db2ff" fill-opacity=".55"/>
+      <rect x="199" y="240" width="76" height="4" rx="2" fill="#7db2ff" fill-opacity=".18"/>
+      <rect x="199" y="250" width="46" height="4" rx="2" fill="#7db2ff" fill-opacity=".18"/>
+      <rect x="199" y="261" width="30" height="7" rx="3.5" fill="#2b6cf2" fill-opacity=".7"/>
+      <text x="239" y="326" text-anchor="middle" fill="#eef4ff" font-size="13" font-weight="700">Laptop</text>
+    </g>
+
+    <g>
+      <circle cx="404" cy="230" r="66" fill="url(#cloud-globe)" stroke="#6ee7f9" stroke-opacity=".4" stroke-width="1.5"/>
+      <ellipse cx="404" cy="230" rx="48" ry="66" fill="none" stroke="#6ee7f9" stroke-opacity=".26"/>
+      <ellipse cx="404" cy="230" rx="66" ry="28" fill="none" stroke="#6ee7f9" stroke-opacity=".22"/>
+      <path d="M340 230h128M355 198c26 14 72 14 98 0M355 262c26-14 72-14 98 0" fill="none" stroke="#7db2ff" stroke-opacity=".2"/>
+      <path d="M380 206h48a17 17 0 0 1 2 34h-58a19 19 0 0 1 8-34z" fill="#0b2039" stroke="#7db2ff" stroke-opacity=".42"/>
+      <path d="M379 229h43M391 221l-9 8 9 8M410 221l9 8-9 8" fill="none" stroke="#6ee7f9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="404" y="352" text-anchor="middle" fill="#eef4ff" font-size="13" font-weight="700">Internet</text>
+    </g>
+
+    <g>
+      <rect x="540" y="105" width="212" height="250" rx="18" fill="#0a1a31" stroke="#8db8ff" stroke-opacity=".2"/>
+      <g>
+        <rect x="558" y="128" width="176" height="46" rx="10" fill="#0c203d" stroke="#6ee7f9" stroke-opacity=".32"/>
+        <rect x="572" y="144" width="16" height="14" rx="2" fill="none" stroke="#6ee7f9" stroke-opacity=".7"/>
+        <text x="598" y="154" fill="#eef4ff" font-size="11" font-weight="700">Cloud application</text>
+        <text x="598" y="167" fill="#7f92b5" font-size="9">Rules and processing</text>
+      </g>
+      <g>
+        <rect x="558" y="188" width="176" height="46" rx="10" fill="#0c203d" stroke="#7db2ff" stroke-opacity=".3"/>
+        <ellipse cx="580" cy="205" rx="7" ry="3.5" fill="none" stroke="#7db2ff" stroke-opacity=".7"/>
+        <path d="M573 205v11c0 2 3 3.5 7 3.5s7-1.5 7-3.5v-11" fill="none" stroke="#7db2ff" stroke-opacity=".55"/>
+        <text x="598" y="211" fill="#eef4ff" font-size="11" font-weight="700">Database</text>
+        <text x="598" y="224" fill="#7f92b5" font-size="9">Orders and records</text>
+      </g>
+      <g>
+        <rect x="558" y="248" width="176" height="46" rx="10" fill="#0c203d" stroke="#c4b5fd" stroke-opacity=".3"/>
+        <path d="M575 263h10l6 6v10h-16z" fill="none" stroke="#c4b5fd" stroke-opacity=".7"/>
+        <text x="598" y="271" fill="#eef4ff" font-size="11" font-weight="700">File storage</text>
+        <text x="598" y="284" fill="#7f92b5" font-size="9">Images and documents</text>
+      </g>
+      <g>
+        <rect x="558" y="308" width="176" height="32" rx="8" fill="#0f1e3b" stroke="#fbbf24" stroke-opacity=".3"/>
+        <text x="646" y="328" text-anchor="middle" fill="#e9d4a1" font-size="10" font-weight="700">AI service</text>
+      </g>
+    </g>
+
+    <g fill="none" stroke="url(#cloud-line)" stroke-width="2" stroke-dasharray="4 7" stroke-linecap="round">
+      <path d="M152 221h25"/>
+      <path d="M301 246c18 0 19-12 36-12"/>
+      <path d="M470 224c22-10 28-46 70-63"/>
+      <path d="M470 234c22 10 28 24 70 2"/>
+    </g>
+    <g fill="#6ee7f9">
+      <path d="M181 216l8 5-8 5z"/>
+      <path d="M341 229l8 5-8 5z"/>
+      <path d="M545 158l8 5-8 5z"/>
+      <path d="M545 233l8 5-8 5z"/>
+    </g>
+
+    <g>
+      <rect x="540" y="376" width="212" height="40" rx="20" fill="#0a192f" stroke="#6ee7f9" stroke-opacity=".2"/>
+      <circle cx="562" cy="396" r="4" fill="#6ee7f9"/>
+      <text x="576" y="400" fill="#a9c8e8" font-size="10" font-weight="700" letter-spacing="1.2">REQUEST → RESPONSE</text>
+    </g>
+
+    <text x="54" y="400" fill="#7f92b5" font-size="11" font-weight="600">A device can keep some work local and use the cloud only when needed.</text>
+  </g>
+</svg>

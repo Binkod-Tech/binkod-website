@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title desc">
+  <title id="title">An AI agent working through a loop</title>
+  <desc id="desc">A circular path connecting a user goal, planning, tool use, checking the result and finishing.</desc>
+  <defs>
+    <linearGradient id="agent-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0b24"/>
+      <stop offset=".55" stop-color="#101334"/>
+      <stop offset="1" stop-color="#09142e"/>
+    </linearGradient>
+    <linearGradient id="agent-path" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7db2ff"/>
+      <stop offset=".55" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#6ee7f9"/>
+    </linearGradient>
+    <pattern id="agent-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#b7c8f5" fill-opacity=".14"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#agent-bg)"/>
+  <rect width="800" height="450" fill="url(#agent-grid)"/>
+  <circle cx="400" cy="225" r="196" fill="none" stroke="#9bb7f0" stroke-opacity=".1"/>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M400 82C557 82 660 187 660 300" stroke="url(#agent-path)" stroke-opacity=".35" stroke-width="3" stroke-dasharray="1 12"/>
+    <path d="M660 300C660 371 576 407 491 403" stroke="url(#agent-path)" stroke-opacity=".35" stroke-width="3" stroke-dasharray="1 12"/>
+    <path d="M491 403C324 397 216 348 169 276" stroke="url(#agent-path)" stroke-opacity=".35" stroke-width="3" stroke-dasharray="1 12"/>
+    <path d="M169 276C137 213 192 113 284 91" stroke="url(#agent-path)" stroke-opacity=".35" stroke-width="3" stroke-dasharray="1 12"/>
+  </g>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <g>
+      <rect x="315" y="43" width="170" height="54" rx="27" fill="#111e45" stroke="#7db2ff" stroke-opacity=".5"/>
+      <circle cx="342" cy="70" r="9" fill="#7db2ff" fill-opacity=".18"/>
+      <circle cx="342" cy="70" r="3.4" fill="#7db2ff"/>
+      <text x="361" y="75" fill="#eef4ff" font-size="13" font-weight="700">User goal</text>
+    </g>
+
+    <g>
+      <rect x="600" y="272" width="158" height="56" rx="28" fill="#15163c" stroke="#a78bfa" stroke-opacity=".5"/>
+      <path d="M626 289l-7 7 7 7M638 289l7 7-7 7" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="655" y="304" fill="#eef4ff" font-size="13" font-weight="700">Plan steps</text>
+    </g>
+
+    <g>
+      <rect x="403" y="379" width="170" height="56" rx="28" fill="#1d2430" stroke="#fbbf24" stroke-opacity=".6"/>
+      <circle cx="430" cy="407" r="9" fill="#fbbf24" fill-opacity=".15"/>
+      <path d="M426 402h9v10h-9zM435 405h4v5h-4" fill="none" stroke="#fbbf24" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="452" y="412" fill="#fff5dc" font-size="13" font-weight="700">Use a tool</text>
+    </g>
+
+    <g>
+      <rect x="82" y="248" width="170" height="56" rx="28" fill="#0f243f" stroke="#6ee7f9" stroke-opacity=".5"/>
+      <circle cx="109" cy="276" r="9" fill="#6ee7f9" fill-opacity=".14"/>
+      <path d="M104 277l4 4 7-8" fill="none" stroke="#6ee7f9" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="127" y="281" fill="#eef4ff" font-size="13" font-weight="700">Check result</text>
+    </g>
+
+    <g>
+      <rect x="258" y="183" width="174" height="84" rx="22" fill="#11172f" stroke="#8db8ff" stroke-opacity=".22"/>
+      <text x="345" y="217" text-anchor="middle" fill="#c4b5fd" font-size="11" font-weight="700" letter-spacing="1.7">CONTINUE</text>
+      <text x="345" y="237" text-anchor="middle" fill="#f2f6ff" font-size="15" font-weight="800">or finish</text>
+      <path d="M327 250c11 6 26 6 37 0" fill="none" stroke="#7db2ff" stroke-opacity=".38" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g fill="#6ee7f9">
+    <circle cx="492" cy="91" r="3.5"/>
+    <circle cx="656" cy="345" r="3"/>
+    <circle cx="376" cy="395" r="3.5"/>
+    <circle cx="136" cy="228" r="3"/>
+  </g>
+
+  <g>
+    <rect x="35" y="48" width="152" height="35" rx="17.5" fill="#0b1328" stroke="#8db8ff" stroke-opacity=".18"/>
+    <circle cx="55" cy="65.5" r="4" fill="#fbbf24"/>
+    <text x="69" y="70" font-family="system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2" fill="#d8c79b">EDUCATIONAL DEMO</text>
+  </g>
+</svg>

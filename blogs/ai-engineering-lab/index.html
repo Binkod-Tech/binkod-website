@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-mode="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI Is Changing Software Development | BINKOD Tech</title>
+  <meta name="description" content="A plain-English guide to AI-assisted software development: frontend, backend, mobile and web apps, finding errors, improving old code, testing, security and human review.">
+  <meta name="theme-color" content="#f3f6fb">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      try {
+        var choice = localStorage.getItem('binkod-theme');
+        if (choice !== 'light' && choice !== 'dark') {
+          choice = 'light';
+        }
+        var root = document.documentElement;
+        root.setAttribute('data-theme', choice);
+        root.setAttribute('data-mode', choice);
+        root.style.colorScheme = choice;
+      } catch (error) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-mode', 'light');
+      }
+    })();
+  </script>
+  <link rel="canonical" href="https://app.binkod.in/blogs/ai-engineering-lab/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BINKOD Tech">
+  <meta property="og:title" content="How AI Is Changing Software Development">
+  <meta property="og:description" content="AI can draft code, explain an error and speed up repetitive work. It can also be confidently wrong. This guide shows where it helps in software development and why testing, security and human review still matter.">
+  <meta property="og:url" content="https://app.binkod.in/blogs/ai-engineering-lab/">
+  <meta property="og:image" content="https://app.binkod.in/public/assets/blog/ai-engineering-lab.svg">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="450">
+  <meta property="article:published_time" content="2026-09-26">
+  <meta property="article:modified_time" content="2026-10-25">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How AI Is Changing Software Development">
+  <meta name="twitter:description" content="AI can draft code, explain an error and speed up repetitive work. It can also be confidently wrong. This guide shows where it helps in software development and why testing, security and human review still matter.">
+  <meta name="twitter:image" content="https://app.binkod.in/public/assets/blog/ai-engineering-lab.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How AI Is Changing Software Development",
+      "description": "A plain-English guide to AI-assisted software development: frontend, backend, mobile and web apps, finding errors, improving old code, testing, security and human review.",
+      "image": "https://app.binkod.in/public/assets/blog/ai-engineering-lab.svg",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-10-25",
+      "inLanguage": "en-IN",
+      "articleSection": "Software development",
+      "author": {
+        "@type": "Organization",
+        "name": "BINKOD Tech"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "BINKOD Tech",
+        "url": "https://app.binkod.in/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://app.binkod.in/blogs/ai-engineering-lab/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://app.binkod.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blogs",
+          "item": "https://app.binkod.in/blogs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How AI Is Changing Software Development",
+          "item": "https://app.binkod.in/blogs/ai-engineering-lab/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
+  <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/blogs.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <script src="/js/global.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+  <script src="/js/blog.js" defer></script>
+</head>
+<body class="shell">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header bk-header">
+    <div class="container header-inner">
+      <a class="bk-brand" href="/" aria-label="BINKOD Tech home">
+        <span class="bk-brand__plate">
+          <img src="/public/assets/shared/binkod-wordmark-473x135.png" alt="BINKOD Tech" width="473" height="135">
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav bk-nav" id="primary-navigation" aria-label="Primary">
+        <ul class="site-nav__list bk-nav__list">
+          <li>
+            <details class="bk-dropdown nav-apps">
+              <summary class="bk-dropdown__summary">
+                Applications
+                <svg class="bk-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="bk-dropdown__panel">
+                <a class="bk-menu-item" href="/family-path-locator/">
+                  <img class="bk-menu-item__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="38" height="38">
+                  <span class="bk-menu-item__meta">
+                    <span class="bk-menu-item__name">
+                      Family Path Locator
+                      <span class="bk-badge bk-badge--testing">Internal testing</span>
+                    </span>
+                    <span class="bk-menu-item__desc">Family location &amp; safety · Android</span>
+                  </span>
+                </a>
+                <a class="bk-menu-item" href="/binkod-abc/">
+                  <img class="bk-menu-item__icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="38" height="38">
+                  <span class="bk-menu-item__meta">
+                    <span class="bk-menu-item__name">
+                      BINKOD ABC
+                      <span class="bk-badge bk-badge--dev">Under development</span>
+                    </span>
+                    <span class="bk-menu-item__desc">Pre-primary learning &amp; practice</span>
+                  </span>
+                </a>
+                <div class="bk-menu-item">
+                  <img class="bk-menu-item__icon" src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="38" height="38">
+                  <span class="bk-menu-item__meta">
+                    <span class="bk-menu-item__name">
+                      Device Matrix
+                      <span class="bk-badge bk-badge--testing">Internal testing</span>
+                    </span>
+                    <span class="bk-menu-item__desc">System Info · Android utility</span>
+                  </span>
+                </div>
+                <div class="bk-menu-item">
+                  <img class="bk-menu-item__icon" src="/public/assets/device-matrix/icons/smart-storage-analyzer.svg" alt="" width="38" height="38">
+                  <span class="bk-menu-item__meta">
+                    <span class="bk-menu-item__name">
+                      Smart Storage Analyzer
+                      <span class="bk-badge bk-badge--dev">Under development</span>
+                    </span>
+                    <span class="bk-menu-item__desc">Storage review · Android utility</span>
+                  </span>
+                </div>
+                <a class="bk-menu__foot" href="/#applications">See all applications <span aria-hidden="true">→</span></a>
+              </div>
+            </details>
+          </li>
+          <li><a class="bk-nav__link" href="/blogs/" aria-current="page">Blogs</a></li>
+          <li><a class="bk-nav__link" href="/#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm bk-nav__cta" href="/#applications">Explore apps</a>
+      </nav>
+
+      <div class="theme-switch" role="group" aria-label="Appearance theme">
+        <span class="theme-switch__label" aria-hidden="true">Theme</span>
+        <button class="theme-switch__btn" type="button" data-theme-value="light" data-label="Light theme" aria-label="Use light theme" aria-pressed="false" title="Light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+          <span class="theme-switch__text">Light</span>
+        </button>
+        <button class="theme-switch__btn" type="button" data-theme-value="dark" data-label="Dark theme" aria-label="Use dark theme" aria-pressed="false" title="Dark theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.6 8.6 0 1 0 20.5 14.2z"/></svg>
+          <span class="theme-switch__text">Dark</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="article-hero" aria-labelledby="article-title">
+      <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+      <div class="article-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <nav class="blog-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blogs/">Blogs</a></li>
+            <li><span aria-current="page">How AI Is Changing Software Development</span></li>
+          </ol>
+        </nav>
+
+        <div class="article-hero__layout">
+          <div class="article-hero__copy">
+            <span class="article-category">Software development</span>
+            <h1 id="article-title">How AI Is Changing Software Development</h1>
+            <p class="article-hero__lede">AI can draft code, explain an error and speed up repetitive work. It can also be confidently wrong. This guide shows where it helps in software development and why testing, security and human review still matter.</p>
+            <div class="article-hero__meta">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15.5" rx="2.4"/><path d="M7.5 3v4"/><path d="M16.5 3v4"/><path d="M3.5 9.5h17"/></svg>
+                <time datetime="2026-09-26">26 September 2026</time>
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+                9 min read
+              </span>
+            </div>
+          </div>
+
+          <figure class="article-hero__visual">
+            <img src="/public/assets/blog/ai-engineering-lab.svg" alt="An illustrated software workbench with stages from idea and design to build and review." width="800" height="450">
+            <figcaption class="article-hero__caption">AI can assist with parts of the work; testing and review remain human responsibilities.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="article-wrap">
+      <div class="container article-layout">
+        <article class="article-main article-prose" data-article>
+          <p>
+            AI is now part of many software teams. It can suggest a line of
+            code, explain an error message, draft a test or describe what an
+            unfamiliar file seems to do. Used well, it can save time on
+            repetitive work and help a developer learn. Used carelessly, it can
+            produce code that looks neat but fails in the real world.
+          </p>
+          <p>
+            The important word is <strong>assist</strong>. AI can help people
+            who develop software. It does not decide what should be built, and it
+            cannot promise that the result is correct, secure or ready for
+            customers.
+          </p>
+
+          <h2 id="work">What software development actually involves</h2>
+          <p>
+            A modern application is more than a screen and more than a database.
+            Someone has to understand the need, decide how the parts fit
+            together, build the screens, write the rules behind them, store and
+            protect information, test the result and support it after release.
+          </p>
+          <p>
+            A simple school fee app shows the range of work. A parent needs to
+            see the amount due and receive a receipt. An administrator needs to
+            record a payment and correct a mistake. The school needs records
+            that are private, a history of changes and a way to handle a failed
+            payment. None of that is only a coding task.
+          </p>
+
+          <h2 id="where-ai-helps">Where AI can help</h2>
+
+          <h3>Frontend development: screens and forms</h3>
+          <p>
+            The frontend is what a person sees and touches: pages, buttons,
+            forms, menus and messages. AI can suggest a layout, generate
+            repetitive form fields, draft validation messages or show a simpler
+            way to write a component. It can also propose labels and error
+            text.
+          </p>
+          <p>
+            A developer still has to check that the page works on a small
+            phone, that a keyboard can reach every control, that colour contrast
+            is readable and that an error message tells the person what to do
+            next. A generated screen can look finished while being difficult to
+            use.
+          </p>
+
+          <h3>Backend development: rules, processing and data</h3>
+          <p>
+            The backend is the work behind the screens. It checks whether a
+            payment is valid, calculates a fee, stores a record, sends a
+            receipt and decides who may see what. AI can help draft an API
+            handler, suggest a database query, write a small utility or explain
+            an unfamiliar function.
+          </p>
+          <p>
+            The backend is also where quiet mistakes are expensive. A generated
+            query may be slow or unsafe. A permission check may be missing. A
+            calculation may be wrong for a discount, a late fee or a refund. A
+            person must test these rules with real examples and review access
+            controls.
+          </p>
+
+          <h3>Mobile application development</h3>
+          <p>
+            Mobile apps add their own constraints: limited battery, different
+            screen sizes, slow networks, camera and location permissions, and
+            app-store rules. AI can help write shared code for Android and iOS,
+            suggest a permissions flow or explain a crash report.
+          </p>
+          <p>
+            It cannot replace testing on real devices. A feature may work on a
+            fast phone with a good connection and fail on an older phone with
+            little storage. Privacy is also more visible on a phone: people
+            should understand why an app asks for a permission and what happens
+            if they say no.
+          </p>
+
+          <h3>Websites and web applications</h3>
+          <p>
+            A website may mainly present information. A web application also
+            lets people sign in, submit data, make bookings or manage records.
+            AI can help with page structure, responsive styling, content
+            templates and repetitive code. It can speed up the early version of
+            a page.
+          </p>
+          <p>
+            Good design still matters. A page that is fast on a laptop may be
+            slow on a village connection. A layout that looks good in one
+            language may break in another. Search engines, screen readers and
+            browsers all need to understand the result.
+          </p>
+
+          <h3>Finding errors and understanding unfamiliar code</h3>
+          <p>
+            AI is often useful when a developer is stuck. It can read an error
+            message, suggest likely causes or explain a piece of code written by
+            someone else. This is especially helpful when joining an existing
+            project or returning to old work.
+          </p>
+          <p>
+            But an explanation can be wrong. The developer should reproduce the
+            bug, read the relevant code and run a test before trusting a fix.
+            An AI tool does not know the full history of a project unless that
+            context is shared, and even then it may miss an important detail.
+          </p>
+
+          <h3>Improving existing software</h3>
+          <p>
+            AI can suggest smaller functions, clearer names, missing tests or a
+            safer way to handle an error. It can summarise a large change and
+            help a team review it. That is useful in old systems where the
+            original developer is no longer available.
+          </p>
+          <p>
+            Improvements still need care. A refactor can break behaviour that
+            customers depend on. A library upgrade can introduce a new problem.
+            Changes should be small, tested and reversible, especially when
+            money, health or personal records are involved.
+          </p>
+
+          <h2 id="flow">A simple path from idea to release</h2>
+          <p>
+            The interactive flow below shows where AI might assist and where a
+            person must stay in charge. Select any stage, or press Start to
+            follow the process. It describes a general way of working, not a
+            fixed rule for every project.
+          </p>
+
+          <div class="stepflow" data-stepper>
+            <div class="stepflow__top">
+              <div>
+                <span class="stepflow__kicker">Interactive process flow</span>
+                <h3 class="stepflow__title">Seven stages of an AI-assisted feature</h3>
+                <p class="stepflow__sub">The same small feature, from a person's need to a careful release.</p>
+              </div>
+              <div class="stepflow__controls">
+                <button class="stepflow__control" type="button" data-step-start>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>
+                  Start
+                </button>
+                <button class="stepflow__control" type="button" data-step-pause disabled>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6.5" y="5" width="4" height="14" rx="1"/><rect x="13.5" y="5" width="4" height="14" rx="1"/></svg>
+                  Pause
+                </button>
+                <button class="stepflow__control" type="button" data-step-replay>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 10a7.5 7.5 0 1 1 1.2 6.4"/><path d="M4.5 4.8V10h5.2"/></svg>
+                  Replay
+                </button>
+              </div>
+            </div>
+
+            <div class="stepflow__steps" role="group" aria-label="Seven stages where AI can assist software development">
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">01</span>
+                <span class="stepflow__label">Understand</span>
+              </button>
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">02</span>
+                <span class="stepflow__label">Design</span>
+              </button>
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">03</span>
+                <span class="stepflow__label">Frontend</span>
+              </button>
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">04</span>
+                <span class="stepflow__label">Backend</span>
+              </button>
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">05</span>
+                <span class="stepflow__label">Test</span>
+              </button>
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">06</span>
+                <span class="stepflow__label">Review</span>
+              </button>
+              <button class="stepflow__step" type="button" data-step aria-pressed="false">
+                <span class="stepflow__index">07</span>
+                <span class="stepflow__label">Release</span>
+              </button>
+            </div>
+
+            <div class="stepflow__panel">
+              <div class="stepflow__detail" data-step-panel="0">
+                <span class="stepflow__count">Step 01 · Understand</span>
+                <h3>Start with the person and the problem</h3>
+                <p>Decide who needs the feature, what they do today and what a better result would look like. Write down what the feature will not do. AI can help list questions, but people who understand the work must decide the requirement.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: a parent should see the exact fee due and a clear receipt. A school should be able to correct a wrong entry without deleting the history.
+                </p>
+              </div>
+              <div class="stepflow__detail" data-step-panel="1">
+                <span class="stepflow__count">Step 02 · Design</span>
+                <h3>Sketch the screens and the rules</h3>
+                <p>AI can suggest a first layout or draft plain-language labels. The team still has to decide what information appears, what happens when a payment fails and how someone gets help. Good design makes the ordinary path obvious.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: a fee screen with a clear amount, a payment button, a receipt screen and a visible way to contact the school.
+                </p>
+              </div>
+              <div class="stepflow__detail" data-step-panel="2">
+                <span class="stepflow__count">Step 03 · Frontend</span>
+                <h3>Build the screens people touch</h3>
+                <p>AI can generate form fields, validation messages and reusable components. A developer checks keyboard access, readable contrast, small screens, error states and loading states. The screen must still make sense when the network is slow.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: a suggested form is kept only after the team tests it with a keyboard, a screen reader and a small phone.
+                </p>
+              </div>
+              <div class="stepflow__detail" data-step-panel="3">
+                <span class="stepflow__count">Step 04 · Backend</span>
+                <h3>Build the rules, data and permissions</h3>
+                <p>AI can draft a handler, query or test, but the team must define who may see a record, how money is calculated and what happens when a step fails. Every important rule needs a test with realistic data.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: a parent may see only their own child's fees. An administrator may correct a payment, but the old value remains in an audit log.
+                </p>
+              </div>
+              <div class="stepflow__detail" data-step-panel="4">
+                <span class="stepflow__count">Step 05 · Test</span>
+                <h3>Test the normal path and the awkward ones</h3>
+                <p>AI can suggest test cases, including repeated payments, lost connections and empty fields. A person checks the results on real devices and with real data. Passing tests do not prove that the software is secure or useful.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: a test payment succeeds, then the connection drops. The app must not show “paid” unless the payment service confirms it.
+                </p>
+              </div>
+              <div class="stepflow__detail" data-step-panel="5">
+                <span class="stepflow__count">Step 06 · Review</span>
+                <h3>Review security, privacy and design together</h3>
+                <p>AI may point out common risks, but a person with the right knowledge must review access, secrets, personal data, backups and failure handling. The words on the screen need review too: unclear messages create support problems.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: a review asks what happens when a receipt email fails, who can export records and how long old data is kept.
+                </p>
+              </div>
+              <div class="stepflow__detail" data-step-panel="6">
+                <span class="stepflow__count">Step 07 · Release</span>
+                <h3>Release carefully and keep checking</h3>
+                <p>Start with a small group. Watch errors, support messages and unusual payments. Keep a way to roll back the change. AI can summarise logs, but a person decides whether the feature is safe to keep.</p>
+                <p class="stepflow__example">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v4.5l3 1.8"/></svg>
+                  Example: the fee feature is tested with one class before the whole school. A support note explains what to do if a receipt is missing.
+                </p>
+              </div>
+            </div>
+
+            <p class="stepflow__status" data-step-status role="status" aria-live="polite">Ready. Press Start, or select any stage to read what happens there.</p>
+            <p class="stepflow__note">AI may help at every stage. Responsibility does not move to the tool.</p>
+          </div>
+
+          <h2 id="human-review">Why human review still matters</h2>
+          <p>
+            AI tends to produce something that looks plausible. That is useful
+            for a draft and dangerous for a final decision. A generated function
+            may be missing a check. A generated test may test the wrong thing. A
+            generated explanation may confidently describe a library version
+            that is not in use.
+          </p>
+          <div class="role-grid">
+            <div class="role-card">
+              <span class="role-card__tag">1</span>
+              <h3>Testing</h3>
+              <p>Run the software with ordinary, empty, unusual and hostile inputs. Check what happens when a service is slow or unavailable.</p>
+            </div>
+            <div class="role-card">
+              <span class="role-card__tag">2</span>
+              <h3>Security</h3>
+              <p>Check access rules, passwords, secrets, uploads and personal data. A working feature can still expose information it should not.</p>
+            </div>
+            <div class="role-card">
+              <span class="role-card__tag">3</span>
+              <h3>Good design</h3>
+              <p>Make the next step clear, use plain words, support keyboard and small screens, and show errors that help rather than blame.</p>
+            </div>
+            <div class="role-card">
+              <span class="role-card__tag">4</span>
+              <h3>Accountability</h3>
+              <p>Someone must be able to explain why the software behaves as it does and fix it when it causes harm.</p>
+            </div>
+          </div>
+
+          <h2 id="limits">What AI cannot promise</h2>
+          <p>
+            AI can speed up certain tasks. It does not guarantee correct, secure
+            or production-ready software. It does not know your users, your
+            legal duties or the condition of an old system unless someone gives
+            it that context. Even with context, it can be wrong.
+          </p>
+          <p>
+            It is also easy to create more code than a team can understand. A
+            large generated change may be harder to review than a small hand-written
+            one. The aim is not to produce the most code. The aim is to produce
+            software that is understandable, tested and safe to change.
+          </p>
+
+          <h2 id="habits">Good habits for AI-assisted development</h2>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg><span>Keep changes small enough to read, test and undo.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg><span>Ask for an explanation, not only a solution. A developer should understand the code they keep.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg><span>Never paste real passwords, private keys or personal records into a tool that is not approved for them.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg><span>Run the tests yourself. Do not accept “it should work” as evidence.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg><span>Treat AI output as a suggestion from a helpful colleague who has not seen the whole system.</span></li>
+          </ul>
+
+
+          <section class="key-takeaways" aria-labelledby="takeaways-title">
+            <h2 id="takeaways-title">Key takeaways</h2>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>AI can help with frontend screens, backend code, mobile and web development, error finding, unfamiliar code and improvements to old software.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>It does not understand the whole system unless it is given context, and it can produce plausible but wrong code.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>A typical feature still moves through understanding, design, frontend, backend, testing, review and release.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>People must decide the requirements, check security and privacy, test on real devices and take responsibility for the result.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>AI can speed up tasks, but it does not guarantee correct, secure or production-ready software.</li>
+            </ul>
+          </section>
+
+          <section class="article-next" aria-labelledby="next-title">
+            <h2 id="next-title">Next reads</h2>
+            <div class="next-reads">
+              <a class="next-read" href="/blogs/agentic-ai/">
+                <span class="next-read__cat">Software systems</span>
+                <strong>How AI Helps Design Software Systems and Architecture</strong>
+                <span>Use a house-planning comparison to see how AI can help people think through parts, data, growth and failure.</span>
+              </a>
+              <a class="next-read" href="/blogs/apis-and-mcp/">
+                <span class="next-read__cat">How it works</span>
+                <strong>How Applications, APIs, and AI Tools Work Together</strong>
+                <span>Learn how one app asks another for information or action, and where MCP fits.</span>
+              </a>
+            </div>
+            <div class="article-end-links">
+              <a href="/blogs/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>Back to all articles</a>
+              <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/></svg>Back to homepage</a>
+            </div>
+          </section>
+        </article>
+
+        <aside class="article-side" aria-label="Article navigation">
+          <a class="article-side__back" href="/blogs/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>All articles</a>
+          <div class="article-side__card">
+            <h2>In this article</h2>
+            <ul>
+              <li><a href="#work">What development involves</a></li>
+              <li><a href="#where-ai-helps">Where AI helps</a></li>
+              <li><a href="#flow">Idea to release</a></li>
+              <li><a href="#human-review">Human review</a></li>
+              <li><a href="#limits">What AI cannot promise</a></li>
+              <li><a href="#habits">Good habits</a></li>
+              <li><a href="#takeaways-title">Key takeaways</a></li>
+            </ul>
+          </div>
+          <div class="article-side__card">
+            <h2>More from the blog</h2>
+            <ul>
+              <li><a href="/blogs/ai-changing-the-world/">How AI is changing everyday life</a></li>
+              <li><a href="/blogs/agentic-ai/">How AI helps design software systems and architecture</a></li>
+              <li><a href="/blogs/cloud-computing/">What is cloud computing?</a></li>
+              <li><a href="/blogs/apis-and-mcp/">How applications, APIs, and AI tools work together</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer bk-footer">
+    <div class="container">
+      <div class="bk-footer__grid">
+        <div class="bk-footer__brand">
+          <a class="bk-footer__plate" href="/" aria-label="BINKOD Tech home">
+            <img src="/public/assets/shared/binkod-wordmark-473x135.png" alt="BINKOD Tech" width="473" height="135" loading="lazy">
+          </a>
+          <p class="bk-footer__tagline">
+            We build useful digital products that solve everyday problems for
+            people and businesses — from mobile apps and web applications to
+            practical uses of intelligent technology.
+          </p>
+          <p class="bk-footer__made">Made in India <span aria-hidden="true">❤</span></p>
+        </div>
+
+        <div>
+          <h2 class="bk-footer__title">Applications</h2>
+          <ul class="bk-footer__links">
+            <li><a href="/family-path-locator/">Family Path Locator</a></li>
+            <li><a href="/binkod-abc/">BINKOD ABC</a></li>
+            <li><span>Device Matrix <span class="bk-footer__soon">Internal testing</span></span></li>
+            <li><span>Smart Storage Analyzer <span class="bk-footer__soon">Under development</span></span></li>
+            <li><a href="/#applications">All applications</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="bk-footer__title">Explore</h2>
+          <ul class="bk-footer__links">
+            <li><a href="/blogs/">Blogs</a></li>
+            <li><a href="/#technology">Technology</a></li>
+            <li><a href="/#blogs">Latest articles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="bk-footer__title">Contact</h2>
+          <ul class="bk-footer__links">
+            <li><a href="/#contact">Contact / Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bk-footer__bottom">
+        <span>© 2026 BINKOD Tech. All rights reserved.</span>
+        <span>Digital products for everyday life.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
