@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Matrix Features — Android System Info</title>
+  <meta name="description" content="Explore Device Matrix's live readings, apps insight, guided hardware checks, local reports, widgets, themes and privacy controls.">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="canonical" href="https://app.binkod.in/device-matrix/features/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BINKOD Tech">
+  <meta property="og:title" content="Device Matrix Features — Android System Info">
+  <meta property="og:description" content="Explore Device Matrix's live readings, apps insight, guided hardware checks, local reports, widgets, themes and privacy controls.">
+  <meta property="og:url" content="https://app.binkod.in/device-matrix/features/">
+  <meta property="og:image" content="https://app.binkod.in/public/assets/shared/binkod-header-1600x639.jpeg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="639">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Device Matrix Features — Android System Info">
+  <meta name="twitter:description" content="Explore Device Matrix's live readings, apps insight, guided hardware checks, local reports, widgets, themes and privacy controls.">
+  <meta name="twitter:image" content="https://app.binkod.in/public/assets/shared/binkod-header-1600x639.jpeg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
+  <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/device-matrix/css/device-matrix.css">
+  <script>
+    document.documentElement.classList.add('js');
+    window.setTimeout(function () {
+      if (!document.documentElement.classList.contains('is-reveal-ready')) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 3000);
+  </script>
+  <script src="/js/global.js" defer></script>
+  <script src="/device-matrix/config.js" defer></script>
+  <script src="/device-matrix/js/device-matrix.js" defer></script>
+</head>
+<body class="dm-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/device-matrix/">
+        <img class="brand__img" src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="38" height="38">
+        <span class="brand__text">
+          <span class="brand__name">Device Matrix</span>
+          <span class="brand__by">System Info</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="/device-matrix/">Home</a></li>
+          <li><a class="site-nav__link" href="/device-matrix/features/" aria-current="page">Features</a></li>
+          <li><a class="site-nav__link" href="/device-matrix/plans/">Plans</a></li>
+          <li><a class="site-nav__link" href="/device-matrix/#faq">FAQ</a></li>
+          <li><a class="site-nav__link" href="/device-matrix/privacy-policy/">Privacy</a></li>
+          <li><a class="site-nav__link" href="/device-matrix/contact/">Contact</a></li>
+        </ul>
+        <a class="btn btn--play btn--sm" href="https://play.google.com/store/apps/details?id=com.binkod.devicematrix" target="_blank" rel="noopener noreferrer" data-dm-play>
+          <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+          Get it on Google Play
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/device-matrix/">Device Matrix</a></li>
+            <li><span aria-current="page">Features</span></li>
+          </ol>
+        </nav>
+        <span class="eyebrow">What the app actually does</span>
+        <h1>Every screen has a job. None of them guesses.</h1>
+        <p class="lead">
+          Device Matrix is a set of small, connected tools: a live dashboard,
+          detailed hardware screens, network and app insight, guided checks,
+          local reports and home-screen widgets. Here is what each part covers
+          in version 1.0.0.
+        </p>
+        <p class="note">
+          The app is Android-only. Values vary by device and by what the
+          manufacturer exposes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="home-dashboard" aria-labelledby="f-dashboard-title">
+      <div class="container privacy-grid dm-split dm-split--reverse">
+        <div class="privacy__copy" data-reveal>
+          <span class="eyebrow">Home dashboard</span>
+          <h2 id="f-dashboard-title">The current picture, while you are looking.</h2>
+          <p class="lead">
+            Home opens with a locally calculated health summary, device facts,
+            today&rsquo;s screen time and live tiles for the processor, memory,
+            storage, battery and heat. Further tiles cover display, network,
+            camera, sensors and connectivity. Shortcuts lead to the hardware
+            checks and the tools.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Readings refresh while the screen is focused.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>No background monitoring and no stored timeline.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Health is a local summary of readable checks, not a diagnosis.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Pro owners can rearrange, hide and reorder tiles and carousels.</li>
+          </ul>
+        </div>
+        <div class="privacy__art" data-reveal>
+          <figure class="dm-figure">
+            <div class="dm-shot">
+              <img
+                src="/public/assets/device-matrix/website/img/dm-home-dashboard-dark-1080.webp"
+                srcset="/public/assets/device-matrix/website/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-home-dashboard-dark-1080.webp 1080w"
+                sizes="(max-width: 768px) 82vw, 340px"
+                width="1080" height="2274"
+                alt="Dark Home dashboard showing the health score, device summary and live CPU, memory, storage and battery tiles."
+                loading="lazy" decoding="async">
+            </div>
+            <figcaption>Home brings the live health score, core readings and shortcuts into one dashboard.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="hardware-detail" aria-labelledby="f-hardware-title">
+      <div class="container privacy-grid dm-split">
+        <div class="privacy__copy" data-reveal>
+          <span class="eyebrow">Hardware detail</span>
+          <h2 id="f-hardware-title">A closer look at the parts Android will discuss.</h2>
+          <p class="lead">
+            The hardware hub opens Device, CPU, Heat, RAM, Storage, Battery,
+            Display, Camera and Sensors. Each screen reads what public Android
+            interfaces report and keeps estimates and missing values clearly
+            labelled.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Device and build identity, including a masked build fingerprint.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Processor clusters, live core clocks, GPU renderer and graphics API versions.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>RAM, storage and battery with live graphs and available estimates.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Thermal status, display modes, camera characteristics and a searchable sensor list.</li>
+          </ul>
+        </div>
+        <div class="privacy__art" data-reveal>
+          <figure class="dm-figure">
+            <div class="dm-shot">
+              <img
+                src="/public/assets/device-matrix/website/img/dm-hardware-hub-dark-1080.webp"
+                srcset="/public/assets/device-matrix/website/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-hardware-hub-dark-1080.webp 1080w"
+                sizes="(max-width: 768px) 82vw, 340px"
+                width="1080" height="2274"
+                alt="Hardware hub listing Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors."
+                loading="lazy" decoding="async">
+            </div>
+            <figcaption>The hardware hub opens every on-device information screen.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="network" aria-labelledby="f-network-title">
+      <div class="container privacy-grid dm-split dm-split--reverse">
+        <div class="privacy__copy" data-reveal>
+          <span class="eyebrow">Network and Wi-Fi</span>
+          <h2 id="f-network-title">Useful network detail, with the sensitive parts covered.</h2>
+          <p class="lead">
+            Network shows the active connection type, metered and VPN state,
+            Data Saver, operator and roaming state, Private DNS, and the Wi-Fi
+            link. Wi-Fi names, BSSID, IP addresses, gateway and DNS stay masked
+            unless you briefly reveal a value.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Masking is on by default for network identifiers.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Data usage: Today, 7 days and 30 days, split by Wi-Fi and mobile.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Connectivity combines Bluetooth and NFC state; there is no separate screen for either.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Pro adds the Wi-Fi analyzer. It starts no scan and asks for no permission until Pro ownership is verified.</li>
+          </ul>
+        </div>
+        <div class="privacy__art" data-reveal>
+          <figure class="dm-figure">
+            <div class="dm-shot">
+              <img
+                src="/public/assets/device-matrix/website/img/dm-network-overview-dark-1080.webp"
+                srcset="/public/assets/device-matrix/website/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-network-overview-dark-1080.webp 1080w"
+                sizes="(max-width: 768px) 82vw, 340px"
+                width="1080" height="2274"
+                alt="Dark Network screen showing the active Wi-Fi connection, operator and masked network identifiers."
+                loading="lazy" decoding="async">
+            </div>
+            <figcaption>Network readings identify the active link; IP addresses and network names stay masked by default.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="apps-and-permissions" aria-labelledby="f-apps-title">
+      <div class="container privacy-grid dm-split">
+        <div class="privacy__copy" data-reveal>
+          <span class="eyebrow">Apps and permissions</span>
+          <h2 id="f-apps-title">The apps you can see, in context.</h2>
+          <p class="lead">
+            Device Matrix lists launcher apps rather than every package on the
+            device. Search and sorting help you find one; the detail sheet shows
+            what Android reports about version, target SDK, installer, dates and
+            size where access allows. The analyzer summarises the collection,
+            and the permission analyzer groups apps by the dangerous permissions
+            they declare.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>App sizes, screen time and some permission analysis need the special Usage Access grant.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Screen time shows foreground time, not total screen-on time.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Declared permissions are not the same as recent use.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>There is no APK extraction or app management.</li>
+          </ul>
+        </div>
+        <div class="privacy__art" data-reveal>
+          <figure class="dm-figure">
+            <div class="dm-shot">
+              <img
+                src="/public/assets/device-matrix/website/img/dm-apps-analyzer-dark-1080.webp"
+                srcset="/public/assets/device-matrix/website/img/dm-apps-analyzer-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-apps-analyzer-dark-1080.webp 1080w"
+                sizes="(max-width: 768px) 82vw, 340px"
+                width="1080" height="2274"
+                alt="App analyzer screen with target API and installer bar charts."
+                loading="lazy" decoding="async">
+            </div>
+            <figcaption>The analyzer summarises launcher apps without claiming access to every installed package.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hardware-tests" aria-labelledby="f-tests-title">
+      <div class="container privacy-grid dm-split dm-split--reverse">
+        <div class="privacy__copy" data-reveal>
+          <span class="eyebrow">Hardware tests</span>
+          <h2 id="f-tests-title">Guided checks, with the result in your hands.</h2>
+          <p class="lead">
+            The tests are the guided checks someone might run on a used phone:
+            display and pixels, multi-touch, flashlight, loudspeaker, earpiece,
+            proximity, light, accelerometer, charging, headset and USB audio,
+            vibration, Bluetooth, volume buttons and microphone.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Start one check or run the full set.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Pass, fail or leave a check untested.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Android limitations are explained and not counted as failures.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Results stay on the phone and can be shared as a checklist.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>The microphone meter is live only; no audio is recorded.</li>
+          </ul>
+        </div>
+        <div class="privacy__art" data-reveal>
+          <figure class="dm-figure">
+            <div class="dm-shot">
+              <img
+                src="/public/assets/device-matrix/website/img/dm-tests-hub-dark-1080.webp"
+                srcset="/public/assets/device-matrix/website/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-tests-hub-dark-1080.webp 1080w"
+                sizes="(max-width: 768px) 82vw, 340px"
+                width="1080" height="2274"
+                alt="Hardware tests hub with an overall progress ring, Run all tests button and grouped test rows."
+                loading="lazy" decoding="async">
+            </div>
+            <figcaption>Guided checks cover display, touch, sound, sensors and power or radios.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="check-up-and-tips" aria-labelledby="f-checkup-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Check-up and tips</span>
+          <h2 id="f-checkup-title">Findings, not a score to chase.</h2>
+          <p class="lead">
+            The check-up reads local settings and readings and returns
+            plain-language findings. Where Android offers a relevant setting,
+            the finding includes a shortcut. It does not silently change the
+            phone, and it does not promise that a change will make the device
+            faster or last longer.
+          </p>
+        </div>
+        <div class="notes-grid" data-reveal-group>
+          <article class="note-card">
+            <h3>What it can notice</h3>
+            <p>Examples include an old security patch, a long screen timeout, USB debugging left on, storage or memory pressure, battery temperature and a high refresh rate.</p>
+          </article>
+          <article class="note-card">
+            <h3>Missing readings are skipped</h3>
+            <p>If Android does not expose a value, the finding is left out and the limitation is disclosed.</p>
+          </article>
+          <article class="note-card">
+            <h3>The health score is a summary</h3>
+            <p>It reflects the checks this phone can report. It is not a diagnosis or a guarantee about the hardware.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tools" aria-labelledby="f-tools-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Tools</span>
+          <h2 id="f-tools-title">Small utilities that hand control back to Android.</h2>
+          <p class="lead">
+            Set an alarm or timer with a prefilled request for your clock app,
+            open the alarm list, toggle the flashlight, play a vibration
+            pattern, or jump into the screen and touch checks.
+          </p>
+        </div>
+        <div class="feature-grid" data-reveal-group>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M5 3 3 5M19 3l2 2"/></svg></span>
+            <h3>Alarm and timer</h3>
+            <p>The clock app owns the final confirmation; Device Matrix does not silently schedule an alarm.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+            <h3>Flashlight</h3>
+            <p>Availability depends on the hardware and the Android version.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 6h4M10 10h4M10 14h4"/></svg></span>
+            <h3>Vibration</h3>
+            <p>Short, Long and Heartbeat patterns.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <h3>Screen and touch</h3>
+            <p>Jump into the same guided checks used in Hardware tests.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="reports-and-exports" aria-labelledby="f-reports-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Reports and exports</span>
+          <h2 id="f-reports-title">A complete report, a clear preview and your choice of destination.</h2>
+          <p class="lead">
+            Pick report sections, build a preview, then copy the text, share it,
+            create a PDF or &mdash; with Pro &mdash; export a custom PDF and a
+            sanitised JSON file. The preview is the same content the export will
+            use.
+          </p>
+        </div>
+        <div class="feature-grid" data-reveal-group>
+          <article class="feature-card">
+            <h3>Standard PDF</h3>
+            <p>Includes every available section and always hides identifying details.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Free PDF</h3>
+            <p>An optional rewarded video; if it cannot load, the PDF proceeds after a short fallback.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Remove ads and Pro</h3>
+            <p>Skip the video gate.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Pro custom export</h3>
+            <p>Follows the &ldquo;Include identifying details&rdquo; switch and can add sanitised JSON.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Local only</h3>
+            <p>No upload and no cloud report.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="widgets" aria-labelledby="f-widgets-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Widgets</span>
+          <h2 id="f-widgets-title">Widgets that fit the home screen.</h2>
+          <p class="lead">
+            RAM, storage, battery and device health widgets use the readings
+            already on the phone. Free includes 2&times;1 and 4&times;1 layouts.
+            Pro adds the 2&times;2 standard layouts and the 4&times;2 Device
+            Health Check. The launcher owns refresh timing and widget placement.
+          </p>
+        </div>
+        <div class="notes-grid" data-reveal-group>
+          <article class="note-card"><h3>Free</h3><p>2&times;1 Compact and 4&times;1 Detailed for RAM, storage and battery.</p></article>
+          <article class="note-card"><h3>Pro</h3><p>2&times;2 Standard for RAM, storage and battery, plus 4&times;2 Device Health Check.</p></article>
+          <article class="note-card"><h3>Appearance</h3><p>Theme, accent and units carry through to widgets.</p></article>
+          <article class="note-card"><h3>Add from the launcher</h3><p>Use the launcher&rsquo;s widget picker; the app cannot place widgets for you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="appearance-and-units" aria-labelledby="f-appearance-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Appearance and units</span>
+          <h2 id="f-appearance-title">Make the readings easier to read.</h2>
+          <p class="lead">
+            Choose System, Dark or Light; choose an accent palette or follow the
+            system colour. Change units for temperature, storage and memory,
+            frequency, network speed, screen size, distance, acceleration,
+            pressure, time and power. Pro adds the extra palettes, dashboard
+            layout editing and Animations Off option.
+          </p>
+        </div>
+        <div class="notes-grid" data-reveal-group>
+          <article class="note-card"><h3>Standard palettes</h3><p>A choice of accent palettes, plus Follow system colours.</p></article>
+          <article class="note-card"><h3>More with Pro</h3><p>Additional accent palettes alongside the standard choices.</p></article>
+          <article class="note-card"><h3>Motion</h3><p>Android&rsquo;s Reduce motion setting is respected; with Pro, Animations Off for battery save is also available.</p></article>
+          <article class="note-card"><h3>Stored locally</h3><p>Theme, units and layout stay in private app storage.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="privacy-inside" aria-labelledby="f-privacy-title">
+      <div class="container">
+        <div class="legal-card" data-reveal>
+          <div class="legal-card__head">
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <div>
+              <span class="eyebrow">Privacy inside the app</span>
+              <h2 id="f-privacy-title">Local by default, visible before export.</h2>
+            </div>
+          </div>
+          <div class="legal-card__body">
+            <p>
+              Device Matrix does not create an app account or send readings to a
+              backend. The app masks network and build identifiers, asks for
+              permissions only when a feature needs them, and keeps reports on
+              the phone until you choose a destination.
+            </p>
+            <div class="actions">
+              <a class="btn btn--outline" href="/device-matrix/privacy-policy/">Read the full privacy policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dm-gallery dm-gallery--full" aria-labelledby="features-gallery-title">
+      <div class="container">
+        <div class="dm-section__head dm-gallery__head" data-reveal>
+          <span class="eyebrow">Screens</span>
+          <h2 id="features-gallery-title">See the main screens before you install.</h2>
+          <p class="lead">A closer look at the dashboard, hardware details, network, apps, guided checks and plans.</p>
+        </div>
+        <div class="dm-gallery__shell" data-dm-gallery data-reveal>
+          <div class="dm-gallery__controls" hidden>
+            <p class="dm-gallery__hint">Scroll, drag or use the arrows to browse.</p>
+            <div class="dm-gallery__buttons">
+              <button class="dm-gallery__button" type="button" data-gallery-prev aria-label="Previous screenshot">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="dm-gallery__button" type="button" data-gallery-next aria-label="Next screenshot">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+          <ul class="dm-gallery__track" tabindex="0" aria-label="Device Matrix screenshots">
+          <li class="dm-gallery__slide">
+            <figure class="dm-gallery__figure">
+              <div class="dm-gallery__image">
+                <img
+                  src="/public/assets/device-matrix/website/img/dm-home-dashboard-dark-1080.webp"
+                  srcset="/public/assets/device-matrix/website/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-home-dashboard-dark-1080.webp 1080w"
+                  sizes="(max-width: 40em) 62vw, 14rem"
+                  width="1080" height="2274"
+                  alt="Dark Home dashboard showing the health score, device summary and live CPU, memory, storage and battery tiles."
+                  loading="lazy" decoding="async">
+              </div>
+              <figcaption class="dm-gallery__caption">
+                <span class="dm-gallery__label">Home</span>
+                <strong>Dashboard</strong>
+                <span>The current health summary, core readings, usage and shortcuts in one view.</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="dm-gallery__slide">
+            <figure class="dm-gallery__figure">
+              <div class="dm-gallery__image">
+                <img
+                  src="/public/assets/device-matrix/website/img/dm-hardware-hub-dark-1080.webp"
+                  srcset="/public/assets/device-matrix/website/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-hardware-hub-dark-1080.webp 1080w"
+                  sizes="(max-width: 40em) 62vw, 14rem"
+                  width="1080" height="2274"
+                  alt="Hardware hub listing Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors."
+                  loading="lazy" decoding="async">
+              </div>
+              <figcaption class="dm-gallery__caption">
+                <span class="dm-gallery__label">Hardware</span>
+                <strong>Information hub</strong>
+                <span>Open device, processor, memory, storage, battery, display, camera and sensor details.</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="dm-gallery__slide">
+            <figure class="dm-gallery__figure">
+              <div class="dm-gallery__image">
+                <img
+                  src="/public/assets/device-matrix/website/img/dm-network-overview-dark-1080.webp"
+                  srcset="/public/assets/device-matrix/website/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-network-overview-dark-1080.webp 1080w"
+                  sizes="(max-width: 40em) 62vw, 14rem"
+                  width="1080" height="2274"
+                  alt="Dark Network screen showing the active Wi-Fi connection, operator and masked network identifiers."
+                  loading="lazy" decoding="async">
+              </div>
+              <figcaption class="dm-gallery__caption">
+                <span class="dm-gallery__label">Network</span>
+                <strong>Connection overview</strong>
+                <span>Active link and data use, with Wi-Fi names and addresses masked by default.</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="dm-gallery__slide">
+            <figure class="dm-gallery__figure">
+              <div class="dm-gallery__image">
+                <img
+                  src="/public/assets/device-matrix/website/img/dm-apps-analyzer-dark-1080.webp"
+                  srcset="/public/assets/device-matrix/website/img/dm-apps-analyzer-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-apps-analyzer-dark-1080.webp 1080w"
+                  sizes="(max-width: 40em) 62vw, 14rem"
+                  width="1080" height="2274"
+                  alt="App analyzer screen with target API and installer bar charts."
+                  loading="lazy" decoding="async">
+              </div>
+              <figcaption class="dm-gallery__caption">
+                <span class="dm-gallery__label">Apps</span>
+                <strong>Analyzer</strong>
+                <span>Launcher apps in context: target API, installer mix and declared permissions.</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="dm-gallery__slide">
+            <figure class="dm-gallery__figure">
+              <div class="dm-gallery__image">
+                <img
+                  src="/public/assets/device-matrix/website/img/dm-tests-hub-dark-1080.webp"
+                  srcset="/public/assets/device-matrix/website/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-tests-hub-dark-1080.webp 1080w"
+                  sizes="(max-width: 40em) 62vw, 14rem"
+                  width="1080" height="2274"
+                  alt="Hardware tests hub with an overall progress ring, Run all tests button and grouped test rows."
+                  loading="lazy" decoding="async">
+              </div>
+              <figcaption class="dm-gallery__caption">
+                <span class="dm-gallery__label">Tests</span>
+                <strong>Guided checks</strong>
+                <span>Run guided checks and record each result as passed, failed or untested.</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="dm-gallery__slide">
+            <figure class="dm-gallery__figure">
+              <div class="dm-gallery__image">
+                <img
+                  src="/public/assets/device-matrix/website/img/dm-plans-overview-dark-1080.webp"
+                  srcset="/public/assets/device-matrix/website/img/dm-plans-overview-dark-540.webp 540w, /public/assets/device-matrix/website/img/dm-plans-overview-dark-1080.webp 1080w"
+                  sizes="(max-width: 40em) 62vw, 14rem"
+                  width="1080" height="2274"
+                  alt="Dark Pro screen with Remove ads and Pro lifetime plan cards, feature lists and Price unavailable buttons."
+                  loading="lazy" decoding="async">
+              </div>
+              <figcaption class="dm-gallery__caption">
+                <span class="dm-gallery__label">Plans</span>
+                <strong>Optional extras</strong>
+                <span>Optional one-time Remove ads and Pro plans; Google Play supplies the local price.</span>
+              </figcaption>
+            </figure>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark cta-band" aria-labelledby="features-cta-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 id="features-cta-title">See which parts fit your phone.</h2>
+          <p>Start with the free information screens and the guided checks. Add Remove ads or Pro only if you want more.</p>
+        </div>
+        <div class="actions" data-reveal>
+          <a class="btn btn--light" href="/device-matrix/plans/">See plans</a>
+          <a class="dm-cta-link" href="/device-matrix/#faq">Read the FAQ</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/device-matrix/">
+            <img class="brand__img" src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="38" height="38" loading="lazy">
+            <span class="brand__text">
+              <span class="brand__name">Device Matrix</span>
+              <span class="brand__by">System Info</span>
+            </span>
+          </a>
+          <p class="footer-brand__text">
+            Clear Android readings, guided hardware checks and local
+            reports &mdash; for Android 8.0 and later.
+          </p>
+          <a class="binkod-link" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
+            <img src="/public/assets/shared/binkod-wordmark-473x135.png" alt="BINKOD Tech" width="473" height="135" loading="lazy">
+          </a>
+          <p class="made-in">Made in India <span class="made-in__heart" aria-hidden="true">&#10084;&#65039;</span></p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="/device-matrix/">Home</a></li>
+            <li><a href="/device-matrix/features/">Features</a></li>
+            <li><a href="/device-matrix/plans/">Plans</a></li>
+            <li><a href="/device-matrix/#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Support</h2>
+          <ul class="footer-links">
+            <li><a href="/device-matrix/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/device-matrix/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-cta">
+          <h2 class="footer__title">Android utility</h2>
+          <p class="footer-cta__text">Informational readings, guided checks and local reports for Android.</p>
+          <a class="btn btn--outline btn--sm" href="/device-matrix/features/">Explore features</a>
+        </div>
+      </div>
+      <div class="footer-bottom footer-bottom--dm">
+        <p class="dm-trademark">Android and Google Play are trademarks of Google LLC. Product and brand names belong to their respective owners.</p>
+        <span>&copy; 2026 BINKOD Tech. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

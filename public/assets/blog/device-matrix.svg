@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-labelledby="title desc">
+  <title id="title">Device Matrix: System Info</title>
+  <desc id="desc">Three tilted Android phone screens show a device dashboard, hardware information and a network overview against a dark technical grid.</desc>
+  <defs>
+    <linearGradient id="dm-blog-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050f20"/>
+      <stop offset=".58" stop-color="#081a32"/>
+      <stop offset="1" stop-color="#0a2840"/>
+    </linearGradient>
+    <linearGradient id="dm-blog-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7db2ff"/>
+      <stop offset=".55" stop-color="#6ee7f9"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="dm-blog-screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c203b"/>
+      <stop offset="1" stop-color="#071528"/>
+    </linearGradient>
+    <pattern id="dm-blog-grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0v34" fill="none" stroke="#8db8ff" stroke-opacity=".065"/>
+    </pattern>
+    <filter id="dm-blog-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="dm-blog-shadow" x="-50%" y="-30%" width="200%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#dm-blog-bg)"/>
+  <rect width="800" height="450" fill="url(#dm-blog-grid)"/>
+  <ellipse cx="620" cy="230" rx="210" ry="170" fill="#2563eb" fill-opacity=".18" filter="url(#dm-blog-glow)"/>
+  <ellipse cx="246" cy="370" rx="150" ry="90" fill="#22d3ee" fill-opacity=".08" filter="url(#dm-blog-glow)"/>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <g>
+      <rect x="52" y="52" width="42" height="42" rx="11" fill="#0d2441" stroke="#7db2ff" stroke-opacity=".38"/>
+      <rect x="61" y="60" width="24" height="26" rx="5" fill="none" stroke="#6ee7f9" stroke-opacity=".7" stroke-width="1.8"/>
+      <path d="M68 68h10M68 74h10M68 80h6" stroke="#7db2ff" stroke-opacity=".65" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="108" y="70" fill="#eef4ff" font-size="13" font-weight="800" letter-spacing=".6">DEVICE MATRIX</text>
+      <text x="108" y="88" fill="#6ee7f9" font-size="9" font-weight="700" letter-spacing="2.2">SYSTEM INFO</text>
+    </g>
+
+    <text x="52" y="168" fill="#eef4ff" font-size="33" font-weight="800" letter-spacing="-1">A clearer view of</text>
+    <text x="52" y="207" fill="url(#dm-blog-accent)" font-size="33" font-weight="800" letter-spacing="-1">your Android phone.</text>
+    <text x="52" y="242" fill="#9db0cc" font-size="12.5">Hardware, network, apps, guided checks and</text>
+    <text x="52" y="261" fill="#9db0cc" font-size="12.5">local reports — without an account.</text>
+
+    <g>
+      <rect x="52" y="298" width="150" height="34" rx="17" fill="#0d2441" stroke="#7db2ff" stroke-opacity=".32"/>
+      <circle cx="70" cy="315" r="5" fill="#6ee7f9"/>
+      <text x="84" y="319" fill="#cfe2fa" font-size="10.5" font-weight="700" letter-spacing=".5">READINGS STAY LOCAL</text>
+    </g>
+  </g>
+
+  <g filter="url(#dm-blog-shadow)">
+    <g transform="rotate(-11 480 244)">
+      <rect x="398" y="86" width="154" height="318" rx="27" fill="#0b1b31" stroke="#6b8cb8" stroke-opacity=".45" stroke-width="2"/>
+      <rect x="408" y="101" width="134" height="288" rx="18" fill="url(#dm-blog-screen)"/>
+      <rect x="452" y="91" width="46" height="5" rx="2.5" fill="#334f73"/>
+      <rect x="419" y="112" width="72" height="7" rx="3.5" fill="#7db2ff" fill-opacity=".48"/>
+      <circle cx="523" cy="139" r="18" fill="#0b2039" stroke="#6ee7f9" stroke-opacity=".4"/>
+      <path d="M523 126a13 13 0 0 1 12 9" fill="none" stroke="#6ee7f9" stroke-width="2.4" stroke-linecap="round"/>
+      <text x="523" y="143" text-anchor="middle" fill="#eaf5ff" font-size="10" font-weight="800">80</text>
+      <rect x="419" y="169" width="61" height="45" rx="6" fill="#102a4b" stroke="#6ee7f9" stroke-opacity=".16"/>
+      <rect x="419" y="222" width="61" height="45" rx="6" fill="#102a4b" stroke="#7db2ff" stroke-opacity=".14"/>
+      <rect x="488" y="169" width="43" height="98" rx="6" fill="#102a4b" stroke="#7db2ff" stroke-opacity=".14"/>
+      <rect x="427" y="178" width="35" height="5" rx="2.5" fill="#6ee7f9" fill-opacity=".6"/>
+      <path d="M426 202l8-7 7 4 9-9" fill="none" stroke="#6ee7f9" stroke-opacity=".65" stroke-width="1.6"/>
+      <rect x="427" y="232" width="32" height="5" rx="2.5" fill="#7db2ff" fill-opacity=".5"/>
+      <rect x="426" y="252" width="44" height="4" rx="2" fill="#7db2ff" fill-opacity=".2"/>
+      <rect x="419" y="281" width="112" height="33" rx="7" fill="#0d2441" stroke="#6ee7f9" stroke-opacity=".18"/>
+      <rect x="428" y="294" width="52" height="5" rx="2.5" fill="#6ee7f9" fill-opacity=".5"/>
+      <rect x="419" y="324" width="112" height="33" rx="7" fill="#0d2441" stroke="#7db2ff" stroke-opacity=".16"/>
+      <rect x="428" y="337" width="62" height="5" rx="2.5" fill="#7db2ff" fill-opacity=".4"/>
+    </g>
+
+    <g transform="rotate(9 618 226)">
+      <rect x="545" y="68" width="150" height="310" rx="26" fill="#0b1b31" stroke="#6b8cb8" stroke-opacity=".4" stroke-width="2"/>
+      <rect x="555" y="82" width="130" height="282" rx="17" fill="url(#dm-blog-screen)"/>
+      <rect x="596" y="72" width="48" height="5" rx="2.5" fill="#334f73"/>
+      <rect x="566" y="94" width="43" height="7" rx="3.5" fill="#6ee7f9" fill-opacity=".45"/>
+      <rect x="616" y="94" width="59" height="7" rx="3.5" fill="#7db2ff" fill-opacity=".18"/>
+      <rect x="566" y="118" width="109" height="67" rx="8" fill="#0d2441" stroke="#6ee7f9" stroke-opacity=".2"/>
+      <rect x="577" y="129" width="48" height="6" rx="3" fill="#eaf5ff" fill-opacity=".72"/>
+      <rect x="577" y="143" width="78" height="4" rx="2" fill="#7db2ff" fill-opacity=".24"/>
+      <rect x="577" y="153" width="57" height="4" rx="2" fill="#7db2ff" fill-opacity=".18"/>
+      <path d="M577 173h86" stroke="#6ee7f9" stroke-opacity=".42" stroke-width="2"/>
+      <rect x="566" y="198" width="52" height="45" rx="7" fill="#102a4b" stroke="#7db2ff" stroke-opacity=".15"/>
+      <rect x="623" y="198" width="52" height="45" rx="7" fill="#102a4b" stroke="#7db2ff" stroke-opacity=".15"/>
+      <circle cx="592" cy="216" r="8" fill="none" stroke="#6ee7f9" stroke-opacity=".6" stroke-width="1.6"/>
+      <path d="M588 216l3 3 6-7" fill="none" stroke="#6ee7f9" stroke-width="1.6"/>
+      <path d="M649 212v17M642 220h14" stroke="#7db2ff" stroke-opacity=".58" stroke-width="1.7" stroke-linecap="round"/>
+      <rect x="566" y="257" width="109" height="11" rx="5.5" fill="#7db2ff" fill-opacity=".13"/>
+      <rect x="566" y="276" width="87" height="11" rx="5.5" fill="#7db2ff" fill-opacity=".1"/>
+      <rect x="566" y="295" width="102" height="11" rx="5.5" fill="#6ee7f9" fill-opacity=".28"/>
+      <rect x="566" y="326" width="109" height="25" rx="7" fill="#12395f" stroke="#6ee7f9" stroke-opacity=".3"/>
+      <rect x="582" y="334" width="76" height="4" rx="2" fill="#cfe2fa" fill-opacity=".55"/>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#6ee7f9" stroke-opacity=".38" stroke-width="1.4">
+    <path d="M711 80c22 15 30 41 20 64"/>
+    <circle cx="730" cy="148" r="3.5" fill="#6ee7f9" stroke="none"/>
+  </g>
+
+  <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+    <rect x="52" y="386" width="78" height="24" rx="12" fill="#0b2039" stroke="#7db2ff" stroke-opacity=".25"/>
+    <text x="91" y="402" text-anchor="middle" fill="#9db0cc" font-size="8" font-weight="700" letter-spacing="1.2">ANDROID</text>
+    <rect x="138" y="386" width="96" height="24" rx="12" fill="#0b2039" stroke="#7db2ff" stroke-opacity=".25"/>
+    <text x="186" y="402" text-anchor="middle" fill="#9db0cc" font-size="8" font-weight="700" letter-spacing="1.2">NO ACCOUNT</text>
+    <rect x="242" y="386" width="105" height="24" rx="12" fill="#0b2039" stroke="#7db2ff" stroke-opacity=".25"/>
+    <text x="294.5" y="402" text-anchor="middle" fill="#9db0cc" font-size="8" font-weight="700" letter-spacing="1.2">LOCAL REPORTS</text>
+  </g>
+</svg>
