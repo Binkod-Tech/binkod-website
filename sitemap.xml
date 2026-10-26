@@ -10,6 +10,18 @@
     <loc>https://app.binkod.in/family-path-locator/</loc>
   </url>
   <url>
+    <loc>https://app.binkod.in/device-matrix/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/features/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/plans/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/contact/</loc>
+  </url>
+  <url>
     <loc>https://app.binkod.in/family-path-locator/contact/</loc>
   </url>
   <url>
@@ -26,7 +38,11 @@
   </url>
   <url>
     <loc>https://app.binkod.in/blogs/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/blogs/device-matrix-explained/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://app.binkod.in/blogs/ai-changing-the-world/</loc>
