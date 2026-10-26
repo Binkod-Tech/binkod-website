@@ -19,3 +19,4 @@ Desktop.ini
 # Node (not used by this project; guards against accidental installs)
 node_modules/
 package-lock.json
+public/assets/device-matrix/website
