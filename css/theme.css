@@ -1118,7 +1118,7 @@ html[data-mode="light"] .arch__node.is-active .arch__node-icon {
 }
 
 html[data-mode="light"] .arch__node-sub {
-  color: #7a8aa3;
+  color: #65768e;
 }
 
 html[data-mode="light"] .arch__node--api {
@@ -1160,19 +1160,19 @@ html[data-mode="light"] .arch__api-label {
 }
 
 html[data-mode="light"] .arch__link {
-  background-color: rgba(37, 99, 235, 0.2);
+  background-color: rgba(37, 99, 235, 0.28);
 }
 
 html[data-mode="light"] .arch__link::before {
-  border-left-color: rgba(37, 99, 235, 0.34);
+  border-left-color: rgba(37, 99, 235, 0.5);
 }
 
 html[data-mode="light"] .arch__link.is-done {
-  background-color: rgba(37, 99, 235, 0.5);
+  background-color: rgba(37, 99, 235, 0.6);
 }
 
 html[data-mode="light"] .arch__link.is-done::before {
-  border-left-color: rgba(37, 99, 235, 0.72);
+  border-left-color: rgba(37, 99, 235, 0.8);
 }
 
 html[data-mode="light"] .arch__status {

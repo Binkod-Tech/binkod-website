@@ -129,7 +129,7 @@
                     <span class="bk-menu-item__desc">Pre-primary learning &amp; practice</span>
                   </span>
                 </a>
-                <div class="bk-menu-item">
+                <a class="bk-menu-item" href="/device-matrix/">
                   <img class="bk-menu-item__icon" src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="38" height="38">
                   <span class="bk-menu-item__meta">
                     <span class="bk-menu-item__name">
@@ -138,7 +138,7 @@
                     </span>
                     <span class="bk-menu-item__desc">System Info · Android utility</span>
                   </span>
-                </div>
+                </a>
                 <div class="bk-menu-item">
                   <img class="bk-menu-item__icon" src="/public/assets/device-matrix/icons/smart-storage-analyzer.svg" alt="" width="38" height="38">
                   <span class="bk-menu-item__meta">
@@ -186,7 +186,7 @@
         <div class="hero__copy">
           <p class="hero__eyebrow">
             <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-            Digital Solutions Developer · India
+            Digital Solutions · Smart Tools Builder
           </p>
           <h1 id="hero-title">
             Building Useful Apps.<br>
@@ -214,129 +214,119 @@
           </div>
         </div>
 
-        <!-- Compact solar-system composition: the phone stays still while
-             three orbit layers move at different speeds. The status of every
-             app is stated in the copy and in the applications section below. -->
+        <!-- Tilted app showcase: a phone cycles through the apps we have
+             built while app names, services and technologies travel on three
+             separate elliptical paths at different angles and speeds. The
+             whole composition is decorative; the copy carries the meaning. -->
         <div class="hero__visual" data-home-reveal aria-hidden="true">
-          <div class="hero-orbit">
-            <span class="hero-orbit__glow"></span>
-            <span class="hero-orbit__ring hero-orbit__ring--outer"></span>
-            <span class="hero-orbit__ring hero-orbit__ring--middle"></span>
-            <span class="hero-orbit__ring hero-orbit__ring--inner"></span>
+          <div class="hero-stage">
+            <span class="hero-stage__glow"></span>
+            <span class="hero-stage__disc"></span>
 
-            <div class="hero-orbit__track hero-orbit__track--outer">
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-1">
-                <div class="hero-orbit__card hero-orbit__card--apps">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6.5" y="2.5" width="11" height="19" rx="2.4"/><path d="M10.5 18.5h3"/></svg>
+            <div class="hero-solar hero-solar--apps" style="--orbit-width: 94%; --orbit-height: 64%; --orbit-tilt: -17deg; --orbit-duration: 24s; --orbit-delay: -8s;">
+              <span class="hero-solar__path"></span>
+              <div class="hero-solar__track">
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <img src="/public/assets/family-path/icons/familypath.png" alt="" width="16" height="16">
+                    <span>Family Path</span>
+                  </span>
                 </span>
-                <span class="hero-orbit__name">Apps</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-2">
-                <div class="hero-orbit__card hero-orbit__card--web">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.8" y="4" width="18.4" height="16" rx="2.2"/><path d="M2.8 9h18.4"/><path d="M6 6.5h.01M9 6.5h.01M12 6.5h.01"/><path d="M7 13h6M7 16.5h10"/></svg>
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <img src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="16" height="16">
+                    <span>Device Matrix</span>
+                  </span>
                 </span>
-                <span class="hero-orbit__name">Web</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-3">
-                <div class="hero-orbit__card hero-orbit__card--frontend">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="4" width="17" height="16" rx="2.2"/><path d="M3.5 8.5h17"/><path d="M8 12h3v5H8z"/><path d="M14 12h3M14 15.5h3"/></svg>
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <img src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="16" height="16">
+                    <span>BINKOD ABC</span>
+                  </span>
                 </span>
-                <span class="hero-orbit__name">Frontend</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-4">
-                <div class="hero-orbit__card hero-orbit__card--backend">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="4" width="17" height="6.4" rx="1.8"/><rect x="3.5" y="13.6" width="17" height="6.4" rx="1.8"/><path d="M7 7.2h.01"/><path d="M7 16.8h.01"/><path d="M11 7.2h5M11 16.8h5"/></svg>
-                </span>
-                <span class="hero-orbit__name">Backend</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-5">
-                <div class="hero-orbit__card hero-orbit__card--api">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 8 4 12l4 4"/><path d="M16 8l4 4-4 4"/><path d="M13.5 5.5l-3 13"/></svg>
-                </span>
-                <span class="hero-orbit__name">API</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-6">
-                <div class="hero-orbit__card hero-orbit__card--cloud">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 18.5h9.2a4.3 4.3 0 0 0 .5-8.6A6 6 0 0 0 5.4 11 3.8 3.8 0 0 0 7 18.5z"/><path d="M9 14.5h6M12 11.5v6"/></svg>
-                </span>
-                <span class="hero-orbit__name">Cloud</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-7">
-                <div class="hero-orbit__card hero-orbit__card--crm">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c.5-3.3 2.6-5 5.5-5s5 1.7 5.5 5"/><circle cx="17" cy="9" r="2.3"/><path d="M16 14.2c2.6-.3 4.3 1.3 4.7 4.3"/></svg>
-                </span>
-                <span class="hero-orbit__name">CRM</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-8">
-                <div class="hero-orbit__card hero-orbit__card--architecture">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3.5 21 8l-9 4.5L3 8z"/><path d="M3 12.5 12 17l9-4.5"/><path d="M3 17 12 21.5 21 17"/></svg>
-                </span>
-                <span class="hero-orbit__name">Architecture</span>
-                </div>
-              </div>
-              <div class="hero-orbit__node hero-orbit__node--outer-pos-9">
-                <div class="hero-orbit__card hero-orbit__card--ai">
-                <span class="hero-orbit__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2.2"/><path d="M10 3.5v3.5M14 3.5v3.5M10 17v3.5M14 17v3.5M3.5 10H7M3.5 14H7M17 10h3.5M17 14h3.5"/><path d="M10.5 12h3"/></svg>
-                </span>
-                <span class="hero-orbit__name">AI</span>
-                </div>
               </div>
             </div>
 
-            <div class="hero-orbit__track hero-orbit__track--middle">
-              <div class="hero-orbit__node hero-orbit__node--middle-dot-a"><span class="hero-orbit__dot"></span></div>
-              <div class="hero-orbit__node hero-orbit__node--middle-dot-b"><span class="hero-orbit__dot"></span></div>
-              <div class="hero-orbit__node hero-orbit__node--middle-dot-c"><span class="hero-orbit__dot"></span></div>
+            <div class="hero-solar hero-solar--services" style="--orbit-width: 73%; --orbit-height: 94%; --orbit-tilt: 24deg; --orbit-duration: 29s; --orbit-delay: -20s;">
+              <span class="hero-solar__path"></span>
+              <div class="hero-solar__track">
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <span class="hero-solar__spark"></span>
+                    <span>Android</span>
+                  </span>
+                </span>
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <span class="hero-solar__spark"></span>
+                    <span>Web apps</span>
+                  </span>
+                </span>
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <span class="hero-solar__spark"></span>
+                    <span>AI tools</span>
+                  </span>
+                </span>
+              </div>
             </div>
 
-            <div class="hero-orbit__track hero-orbit__track--inner">
-              <div class="hero-orbit__node hero-orbit__node--inner-dot-a"><span class="hero-orbit__dot"></span></div>
-              <div class="hero-orbit__node hero-orbit__node--inner-dot-b"><span class="hero-orbit__dot"></span></div>
+            <div class="hero-solar hero-solar--tech" style="--orbit-width: 108%; --orbit-height: 32%; --orbit-tilt: 8deg; --orbit-duration: 19s; --orbit-delay: -5s;">
+              <span class="hero-solar__path"></span>
+              <div class="hero-solar__track">
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <span>.NET</span>
+                  </span>
+                </span>
+                <span class="hero-solar__chip">
+                  <span class="hero-solar__chip-inner">
+                    <span>Flutter</span>
+                  </span>
+                </span>
+              </div>
             </div>
 
-            <div class="hero-phone-wrap">
-              <div class="hero-phone">
-                <div class="hero-phone__screen">
-                  <img src="/public/assets/family-path/images/flash2%20location%20sharing.png" alt="" width="500" height="500">
-                  <span class="hero-phone__shade"></span>
-                  <div class="hero-phone__statusbar">
-                    <span>9:41</span>
-                    <svg viewBox="0 0 60 14" aria-hidden="true" focusable="false"><rect x="0" y="2" width="22" height="10" rx="2.4"/><rect x="24" y="4" width="16" height="6" rx="1.6" opacity=".65"/><rect x="42" y="4" width="14" height="6" rx="1.6" opacity=".4"/></svg>
+            <div class="hero-device" data-hero-showcase>
+              <div class="hero-device__wrap">
+                <div class="hero-device__frame">
+                  <div class="hero-device__screen">
+                    <div class="hero-device__slide is-active" data-hero-slide>
+                      <img src="/public/assets/family-path/images/flash2%20location%20sharing.png" alt="" width="500" height="500" fetchpriority="high">
+                      <span class="hero-device__shade"></span>
+                      <span class="hero-device__app">
+                        <img src="/public/assets/family-path/icons/familypath.png" alt="" width="16" height="16">
+                        <span>Family Path</span>
+                      </span>
+                    </div>
+                    <div class="hero-device__slide" data-hero-slide>
+                      <img src="/public/assets/device-matrix/website/img/dm-home-dashboard-dark-540.webp" alt="" width="1080" height="2274" loading="lazy" decoding="async">
+                      <span class="hero-device__shade"></span>
+                      <span class="hero-device__app">
+                        <img src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="16" height="16">
+                        <span>Device Matrix</span>
+                      </span>
+                    </div>
+                    <div class="hero-device__slide hero-device__slide--abc" data-hero-slide>
+                      <span class="hero-device__abc-mark">
+                        <img src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="64" height="64" loading="lazy">
+                      </span>
+                      <span class="hero-device__abc-row" aria-hidden="true">
+                        <span>A</span><span>B</span><span>C</span>
+                      </span>
+                      <span class="hero-device__app">
+                        <img src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="16" height="16">
+                        <span>BINKOD ABC</span>
+                      </span>
+                    </div>
                   </div>
-                  <div class="hero-phone__top">
-                    <img src="/public/assets/family-path/icons/familypath.png" alt="" width="25" height="25" loading="lazy">
-                    <span>
-                      <strong>Family Path Locator</strong>
-                      <small>Stay close, wherever you go</small>
-                    </span>
-                  </div>
-                  <div class="hero-phone__chips">
-                    <span>Family map</span>
-                    <span>Location sharing</span>
-                    <span>Safety alerts</span>
-                  </div>
+                  <span class="hero-device__shine"></span>
+                  <span class="hero-device__island"></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -437,8 +427,10 @@
               </li>
             </ul>
             <div class="app-card__footer">
-              <span class="app-card__informational">Informational listing — no public app page yet</span>
-              <span class="app-card__platform">Android · Internal testing</span>
+              <a class="app-card__link" href="/device-matrix/">
+                View app details <span aria-hidden="true">→</span>
+              </a>
+              <span class="app-card__platform">Android</span>
             </div>
           </article>
 
@@ -542,9 +534,10 @@
             <p class="home-eyebrow">Blogs</p>
             <h2 id="blogs-title">Technology, explained simply.</h2>
             <p>
-              Clear guides for everyday readers: AI in daily life, AI-assisted
-              software development, software architecture, cloud computing, and
-              how applications, APIs and AI tools connect. No jargon required.
+              Clear guides for everyday readers: the apps we build, AI in daily
+              life, AI-assisted software development, software architecture,
+              cloud computing, and how applications, APIs and AI tools connect.
+              No jargon required.
             </p>
           </div>
           <a class="btn btn--ghost" href="/blogs/">Browse all articles</a>
@@ -552,6 +545,22 @@
 
         <div class="blog-rail" data-blog-slider data-home-reveal>
           <div class="blog-rail__viewport" data-blog-viewport role="region" aria-label="BINKOD Tech blog articles" tabindex="0">
+            <article class="post-card">
+              <div class="post-card__media">
+                <img src="/public/assets/blog/device-matrix.svg" alt="Three tilted phone screens showing Device Matrix hardware, network and dashboard information." width="800" height="450" loading="lazy">
+              </div>
+              <div class="post-card__body">
+                <span class="post-card__cat">Apps &amp; Android</span>
+                <h3 class="post-card__title"><a href="/blogs/device-matrix-explained/">Device Matrix, Explained: What It Shows and How It Helps Your Phone</a></h3>
+                <p class="post-card__summary">
+                  The hardware, network, app and permission details Device Matrix
+                  reads, what its guided checks and local reports do, and how
+                  each feature can help your Android phone.
+                </p>
+                <span class="post-card__more">Read article <span aria-hidden="true">→</span></span>
+              </div>
+            </article>
+
             <article class="post-card">
               <div class="post-card__media">
                 <img src="/public/assets/blog/cloud-computing.svg" alt="A phone and laptop connected through the internet to cloud services." width="800" height="450" loading="lazy">
@@ -745,7 +754,7 @@
           <ul class="bk-footer__links">
             <li><a href="/family-path-locator/">Family Path Locator</a></li>
             <li><a href="/binkod-abc/">BINKOD ABC</a></li>
-            <li><span>Device Matrix <span class="bk-footer__soon">Internal testing</span></span></li>
+            <li><a href="/device-matrix/">Device Matrix <span class="bk-footer__soon">Internal testing</span></a></li>
             <li><span>Smart Storage Analyzer <span class="bk-footer__soon">Under development</span></span></li>
             <li><a href="/#applications">All applications</a></li>
           </ul>

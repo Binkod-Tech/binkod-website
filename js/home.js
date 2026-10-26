@@ -4,6 +4,8 @@
    1. Scroll reveal (content stays visible if JavaScript fails).
    2. The BINKOD Tech blog rail: native horizontal scrolling, touch swipe,
       arrow controls and keyboard support. No autoplay and no dependencies.
+   3. The decorative hero phone slider: one app screen at a time, paused
+      off-screen, in a hidden tab and for reduced-motion visitors.
    ========================================================================== */
 (function () {
   'use strict';
@@ -160,6 +162,69 @@
     updateControls();
   }
 
+  /* ------------------------------------------------------------------ */
+  /* 3. Hero app slider                                                  */
+  /* ------------------------------------------------------------------ */
+  function setupHeroShowcase() {
+    var showcase = document.querySelector('[data-hero-showcase]');
+    if (!showcase) {
+      return;
+    }
+
+    var slides = showcase.querySelectorAll('[data-hero-slide]');
+    if (slides.length < 2 || reducedMotion) {
+      return;
+    }
+
+    var current = 0;
+    var timer = null;
+    var visible = true;
+
+    function showNext() {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }
+
+    function start() {
+      if (timer !== null || !visible || document.hidden) {
+        return;
+      }
+      timer = window.setInterval(showNext, 4600);
+    }
+
+    function stop() {
+      if (timer === null) {
+        return;
+      }
+      window.clearInterval(timer);
+      timer = null;
+    }
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        if (visible) {
+          start();
+        } else {
+          stop();
+        }
+      }, { rootMargin: '120px 0px' });
+      observer.observe(showcase);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stop();
+      } else {
+        start();
+      }
+    });
+
+    start();
+  }
+
   setupReveal();
   setupBlogRail();
+  setupHeroShowcase();
 })();
