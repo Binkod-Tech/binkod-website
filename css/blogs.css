@@ -1956,42 +1956,24 @@
 }
 
 /* Device Matrix product guide --------------------------------------------- */
-.dm-blog-shots {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin: 1.5rem 0;
-}
-
-.dm-blog-shots figure {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+/* The screenshot carousel reuses the shared Device Matrix cards. These rules
+   only neutralise the article-prose list defaults, which are more specific
+   than the component's own resets. */
+.article-prose .dm-blog-carousel .dm-carousel__track,
+.article-prose .dm-blog-carousel .dm-screen-card__points {
   margin: 0;
-  padding: 0.42rem;
-  border: 1px solid #cfdeef;
-  border-radius: 16px;
-  background:
-    radial-gradient(circle at 90% 0%, rgba(34, 211, 238, 0.12), transparent 8rem),
-    #071426;
-  box-shadow: 0 18px 32px -30px rgba(7, 20, 38, 0.55);
+  padding: 0;
+  list-style: none;
 }
 
-.article-prose .dm-blog-shots img {
-  width: 100%;
-  height: auto;
-  border: 0;
-  border-radius: 11px;
-  background-color: #071426;
-}
-
-.article-prose .dm-blog-shots figcaption {
+.article-prose .dm-blog-carousel .dm-carousel__track > li {
   margin: 0;
-  padding: 0 0.18rem 0.22rem;
-  color: #b9cbe0;
-  font-size: 0.68rem;
-  line-height: 1.45;
-  text-align: left;
+  padding-left: 0;
+}
+
+.article-prose .dm-blog-carousel .dm-screen-card__points li {
+  margin: 0;
+  padding-left: 0.8rem;
 }
 
 .dm-blog-cta {
@@ -2028,11 +2010,6 @@
 }
 
 @media (min-width: 44em) {
-  .dm-blog-shots {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
-  }
-
   .dm-blog-cta {
     flex-direction: row;
     align-items: center;
