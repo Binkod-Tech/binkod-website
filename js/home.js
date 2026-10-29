@@ -6,6 +6,7 @@
       arrow controls and keyboard support. No autoplay and no dependencies.
    3. The decorative hero phone slider: one app screen at a time, paused
       off-screen, in a hidden tab and for reduced-motion visitors.
+   4. Randomised technology labels on the hero technology orbit.
    ========================================================================== */
 (function () {
   'use strict';
@@ -224,7 +225,93 @@
     start();
   }
 
+  /* ------------------------------------------------------------------ */
+  /* 4. Random technology labels on the hero tech orbit                  */
+  /* ------------------------------------------------------------------ */
+  function setupOrbitLabels() {
+    var labels = document.querySelectorAll('[data-orbit-label]');
+    if (!labels.length || reducedMotion) {
+      return;
+    }
+
+    var pool = [
+      '.NET',
+      'Flutter',
+      'Kotlin',
+      'Jetpack Compose',
+      'React',
+      'Node.js',
+      'TypeScript',
+      'Python',
+      'Firebase',
+      'Cloud APIs',
+      'SQL',
+      'Git'
+    ];
+    var timer = null;
+
+    function pickLabel(used) {
+      var available = [];
+      var i;
+      for (i = 0; i < pool.length; i++) {
+        if (used.indexOf(pool[i]) === -1) {
+          available.push(pool[i]);
+        }
+      }
+      if (!available.length) {
+        return pool[Math.floor(Math.random() * pool.length)];
+      }
+      return available[Math.floor(Math.random() * available.length)];
+    }
+
+    function rotate() {
+      var used = [];
+      var i;
+      for (i = 0; i < labels.length; i++) {
+        used.push(labels[i].textContent);
+      }
+
+      for (i = 0; i < labels.length; i++) {
+        (function (label) {
+          var next = pickLabel(used);
+          used.push(next);
+          label.classList.add('is-swapping');
+          window.setTimeout(function () {
+            label.textContent = next;
+            label.classList.remove('is-swapping');
+          }, 180);
+        })(labels[i]);
+      }
+    }
+
+    function start() {
+      if (timer !== null || document.hidden) {
+        return;
+      }
+      timer = window.setInterval(rotate, 3400);
+    }
+
+    function stop() {
+      if (timer === null) {
+        return;
+      }
+      window.clearInterval(timer);
+      timer = null;
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        stop();
+      } else {
+        start();
+      }
+    });
+
+    start();
+  }
+
   setupReveal();
   setupBlogRail();
   setupHeroShowcase();
+  setupOrbitLabels();
 })();

@@ -167,7 +167,11 @@ html[data-mode="dark"] .shell :focus-visible {
   }
 
   .bk-brand__plate {
-    padding-inline: 0.48rem;
+    padding: 0.34rem 0.55rem;
+  }
+
+  .bk-brand__plate img {
+    height: 1.72rem;
   }
 
   .theme-switch {
@@ -471,12 +475,22 @@ html[data-mode="light"] .bk-header {
 }
 
 html[data-mode="light"] .bk-brand__plate {
-  border: 1px solid #e1eaf6;
-  box-shadow: 0 10px 22px -18px rgba(12, 25, 48, 0.4);
+  border-color: rgba(255, 255, 255, 0.85);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(237, 247, 255, 0.95));
+  box-shadow:
+    0 14px 28px -20px rgba(12, 25, 48, 0.5),
+    0 0 22px -3px rgba(56, 189, 248, 0.32),
+    0 0 40px -14px rgba(37, 99, 235, 0.36),
+    inset 0 1px 0 #ffffff;
 }
 
 html[data-mode="light"] .bk-brand:hover .bk-brand__plate {
-  box-shadow: 0 14px 26px -18px rgba(12, 25, 48, 0.45);
+  box-shadow:
+    0 16px 30px -18px rgba(12, 25, 48, 0.45),
+    0 0 28px -1px rgba(56, 189, 248, 0.42),
+    0 0 48px -12px rgba(37, 99, 235, 0.44),
+    inset 0 1px 0 #ffffff;
 }
 
 html[data-mode="light"] .bk-nav__link,
@@ -682,6 +696,10 @@ html[data-mode="light"] .hero {
   --hero-testing-bg: rgba(251, 191, 36, 0.1);
   --hero-testing-title: #4a3510;
   --hero-testing-text: #77591b;
+  --hero-tag-text: #1e4f9c;
+  --hero-tag-border: rgba(37, 99, 235, 0.22);
+  --hero-tag-bg: rgba(37, 99, 235, 0.07);
+  --hero-tag-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
   background:
     radial-gradient(48rem 30rem at 82% -8%, rgba(37, 99, 235, 0.13), transparent 64%),
     radial-gradient(38rem 24rem at 2% 18%, rgba(124, 58, 237, 0.08), transparent 65%),
@@ -704,6 +722,30 @@ html[data-mode="light"] .hero__orb--b {
 
 html[data-mode="light"] .hero__eyebrow-dot {
   box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+}
+
+html[data-mode="light"] .hero-solar--apps .hero-solar__path {
+  --orbit-line: rgba(37, 99, 235, 0.5);
+  --orbit-halo: rgba(14, 165, 233, 0.36);
+  --orbit-sheen: rgba(14, 165, 233, 0.9);
+  --orbit-sheen-alt: rgba(37, 99, 235, 0.55);
+  --orbit-inner: rgba(37, 99, 235, 0.06);
+}
+
+html[data-mode="light"] .hero-solar--services .hero-solar__path {
+  --orbit-line: rgba(8, 145, 178, 0.5);
+  --orbit-halo: rgba(6, 182, 212, 0.38);
+  --orbit-sheen: rgba(8, 145, 178, 0.88);
+  --orbit-sheen-alt: rgba(37, 99, 235, 0.46);
+  --orbit-inner: rgba(8, 145, 178, 0.06);
+}
+
+html[data-mode="light"] .hero-solar--tech .hero-solar__path {
+  --orbit-line: rgba(5, 150, 105, 0.44);
+  --orbit-halo: rgba(16, 185, 129, 0.34);
+  --orbit-sheen: rgba(5, 150, 105, 0.82);
+  --orbit-sheen-alt: rgba(8, 145, 178, 0.46);
+  --orbit-inner: rgba(5, 150, 105, 0.05);
 }
 
 html[data-mode="light"] .hero-orbit__glow {
