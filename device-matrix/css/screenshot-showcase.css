@@ -1,0 +1,435 @@
+/* ==========================================================================
+   Device Matrix: screenshot showcase
+   Shared phone-frame cards, homepage grid and carousel used by Device Matrix
+   pages and the Device Matrix blog article. Loaded after device-matrix.css
+   (or the blog theme stylesheet) wherever the showcase appears.
+   ========================================================================== */
+
+/* Shared screenshot cards -------------------------------------------------- */
+.dm-screen-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d7e6f3;
+  border-radius: 1.35rem;
+  background: #ffffff;
+  box-shadow: 0 22px 46px -42px rgba(7, 20, 38, 0.55);
+}
+
+.dm-screen-card__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  padding: clamp(0.8rem, 0.68rem + 0.5vw, 1.05rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 16%, rgba(34, 211, 238, 0.16), transparent 58%),
+    linear-gradient(158deg, #0a1a31, #0e2b4d 58%, #083a4a);
+}
+
+.dm-screen-card__media::after {
+  content: "";
+  position: absolute;
+  inset: auto 12% 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.45), transparent);
+}
+
+/* Phone bezel shared by the homepage grid and Features carousel. The screen
+   keeps the 720 / 1532 capture ratio, so both themes sit in the same box. */
+.dm-screen-card__frame {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  padding: 5px;
+  border-radius: 1.55rem;
+  background: linear-gradient(155deg, #1b2f50, #0a1730 46%, #071426 78%, #0b2138);
+  box-shadow:
+    0 22px 40px -20px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(103, 232, 249, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.dm-screen-card__screen {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 720 / 1532;
+  overflow: hidden;
+  border-radius: 1.05rem;
+  background: #071426;
+}
+
+.dm-screen-card__shot {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.dm-screen-card__shot.is-active {
+  opacity: 1;
+}
+
+.dm-screen-card__controls {
+  display: flex;
+  justify-content: center;
+  padding: 0.55rem 1rem 0.4rem;
+  background: #ffffff;
+}
+
+.dm-screen-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.42rem;
+  padding: 0.6rem 1rem 0.95rem;
+  border-top: 1px solid #e4eff8;
+  background: #ffffff;
+}
+
+.dm-screen-card__eyebrow {
+  display: block;
+  overflow: hidden;
+  color: #0e7490;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.dm-screen-card__toggle {
+  display: inline-flex;
+  flex: none;
+  gap: 0.1rem;
+  padding: 0.12rem;
+  border: 1px solid #d3e5f4;
+  border-radius: 999px;
+  background: #eff7ff;
+}
+
+.dm-screen-card__toggle button {
+  min-height: 1.7rem;
+  padding: 0.2rem 0.68rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #4d6785;
+  font-family: inherit;
+  font-size: 0.6rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--t-fast), color var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.dm-screen-card__toggle button:hover {
+  color: #0e7490;
+}
+
+.dm-screen-card__toggle button.is-active {
+  border-color: #0e7490;
+  background: #0e7490;
+  color: #ffffff;
+  box-shadow: 0 8px 18px -12px rgba(14, 116, 144, 0.75);
+}
+
+.dm-screen-card__body h3 {
+  margin: 0;
+  color: #172b45;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.dm-screen-card__body > p {
+  margin: 0;
+  color: #5a708f;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.dm-screen-card__points {
+  display: grid;
+  gap: 0.3rem;
+  margin: auto 0 0;
+  padding: 0.55rem 0 0;
+  border-top: 1px solid #eaf2fa;
+  list-style: none;
+}
+
+.dm-screen-card__points li {
+  position: relative;
+  padding-left: 0.8rem;
+  color: #425b78;
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.dm-screen-card__points li::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.13);
+}
+
+.dm-screen-card__toggle button:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .dm-screen-card {
+    transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  }
+
+  .dm-screen-card:hover {
+    border-color: #bcd9ee;
+    box-shadow: 0 26px 52px -40px rgba(7, 20, 38, 0.62);
+  }
+}
+
+/* Homepage showcase grid --------------------------------------------------- */
+.dm-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  justify-items: center;
+  gap: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dm-screen-grid .dm-screen-card {
+  width: min(100%, 20rem);
+}
+
+@media (min-width: 48em) {
+  .dm-screen-grid {
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (max-width: 63.99em) {
+  .dm-screen-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.99em) {
+  .dm-screen-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Features carousel -------------------------------------------------------- */
+.dm-carousel {
+  --dm-card-w: min(74vw, 20rem);
+  --dm-gap: clamp(1rem, 0.8rem + 0.9vw, 1.5rem);
+  --dm-arrow: 2.75rem;
+  display: grid;
+  grid-template-columns: var(--dm-arrow) minmax(0, 1fr) var(--dm-arrow);
+  grid-template-areas:
+    "viewport viewport viewport"
+    "prev dots next";
+  align-items: center;
+  gap: 1rem;
+  margin-inline: auto;
+  padding-block: 0.35rem;
+}
+
+.dm-carousel__viewport {
+  grid-area: viewport;
+  position: relative;
+  min-width: 0;
+  padding-block: 0.35rem;
+  margin-block: -0.35rem;
+  overflow: hidden;
+  overflow: clip;
+  border-radius: 1.35rem;
+  touch-action: pan-y;
+  outline-offset: 2px;
+}
+
+.dm-carousel__track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--dm-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  will-change: transform;
+  transition: transform 430ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.dm-carousel__track.is-instant {
+  transition: none;
+}
+
+.dm-carousel .dm-screen-card {
+  flex: 0 0 var(--dm-card-w);
+  align-self: stretch;
+}
+
+.dm-carousel__arrow {
+  display: grid;
+  place-items: center;
+  width: var(--dm-arrow);
+  height: var(--dm-arrow);
+  padding: 0;
+  border: 1px solid #bcd6ec;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1e3a8a;
+  box-shadow: 0 12px 24px -18px rgba(7, 20, 38, 0.65);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: background-color var(--t-fast), border-color var(--t-fast), color var(--t-fast), transform var(--t-fast);
+}
+
+.dm-carousel__arrow--prev {
+  grid-area: prev;
+  justify-self: center;
+}
+
+.dm-carousel__arrow--next {
+  grid-area: next;
+  justify-self: center;
+}
+
+.dm-carousel__arrow .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.dm-carousel__arrow:hover {
+  border-color: #67b8e8;
+  background: #eff9ff;
+  color: #0e7490;
+  transform: translateY(-1px);
+}
+
+.dm-carousel__arrow:focus-visible,
+.dm-carousel__dot:focus-visible,
+.dm-carousel__viewport:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.dm-carousel__dots {
+  grid-area: dots;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  max-width: 100%;
+}
+
+.dm-carousel__dot {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dm-carousel__dot::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #b8cee2;
+  transition: width var(--t-fast), background-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.dm-carousel__dot:hover::before {
+  background: #67b8e8;
+}
+
+.dm-carousel__dot.is-active::before {
+  width: 1.1rem;
+  background: #0e7490;
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.12);
+}
+
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .dm-carousel {
+    --dm-card-w: clamp(16rem, 38vw, 20rem);
+  }
+}
+
+@media (min-width: 64em) {
+  .dm-carousel {
+    --dm-card-w: clamp(18rem, 24vw, 20rem);
+    grid-template-areas:
+      "prev viewport next"
+      ". dots .";
+    align-items: start;
+    gap: 1.3rem clamp(0.9rem, 1.5vw, 1.5rem);
+  }
+
+  .dm-carousel__arrow {
+    margin-top: calc(var(--dm-card-w) / 2 - var(--dm-arrow) / 2);
+  }
+
+  .dm-carousel__arrow--prev {
+    justify-self: end;
+  }
+
+  .dm-carousel__arrow--next {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 47.99em) {
+  .dm-carousel {
+    gap: 0.9rem;
+  }
+}
+
+@media (max-width: 22em) {
+  .dm-screen-card__body {
+    padding-inline: 0.9rem;
+  }
+
+  .dm-screen-card__toggle button {
+    padding-inline: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dm-carousel__track,
+  .dm-screen-card__shot,
+  .dm-carousel__arrow,
+  .dm-carousel__dot::before,
+  .dm-screen-card__toggle button,
+  .dm-home-preview__screen img,
+  .dm-home-preview__button {
+    transition: none;
+  }
+}

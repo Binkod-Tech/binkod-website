@@ -83,8 +83,10 @@
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/blogs.css">
   <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/device-matrix/css/screenshot-showcase.css">
   <script src="/js/global.js" defer></script>
   <script src="/js/theme.js" defer></script>
+  <script src="/device-matrix/js/device-matrix.js" defer></script>
   <script src="/js/blog.js" defer></script>
 </head>
 <body class="shell">
@@ -294,37 +296,31 @@
 
           <h2 id="screens">The main screens, at a glance</h2>
           <p>
-            The screens follow the same idea: show a clear reading, give it
-            context, and avoid pretending that missing information exists. Here
-            are real screens from the dark theme of the app.
+            The core screens follow the same idea: show a clear reading, give it
+            context, and avoid pretending that missing information exists. These
+            six captures cover the first questions about a phone: Home,
+            Hardware, Thermal, Battery, Storage and Memory. Use the arrows or
+            the dots to move through them, and switch any capture between Light
+            and Dark.
           </p>
 
-          <div class="dm-blog-shots">
-            <figure>
-              <img src="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp" srcset="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp 1080w" sizes="(max-width: 43.99em) 42vw, 14rem" width="1080" height="2274" alt="Device Matrix Home dashboard with health score and CPU, memory, storage and battery readings." loading="lazy" decoding="async">
-              <figcaption>Home dashboard: a local health summary and live readings.</figcaption>
-            </figure>
-            <figure>
-              <img src="/public/assets/device-matrix/img/dm-hardware-hub-dark-540.webp" srcset="/public/assets/device-matrix/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp 1080w" sizes="(max-width: 43.99em) 42vw, 14rem" width="1080" height="2274" alt="Device Matrix hardware hub listing device, CPU, heat, memory, storage, battery, display, camera and sensor screens." loading="lazy" decoding="async">
-              <figcaption>Hardware hub: every component detail in one list.</figcaption>
-            </figure>
-            <figure>
-              <img src="/public/assets/device-matrix/img/dm-network-overview-dark-540.webp" srcset="/public/assets/device-matrix/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-network-overview-dark-1080.webp 1080w" sizes="(max-width: 43.99em) 42vw, 14rem" width="1080" height="2274" alt="Device Matrix network screen with active Wi-Fi details and masked network identifiers." loading="lazy" decoding="async">
-              <figcaption>Network overview: active link, operator and masked identifiers.</figcaption>
-            </figure>
-            <figure>
-              <img src="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp" srcset="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp 540w, /public/assets/device-matrix/img/dm-apps-list-dark-540.webp 1080w" sizes="(max-width: 43.99em) 42vw, 14rem" width="1080" height="2274" alt="Device Matrix app analyzer with target API and installer charts." loading="lazy" decoding="async">
-              <figcaption>App analyzer: target API and installer information in context.</figcaption>
-            </figure>
-            <figure>
-              <img src="/public/assets/device-matrix/img/dm-tests-hub-dark-540.webp" srcset="/public/assets/device-matrix/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp 1080w" sizes="(max-width: 43.99em) 42vw, 14rem" width="1080" height="2274" alt="Device Matrix guided hardware tests hub with progress and grouped test rows." loading="lazy" decoding="async">
-              <figcaption>Guided checks: screen, touch, sound, sensors, ports and radios.</figcaption>
-            </figure>
-            <figure>
-              <img src="/public/assets/device-matrix/img/dm-widgets-overview-dark-540.webp" sizes="(max-width: 43.99em) 42vw, 14rem" width="1080" height="2274" alt="Device Matrix home-screen widget overview with RAM, storage, battery and device health layouts." loading="lazy" decoding="async">
-              <figcaption>Widgets: RAM, storage, battery and health at a glance.</figcaption>
-            </figure>
+          <div class="dm-carousel dm-blog-carousel" data-dm-carousel>
+            <p class="visually-hidden" id="dm-blog-carousel-help">Use the previous and next buttons, the pagination dots, a horizontal swipe, or the left and right arrow keys to move between screens.</p>
+            <button class="dm-carousel__arrow dm-carousel__arrow--prev" type="button" data-carousel-prev aria-label="Previous screen" aria-controls="dm-blog-carousel-viewport">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div class="dm-carousel__viewport" id="dm-blog-carousel-viewport" data-carousel-viewport tabindex="0" role="region" aria-roledescription="carousel" aria-label="Device Matrix core screens" aria-describedby="dm-blog-carousel-help">
+              <ul class="dm-carousel__track" data-carousel-track role="list"></ul>
+            </div>
+            <button class="dm-carousel__arrow dm-carousel__arrow--next" type="button" data-carousel-next aria-label="Next screen" aria-controls="dm-blog-carousel-viewport">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <div class="dm-carousel__dots" data-carousel-dots role="group" aria-label="Choose a screen"></div>
+            <p class="visually-hidden" data-carousel-status aria-live="polite"></p>
           </div>
+          <noscript>
+            <p>The screenshot carousel needs JavaScript. You can <a href="/device-matrix/features/">view the six core screens on the Device Matrix features page</a>.</p>
+          </noscript>
 
           <h2 id="tests">Guided checks for parts a settings page cannot test</h2>
           <p>
@@ -626,6 +622,13 @@
       </div>
 
       <div class="bk-footer__bottom">
+        <p class="bk-footer__legal">
+          All third-party trademarks, brand names, logos and product names are
+          the property of their respective owners. Device names and manufacturer
+          branding visible in screenshots are shown for identification and
+          illustration only. BINKOD Tech and Device Matrix are not affiliated
+          with, endorsed by, or sponsored by these manufacturers.
+        </p>
         <span>© 2026 BINKOD Tech. All rights reserved.</span>
         <span>Digital products for everyday life.</span>
       </div>

@@ -195,9 +195,17 @@
           <p class="hero__lead">
             We build useful mobile and web applications for everyday life and
             small businesses — and explore practical ways intelligent
-            technology can help. Clear products, thoughtful engineering and
-            plain explanations of how it all works.
+            technology can help.
           </p>
+          <p class="hero__lead hero__lead--secondary">
+            Clear products, thoughtful engineering and plain explanations of
+            how it all works.
+          </p>
+          <ul class="hero__tags" aria-label="What we build">
+            <li>Android apps</li>
+            <li>Web applications</li>
+            <li>Practical AI</li>
+          </ul>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#applications">
               Explore our applications
@@ -223,65 +231,63 @@
             <span class="hero-stage__glow"></span>
             <span class="hero-stage__disc"></span>
 
-            <div class="hero-solar hero-solar--apps" style="--orbit-width: 94%; --orbit-height: 64%; --orbit-tilt: -17deg; --orbit-duration: 24s; --orbit-delay: -8s;">
+            <div class="hero-solar hero-solar--apps" style="--orbit-width: 70%; --orbit-height: 56%; --orbit-tilt: -17deg; --orbit-duration: 24s; --orbit-delay: -8s;">
+              <span class="hero-solar__path"></span>
+              <div class="hero-solar__track"></div>
+            </div>
+
+            <div class="hero-solar hero-solar--services" style="--orbit-width: 50%; --orbit-height: 68%; --orbit-tilt: 24deg; --orbit-duration: 29s; --orbit-delay: -20s;">
+              <span class="hero-solar__path"></span>
+              <div class="hero-solar__track"></div>
+            </div>
+
+            <div class="hero-solar hero-solar--tech" style="--orbit-width: 86%; --orbit-height: 80%; --orbit-tilt: -6deg; --orbit-duration: 52s; --orbit-delay: -7s;">
               <span class="hero-solar__path"></span>
               <div class="hero-solar__track">
-                <span class="hero-solar__chip">
+                <span class="hero-solar__chip hero-chip--app">
                   <span class="hero-solar__chip-inner">
                     <img src="/public/assets/family-path/icons/familypath.png" alt="" width="16" height="16">
                     <span>Family Path</span>
                   </span>
                 </span>
-                <span class="hero-solar__chip">
-                  <span class="hero-solar__chip-inner">
-                    <img src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="16" height="16">
-                    <span>Device Matrix</span>
-                  </span>
-                </span>
-                <span class="hero-solar__chip">
-                  <span class="hero-solar__chip-inner">
-                    <img src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="16" height="16">
-                    <span>BINKOD ABC</span>
-                  </span>
-                </span>
-              </div>
-            </div>
-
-            <div class="hero-solar hero-solar--services" style="--orbit-width: 73%; --orbit-height: 94%; --orbit-tilt: 24deg; --orbit-duration: 29s; --orbit-delay: -20s;">
-              <span class="hero-solar__path"></span>
-              <div class="hero-solar__track">
-                <span class="hero-solar__chip">
+                <span class="hero-solar__chip hero-chip--service">
                   <span class="hero-solar__chip-inner">
                     <span class="hero-solar__spark"></span>
                     <span>Android</span>
                   </span>
                 </span>
-                <span class="hero-solar__chip">
+                <span class="hero-solar__chip hero-chip--app">
+                  <span class="hero-solar__chip-inner">
+                    <img src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="16" height="16">
+                    <span>BINKOD ABC</span>
+                  </span>
+                </span>
+                <span class="hero-solar__chip hero-chip--service">
                   <span class="hero-solar__chip-inner">
                     <span class="hero-solar__spark"></span>
                     <span>Web apps</span>
                   </span>
                 </span>
-                <span class="hero-solar__chip">
+                <span class="hero-solar__chip hero-chip--app">
+                  <span class="hero-solar__chip-inner">
+                    <img src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="16" height="16">
+                    <span>Device Matrix</span>
+                  </span>
+                </span>
+                <span class="hero-solar__chip hero-chip--service">
                   <span class="hero-solar__chip-inner">
                     <span class="hero-solar__spark"></span>
                     <span>AI tools</span>
                   </span>
                 </span>
-              </div>
-            </div>
-
-            <div class="hero-solar hero-solar--tech" style="--orbit-width: 108%; --orbit-height: 32%; --orbit-tilt: 8deg; --orbit-duration: 19s; --orbit-delay: -5s;">
-              <span class="hero-solar__path"></span>
-              <div class="hero-solar__track">
-                <span class="hero-solar__chip">
+                <span class="hero-solar__chip hero-chip--tech">
                   <span class="hero-solar__chip-inner">
-                    <span>.NET</span>
+                    <span class="hero-solar__label" data-orbit-label>.NET</span>
                   </span>
                 </span>
-                <span class="hero-solar__chip">
+                <span class="hero-solar__chip hero-chip--tech">
                   <span class="hero-solar__chip-inner">
-                    <span>Flutter</span>
+                    <span class="hero-solar__label" data-orbit-label>Flutter</span>
                   </span>
                 </span>
               </div>
@@ -300,7 +306,7 @@
                       </span>
                     </div>
                     <div class="hero-device__slide" data-hero-slide>
-                      <img src="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp" alt="" width="1080" height="2274" loading="lazy" decoding="async">
+                      <img src="/public/assets/device-matrix/screenshots/light/01-home.webp" alt="" width="720" height="1532" loading="lazy" decoding="async">
                       <span class="hero-device__shade"></span>
                       <span class="hero-device__app">
                         <img src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="16" height="16">
@@ -698,11 +704,10 @@
             <li><span class="tech-wall__item" tabindex="0" data-name="Microsoft technologies"><img src="/public/assets/tech/microsoft.svg" alt="" width="36" height="36" loading="lazy"><span class="visually-hidden">Microsoft technologies</span></span></li>
           </ul>
           <p class="home-tech__note">
-            All logos belong to their respective owners. They are shown only to
-            indicate technologies we use or explore — not products built by
-            BINKOD Tech. Their presence does not imply a partnership,
-            certification or official endorsement, and not every app uses every
-            technology listed.
+            Third-party logos are shown only to indicate technologies we use or
+            explore — not products built by BINKOD Tech. Their presence does not
+            imply a partnership, certification or official endorsement, and not
+            every app uses every technology listed.
           </p>
         </div>
       </div>
@@ -778,6 +783,13 @@
       </div>
 
       <div class="bk-footer__bottom">
+        <p class="bk-footer__legal">
+          All third-party trademarks, brand names, logos and product names are
+          the property of their respective owners. Device names and manufacturer
+          branding visible in screenshots are shown for identification and
+          illustration only. BINKOD Tech is not affiliated with, endorsed by, or
+          sponsored by these manufacturers.
+        </p>
         <span>© 2026 BINKOD Tech. All rights reserved.</span>
         <span>Digital products for everyday life.</span>
       </div>
