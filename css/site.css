@@ -742,6 +742,22 @@
   font-size: 0.78rem;
 }
 
+.bk-footer__legal {
+  flex: 1 0 100%;
+  max-width: 68rem;
+  margin: 0 0 0.2rem;
+  color: inherit;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+@media (max-width: 47.99em) {
+  .bk-footer__legal {
+    padding-right: 3.25rem;
+  }
+}
+
 .bk-footer__bottom a {
   color: #c0cee7;
   text-decoration: none;
