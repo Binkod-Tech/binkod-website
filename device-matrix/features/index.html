@@ -23,6 +23,7 @@
   <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/device-matrix/css/device-matrix.css">
+  <link rel="stylesheet" href="/device-matrix/css/screenshot-showcase.css">
   <script>
     document.documentElement.classList.add('js');
     window.setTimeout(function () {
@@ -116,11 +117,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Dark Home dashboard showing the health score, device summary and live CPU, memory, storage and battery tiles."
+                src="/public/assets/device-matrix/screenshots/light/01-home.webp"
+                width="720" height="1532"
+                alt="Light Home dashboard showing the locally calculated health score, device summary and live processor, memory, storage and battery tiles."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>Home brings the live health score, core readings and shortcuts into one dashboard.</figcaption>
@@ -151,11 +150,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Hardware hub listing Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors."
+                src="/public/assets/device-matrix/screenshots/light/02-hardware.webp"
+                width="720" height="1532"
+                alt="Light Hardware screen with a grid of Device and OS, CPU and GPU, Thermal, Memory, Storage, Battery, Display, Camera and Sensors entries."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>The hardware hub opens every on-device information screen.</figcaption>
@@ -186,11 +183,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-network-overview-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-network-overview-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Dark Network screen showing the active Wi-Fi connection, operator and masked network identifiers."
+                src="/public/assets/device-matrix/screenshots/light/03-network.webp"
+                width="720" height="1532"
+                alt="Light Network screen showing connection state, metered and VPN status, Data Saver, operator, roaming, Private DNS and masked IPv6 details."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>Network readings identify the active link; IP addresses and network names stay masked by default.</figcaption>
@@ -223,11 +218,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp"
-                srcset="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp 540w, /public/assets/device-matrix/img/dm-apps-list-dark-540.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="App analyzer screen with target API and installer bar charts."
+                src="/public/assets/device-matrix/screenshots/light/04-apps.webp"
+                width="720" height="1532"
+                alt="Light Apps screen with a launcher app search, filter and sort controls, a Usage Access notice and links to the app, permission and screen-time analyzers."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>The analyzer summarises launcher apps without claiming access to every installed package.</figcaption>
@@ -259,14 +252,12 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Hardware tests hub with an overall progress ring, Run all tests button and grouped test rows."
+                src="/public/assets/device-matrix/screenshots/light/05-tools.webp"
+                width="720" height="1532"
+                alt="Light Tools screen with a Guided Checkup entry, alarm and timer shortcuts, alarm list, flashlight, vibration patterns and screen tests."
                 loading="lazy" decoding="async">
             </div>
-            <figcaption>Guided checks cover display, touch, sound, sensors and power or radios.</figcaption>
+            <figcaption>The Tools screen opens the guided checkup and the individual screen, touch, sound and hardware checks.</figcaption>
           </figure>
         </div>
       </div>
@@ -445,135 +436,26 @@
       </div>
     </section>
 
-    <section class="section dm-gallery dm-gallery--full" aria-labelledby="features-gallery-title">
+    <section class="section dm-gallery dm-gallery--feature" aria-labelledby="features-gallery-title">
       <div class="container">
         <div class="dm-section__head dm-gallery__head" data-reveal>
-          <span class="eyebrow">Screens</span>
-          <h2 id="features-gallery-title">See the main screens before you install.</h2>
-          <p class="lead">A closer look at the dashboard, hardware details, network, apps, guided checks and plans.</p>
+          <span class="eyebrow">The six core screens</span>
+          <h2 id="features-gallery-title">Six screens, one reading path.</h2>
+          <p class="lead">Home gives the overview; Hardware opens the details, with Thermal, Battery, Storage and Memory alongside. Slide through the cards, or switch any capture between Light and Dark without losing your place.</p>
         </div>
-        <div class="dm-gallery__shell" data-dm-gallery data-reveal>
-          <div class="dm-gallery__controls" hidden>
-            <p class="dm-gallery__hint">Scroll, drag or use the arrows to browse.</p>
-            <div class="dm-gallery__buttons">
-              <button class="dm-gallery__button" type="button" data-gallery-prev aria-label="Previous screenshot">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-              <button class="dm-gallery__button" type="button" data-gallery-next aria-label="Next screenshot">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
+        <div class="dm-carousel" data-dm-carousel data-reveal>
+          <p class="visually-hidden" id="dm-carousel-help">Use the previous and next buttons, the pagination dots, a horizontal swipe, or the left and right arrow keys to move between screens.</p>
+          <button class="dm-carousel__arrow dm-carousel__arrow--prev" type="button" data-carousel-prev aria-label="Previous screen" aria-controls="dm-carousel-viewport">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div class="dm-carousel__viewport" id="dm-carousel-viewport" data-carousel-viewport tabindex="0" role="region" aria-roledescription="carousel" aria-label="Device Matrix core screens" aria-describedby="dm-carousel-help">
+            <ul class="dm-carousel__track" data-carousel-track role="list"></ul>
           </div>
-          <ul class="dm-gallery__track" tabindex="0" aria-label="Device Matrix screenshots">
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 62vw, 14rem"
-                  width="1080" height="2274"
-                  alt="Dark Home dashboard showing the health score, device summary and live CPU, memory, storage and battery tiles."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Home</span>
-                <strong>Dashboard</strong>
-                <span>The current health summary, core readings, usage and shortcuts in one view.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 62vw, 14rem"
-                  width="1080" height="2274"
-                  alt="Hardware hub listing Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Hardware</span>
-                <strong>Information hub</strong>
-                <span>Open device, processor, memory, storage, battery, display, camera and sensor details.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-network-overview-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-network-overview-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 62vw, 14rem"
-                  width="1080" height="2274"
-                  alt="Dark Network screen showing the active Wi-Fi connection, operator and masked network identifiers."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Network</span>
-                <strong>Connection overview</strong>
-                <span>Active link and data use, with Wi-Fi names and addresses masked by default.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp"
-                  srcset="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp 540w, /public/assets/device-matrix/img/dm-apps-list-dark-540.webp 1080w"
-                  sizes="(max-width: 40em) 62vw, 14rem"
-                  width="1080" height="2274"
-                  alt="App analyzer screen with target API and installer bar charts."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Apps</span>
-                <strong>Analyzer</strong>
-                <span>Launcher apps in context: target API, installer mix and declared permissions.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 62vw, 14rem"
-                  width="1080" height="2274"
-                  alt="Hardware tests hub with an overall progress ring, Run all tests button and grouped test rows."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Tests</span>
-                <strong>Guided checks</strong>
-                <span>Run guided checks and record each result as passed, failed or untested.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-plans-overview-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-plans-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-plans-overview-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 62vw, 14rem"
-                  width="1080" height="2274"
-                  alt="Dark Pro screen with Remove ads and Pro lifetime plan cards, feature lists and Price unavailable buttons."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Plans</span>
-                <strong>Optional extras</strong>
-                <span>Optional one-time Remove ads and Pro plans; Google Play supplies the local price.</span>
-              </figcaption>
-            </figure>
-          </li>
-          </ul>
+          <button class="dm-carousel__arrow dm-carousel__arrow--next" type="button" data-carousel-next aria-label="Next screen" aria-controls="dm-carousel-viewport">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <div class="dm-carousel__dots" data-carousel-dots role="group" aria-label="Choose a screen"></div>
+          <p class="visually-hidden" data-carousel-status aria-live="polite"></p>
         </div>
       </div>
     </section>

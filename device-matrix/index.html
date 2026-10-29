@@ -23,6 +23,7 @@
   <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/device-matrix/css/device-matrix.css">
+  <link rel="stylesheet" href="/device-matrix/css/screenshot-showcase.css">
   <script>
     document.documentElement.classList.add('js');
     window.setTimeout(function () {
@@ -105,18 +106,35 @@
           <span class="dm-hud dm-hud--read" aria-hidden="true">Readings stay local</span>
           <span class="dm-hud dm-hud--api" aria-hidden="true">Public Android APIs</span>
           <span class="dm-hud dm-hud--masked" aria-hidden="true">Network identifiers masked</span>
-          <figure class="dm-hero__figure dm-figure">
+          <figure class="dm-hero__figure dm-figure dm-home-preview" data-dm-home-preview data-preview-interval="2600">
             <div class="dm-shot dm-shot--hero">
-              <img
-                src="/public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp 1080w"
-                sizes="(max-width: 640px) 78vw, 340px"
-                width="1080" height="2274"
-                alt="Dark Home dashboard showing the health score, device summary and live CPU, memory, storage and battery tiles."
-                loading="eager" decoding="async" fetchpriority="high">
+              <div class="dm-home-preview__screen">
+                <img
+                  class="is-active"
+                  data-dm-home-image="light"
+                  src="/public/assets/device-matrix/screenshots/light/01-home.webp"
+                  width="720" height="1532"
+                  alt="Light Home dashboard showing the locally calculated health score, device summary and live processor, memory, storage and battery tiles."
+                  loading="eager" decoding="async" fetchpriority="high">
+                <img
+                  data-dm-home-image="dark"
+                  src="/public/assets/device-matrix/screenshots/dark/01-home.webp"
+                  width="720" height="1602"
+                  alt="Dark Home dashboard showing the locally calculated health score, device summary and live processor, memory, storage and battery tiles."
+                  loading="eager" decoding="async" aria-hidden="true">
+              </div>
+            </div>
+            <div class="dm-home-preview__controls" data-dm-home-controls role="group" aria-label="Home screenshot theme" hidden>
+              <button class="dm-home-preview__button is-active" type="button" data-dm-home-theme="light" aria-pressed="true">Light</button>
+              <button class="dm-home-preview__button" type="button" data-dm-home-theme="dark" aria-pressed="false">Dark</button>
             </div>
             <figcaption>Home brings the live health score, core readings and shortcuts into one dashboard.</figcaption>
           </figure>
+          <ul class="dm-hero__notes" aria-label="Device Matrix notes">
+            <li>Readings stay local</li>
+            <li>Public Android APIs</li>
+            <li>Network identifiers masked</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -306,11 +324,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Hardware hub listing Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors."
+                src="/public/assets/device-matrix/screenshots/light/02-hardware.webp"
+                width="720" height="1532"
+                alt="Light Hardware screen with a grid of Device and OS, CPU and GPU, Thermal, Memory, Storage, Battery, Display, Camera and Sensors entries."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>The hardware hub opens every on-device information screen.</figcaption>
@@ -341,11 +357,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-network-overview-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-network-overview-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Dark Network screen showing the active Wi-Fi connection, operator and masked network identifiers."
+                src="/public/assets/device-matrix/screenshots/light/03-network.webp"
+                width="720" height="1532"
+                alt="Light Network screen showing connection state, metered and VPN status, Data Saver, operator, roaming, Private DNS and masked IPv6 details."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>Network readings identify the active link; IP addresses and network names stay masked by default.</figcaption>
@@ -377,11 +391,9 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp"
-                srcset="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp 540w, /public/assets/device-matrix/img/dm-apps-list-dark-540.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="App analyzer screen with target API and installer bar charts."
+                src="/public/assets/device-matrix/screenshots/light/04-apps.webp"
+                width="720" height="1532"
+                alt="Light Apps screen with a launcher app search, filter and sort controls, a Usage Access notice and links to the app, permission and screen-time analyzers."
                 loading="lazy" decoding="async">
             </div>
             <figcaption>The analyzer summarises launcher apps without claiming access to every installed package.</figcaption>
@@ -413,14 +425,12 @@
           <figure class="dm-figure">
             <div class="dm-shot">
               <img
-                src="/public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Hardware tests hub with an overall progress ring, Run all tests button and grouped test rows."
+                src="/public/assets/device-matrix/screenshots/light/05-tools.webp"
+                width="720" height="1532"
+                alt="Light Tools screen with a Guided Checkup entry, alarm and timer shortcuts, alarm list, flashlight, vibration patterns and screen tests."
                 loading="lazy" decoding="async">
             </div>
-            <figcaption>Guided checks cover display, touch, sound, sensors, power and radios.</figcaption>
+            <figcaption>The Tools screen opens the guided checkup and the individual screen, touch, sound and hardware checks.</figcaption>
           </figure>
         </div>
       </div>
@@ -431,229 +441,9 @@
         <div class="dm-section__head dm-gallery__head" data-reveal>
           <span class="eyebrow">Screens</span>
           <h2 id="home-gallery-title">A closer look, screen by screen.</h2>
-          <p class="lead">Real app screens for hardware, network, apps, guided checks, tools and widgets.</p>
+          <p class="lead">Six core screens in Light or Dark, from the Home dashboard through hardware, thermal, battery, storage and memory. Each card keeps its own theme switch.</p>
         </div>
-        <div class="dm-gallery__shell" data-dm-gallery data-reveal>
-          <div class="dm-gallery__controls" hidden>
-            <p class="dm-gallery__hint">Scroll, drag or use the arrows to browse.</p>
-            <div class="dm-gallery__buttons">
-              <button class="dm-gallery__button" type="button" data-gallery-prev aria-label="Previous screenshot">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
-              </button>
-              <button class="dm-gallery__button" type="button" data-gallery-next aria-label="Next screenshot">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
-              </button>
-            </div>
-          </div>
-          <ul class="dm-gallery__track" tabindex="0" aria-label="Device Matrix screenshots">
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-home-dashboard-dark-540.webp 540w, /public/assets/device-matrix/img/dm-home-dashboard-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="Dark Home dashboard showing the health score, device summary and live CPU, memory, storage and battery tiles."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Home</span>
-                <strong>Dashboard</strong>
-                <span>Health summary, core readings and shortcuts in one view.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-hardware-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-hardware-hub-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="Hardware hub listing Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Hardware</span>
-                <strong>Information hub</strong>
-                <span>Device, processor, memory, storage, battery, display and sensor details.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-hardware-cpu-dark-1080.webp"
-                  width="1080" height="2274"
-                  alt="Processor details screen with core information, clock speed, GPU and architecture fields."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Hardware</span>
-                <strong>Processor</strong>
-                <span>Cores, clock speed, GPU and architecture details when Android reports them.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-hardware-memory-dark-540.webp"
-                  width="1080" height="2274"
-                  alt="Memory screen showing RAM totals, availability and current usage."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Hardware</span>
-                <strong>Memory</strong>
-                <span>RAM totals, availability and current usage without a performance score.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-network-overview-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-network-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-network-overview-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="Dark Network screen showing the active Wi-Fi connection, operator and masked network identifiers."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Network</span>
-                <strong>Connection overview</strong>
-                <span>The active link, operator and Wi-Fi details, with identifiers masked.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-network-data-usage-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-network-data-usage-dark-540.webp 540w, /public/assets/device-matrix/img/dm-network-data-usage-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="Data usage screen with mobile and Wi-Fi summaries for the selected period."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Network</span>
-                <strong>Data usage</strong>
-                <span>Mobile and Wi-Fi usage summaries for the selected period.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp"
-                  srcset="/public/assets/device-matrix/img/dm-apps-list-dark-540.webp 540w, /public/assets/device-matrix/img/dm-apps-list-dark-540.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="App analyzer screen with target API and installer bar charts."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Apps</span>
-                <strong>Analyzer</strong>
-                <span>Target Android API, installer sources and declared permissions in context.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-apps-screen-time-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-apps-screen-time-dark-540.webp 540w, /public/assets/device-matrix/img/dm-apps-screen-time-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="Screen time screen showing app usage for the day."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Apps</span>
-                <strong>Screen time</strong>
-                <span>A local view of daily app use, where Android makes it available.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp"
-                  srcset="/public/assets/device-matrix/img/dm-tests-hub-dark-540.webp 540w, /public/assets/device-matrix/img/dm-tests-hub-dark-1080.webp 1080w"
-                  sizes="(max-width: 40em) 48vw, 12.25rem"
-                  width="1080" height="2274"
-                  alt="Hardware tests hub with an overall progress ring, Run all tests button and grouped test rows."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Tests</span>
-                <strong>Guided checks</strong>
-                <span>Screen, touch, sound, sensor, port and radio checks with clear results.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-tests-display-dark-1080.webp"
-                  width="1080" height="2274"
-                  alt="Display test screen guiding a visual screen check."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Tests</span>
-                <strong>Display check</strong>
-                <span>A guided check for screen response, colours and visible defects.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-tools-hub-dark-1080.webp"
-                  width="1080" height="2274"
-                  alt="Everyday tools hub with alarm, timer, flashlight, vibration and test shortcuts."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Tools</span>
-                <strong>Everyday tools</strong>
-                <span>Alarm and timer requests, flashlight, vibration and test shortcuts.</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="dm-gallery__slide">
-            <figure class="dm-gallery__figure">
-              <div class="dm-gallery__image">
-                <img
-                  src="/public/assets/device-matrix/img/dm-widgets-overview-dark-540.webp"
-                  width="1080" height="2274"
-                  alt="Home-screen widget overview showing RAM, storage, battery and device-health layouts."
-                  loading="lazy" decoding="async">
-              </div>
-              <figcaption class="dm-gallery__caption">
-                <span class="dm-gallery__label">Widgets</span>
-                <strong>Home-screen layouts</strong>
-                <span>RAM, storage, battery and device-health widgets in Free and Pro sizes.</span>
-              </figcaption>
-            </figure>
-          </li>
-          </ul>
-        </div>
+        <ul class="dm-screen-grid" data-dm-screen-grid data-reveal role="list" aria-label="Device Matrix core screens"></ul>
       </div>
     </section>
 
@@ -770,18 +560,24 @@
           </p>
         </div>
         <div class="dm-plans__media" data-reveal>
-          <figure class="dm-figure">
-            <div class="dm-shot">
-              <img
-                src="/public/assets/device-matrix/img/dm-plans-overview-dark-1080.webp"
-                srcset="/public/assets/device-matrix/img/dm-plans-overview-dark-540.webp 540w, /public/assets/device-matrix/img/dm-plans-overview-dark-1080.webp 1080w"
-                sizes="(max-width: 768px) 82vw, 340px"
-                width="1080" height="2274"
-                alt="Dark Pro screen with Remove ads and Pro lifetime plan cards, feature lists and Price unavailable buttons."
-                loading="lazy" decoding="async">
-            </div>
-            <figcaption>Remove ads and Pro are one-time purchases; Google Play supplies the local price.</figcaption>
-          </figure>
+          <div class="dm-plan-preview" aria-label="Device Matrix plan summary">
+            <article class="dm-plan-preview__item">
+              <span class="dm-plan-preview__tag">Free</span>
+              <strong>Core information</strong>
+              <p>Information screens, every guided test, text reports and the smaller widgets.</p>
+            </article>
+            <article class="dm-plan-preview__item">
+              <span class="dm-plan-preview__tag dm-plan-preview__tag--cyan">Remove ads</span>
+              <strong>A quieter app</strong>
+              <p>Free without ads, plus the standard PDF without the optional rewarded video.</p>
+            </article>
+            <article class="dm-plan-preview__item">
+              <span class="dm-plan-preview__tag dm-plan-preview__tag--violet">Pro</span>
+              <strong>More control</strong>
+              <p>Larger widgets, extra colours, dashboard layout, the Wi-Fi analyzer and custom exports.</p>
+            </article>
+            <p class="dm-plan-preview__note">Optional one-time purchases through Google Play. No subscription.</p>
+          </div>
         </div>
       </div>
     </section>
