@@ -933,7 +933,7 @@
     bar.id = 'install-bar';
     bar.className = 'install-bar';
     bar.innerHTML =
-      '<img class="install-bar__icon" src="/public/assets/device-matrix/icons/app-icon.svg" alt="" width="38" height="38">' +
+      '<img class="install-bar__icon" src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="38" height="38">' +
       '<span class="install-bar__text">' +
       '<span class="install-bar__name">Device Matrix</span>' +
       '<span class="install-bar__label">System Info App · Free</span>' +
