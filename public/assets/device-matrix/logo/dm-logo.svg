@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title>Device Matrix - Pulse Monitor Light</title>
+<desc>Smartphone outline with a diagnostic pulse waveform and a blue CPU chipset carrying a centered information symbol.</desc>
+<defs>
+  <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fbfdff"/><stop offset=".55" stop-color="#e4eff9"/><stop offset="1" stop-color="#d7e7f5"/>
+  </linearGradient>
+  <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#06b6d4"/>
+  </linearGradient>
+  <linearGradient id="chipSheen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffffff" stop-opacity=".38"/>
+    <stop offset=".38" stop-color="#ffffff" stop-opacity=".05"/>
+    <stop offset=".62" stop-color="#ffffff" stop-opacity="0"/>
+    <stop offset="1" stop-color="#020b16" stop-opacity=".16"/>
+  </linearGradient>
+  <linearGradient id="metalRim" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".34" stop-color="#e2eef9"/>
+    <stop offset=".66" stop-color="#9db4c9"/><stop offset="1" stop-color="#607c97"/>
+  </linearGradient>
+  <linearGradient id="pinGold" x1="0" y1="0" x2=".35" y2="1">
+    <stop offset="0" stop-color="#fff9e3"/><stop offset=".26" stop-color="#f4d98f"/>
+    <stop offset=".62" stop-color="#ddb25a"/><stop offset=".85" stop-color="#b3832f"/>
+    <stop offset="1" stop-color="#7e5a1c"/>
+  </linearGradient>
+  <filter id="chipShadow" x="-35%" y="-35%" width="170%" height="170%">
+    <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#020b16" flood-opacity="0.26"/>
+  </filter>
+  <filter id="waveGlow" x="-20%" y="-40%" width="140%" height="180%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="chipClip"><rect x="248" y="266" width="130" height="130" rx="20"/></clipPath>
+</defs>
+<rect width="512" height="512" rx="112" fill="url(#tile)"/><rect x="1" y="1" width="510" height="510" rx="111" fill="none" stroke="#0a1b33" stroke-opacity="0.08" stroke-width="2"/>
+<rect x="122" y="86" width="186" height="340" rx="42" fill="none" stroke="#0a1b33" stroke-width="18"/>
+<rect x="146" y="120" width="138" height="272" rx="24" fill="#ffffff" fill-opacity=".72"/>
+<path d="M146 236h28l14-44 22 76 18-32h34" fill="none" stroke="#0b63d8" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M146 168h18M178 168h10M202 168h14" stroke="#0b63d8" stroke-width="8" stroke-linecap="round" opacity=".65"/>
+<circle cx="160" cy="352" r="8" fill="#0891b2"/><path d="M176 352h36" stroke="#0891b2" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+<g id="cpu-chip">
+  <rect x="258" y="245" width="20" height="8" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M260.5 246.3H275.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="258" y="409" width="20" height="8" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M260.5 410.3H275.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="303" y="245" width="20" height="8" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M305.5 246.3H320.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="303" y="409" width="20" height="8" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M305.5 410.3H320.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="348" y="245" width="20" height="8" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M350.5 246.3H365.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="348" y="409" width="20" height="8" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M350.5 410.3H365.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="227" y="276" width="8" height="20" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M228.3 278.5V293.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="391" y="276" width="8" height="20" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M392.3 278.5V293.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="227" y="321" width="8" height="20" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M228.3 323.5V338.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="391" y="321" width="8" height="20" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M392.3 323.5V338.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="227" y="366" width="8" height="20" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M228.3 368.5V383.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/><rect x="391" y="366" width="8" height="20" rx="4" fill="url(#pinGold)" stroke="#6f4a12" stroke-opacity=".4" stroke-width=".8"/><path d="M392.3 368.5V383.5" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/>
+  <rect x="242" y="260" width="142" height="142" rx="26" fill="url(#chip)" stroke="#eef6fd" stroke-width="12" filter="url(#chipShadow)"/>
+  <rect x="242" y="260" width="142" height="142" rx="26" fill="none" stroke="#0b2c4d" stroke-opacity=".28" stroke-width="3"/>
+  <g clip-path="url(#chipClip)">
+    <rect x="248" y="266" width="130" height="130" rx="20" fill="url(#chipSheen)"/>
+    <rect x="252" y="270" width="122" height="122" rx="16" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1"/>
+    <rect x="248.9" y="266.9" width="128.2" height="128.2" rx="19.2" fill="none" stroke="url(#metalRim)" stroke-opacity=".9" stroke-width="1.9"/>
+    <path d="M252 282 H266 L274 290 V298" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M252 338 H264 L272 330 V322" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M252 372 H268 V382" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M292 392 V384 L300 376" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M374 286 H360 L352 278 V272" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M374 342 H362 V334" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M374 370 H358 L350 378 V386" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M334 270 V278 L342 286" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M313 270 V278" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M313 392 V384" fill="none" stroke="#ffffff" stroke-opacity=".58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="274" cy="298" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="272" cy="322" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="268" cy="382" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="300" cy="376" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="352" cy="272" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="362" cy="334" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="350" cy="386" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="342" cy="286" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="313" cy="278" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/><circle cx="313" cy="384" r="2" fill="#ffffff" fill-opacity=".72" stroke="#062a4a" stroke-opacity=".38" stroke-width=".8"/>
+  </g>
+  <rect x="291" y="309" width="44" height="44" rx="11" fill="#082642" fill-opacity=".72" stroke="#ffffff" stroke-opacity=".78" stroke-width="1.4"/>
+  <circle cx="313" cy="322" r="2.5" fill="#ffffff"/>
+  <rect x="310.6" y="326.5" width="4.8" height="15.5" rx="2.4" fill="#ffffff"/>
+</g>
+</svg>
