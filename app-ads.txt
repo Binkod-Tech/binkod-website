@@ -1,0 +1,11 @@
+# app-ads.txt - Device Matrix
+#
+# Host this file at the root of the developer website listed on the app's
+# Google Play listing:
+#   https://app.binkod.in/app-ads.txt
+#
+# The Play listing's developer website must use the app.binkod.in domain.
+# AdMob shows the exact line under Apps -> app-ads.txt -> How to set up
+# app-ads.txt.
+
+google.com, pub-2730708357991854, DIRECT, f08c47fec0942fa0
