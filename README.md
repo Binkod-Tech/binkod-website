@@ -110,13 +110,14 @@ binkod-tech-web/
 │   ├── family-path.css               # Family Path styles + hero/scroll animations
 │   └── binkod-abc.css                # BINKOD ABC styles (playful, educational theme)
 ├── js/
-│   ├── global.js                     # Nav toggle + SITE_CONFIG (Play URL)
+│   ├── global.js                     # Nav toggle + SITE_CONFIG + install bar
 │   ├── home.js                       # Homepage behavior (header, reveal, spotlight, theme switcher)
 │   ├── family-path.js                # Scroll-reveal enhancement (Family Path homepage)
 │   └── binkod-abc.js                 # Scroll-reveal enhancement (BINKOD ABC page)
 ├── index.html                        # Root — BINKOD Tech homepage
 ├── 404.html                          # Not-found page
 ├── robots.txt                        # Crawler policy + sitemap reference
+├── app-ads.txt                       # AdMob app-ads.txt authorization file
 ├── sitemap.xml                       # Public routes
 ├── vercel.json                       # Static hosting configuration (clean URLs)
 ├── .gitignore
@@ -161,6 +162,17 @@ Intended workflow: **GitHub → Vercel → Custom Domain**
 
 `vercel.json` enables `cleanUrls`, so pages are served at extensionless paths
 such as `/family-path-locator/privacy-policy`.
+
+## Advertising Authorization File
+
+- **File:** `app-ads.txt` — use this exact filename.
+- **Location:** repository root, served at
+  <https://app.binkod.in/app-ads.txt>.
+- **Purpose:** authorizes the digital sellers listed by Google AdMob to sell
+  advertising inventory for the **Device Matrix** Android app.
+- Keep the file at the site root; do not move it into an app subdirectory.
+  It must contain the exact authorization record supplied by AdMob (Apps →
+  app-ads.txt), and the public URL is listed in `sitemap.xml`.
 
 ## Pending Items (tracked TODOs in the code)
 
@@ -207,10 +219,11 @@ such as `/family-path-locator/privacy-policy`.
   as the *Delete account URL* in Google Play Console. The email must not
   appear on any other page — not the Family Path homepage or its footer, not
   the Family Path legal pages, not the BINKOD ABC page.
-- Google Play buttons (`data-play-link`) all carry the real listing URL
-  (`https://play.google.com/store/apps/details?id=com.binkod.familypath`,
-  also configured in `js/global.js`) with `target="_blank"
-  rel="noopener noreferrer"` and an inline Google Play icon.
+- Family Path Locator Google Play CTAs are **visual only**: they keep the
+  Play icon and button styling but have no store URL. Do not add a Play Store
+  link or restore a URL in `js/global.js` unless the public listing is
+  approved. Device Matrix Play buttons use the real listing URL with
+  `target="_blank" rel="noopener noreferrer"`.
 - Never use the word "Legal" as a UI label (navigation, footer, headings,
   labels). The footer column that groups Privacy Policy, Terms & Conditions,
   Disclaimer and Contact is titled **"Support"**. Do not change the wording

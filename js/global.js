@@ -8,12 +8,13 @@
   'use strict';
 
    /* -----------------------------------------------------------------------
-      Site configuration — single source of truth for the public Play Store
-      listing URL. All [data-play-link] buttons receive this URL, open in a
-      new tab (target="_blank"), and use rel="noopener noreferrer".
+      Site configuration. No public Play Store listing URL is configured for
+      Family Path Locator, so its Play buttons stay visible but non-linking.
+      Leaving this empty prevents [data-play-link] elements from receiving a
+      store URL; setupPlayLinks() marks any such element as disabled instead.
       ----------------------------------------------------------------------- */
   var SITE_CONFIG = {
-    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.binkod.familypath'
+    googlePlayUrl: ''
   };
 
   function setupPlayLinks() {
@@ -224,7 +225,6 @@
      control it is injected here so no page HTML changes.
 
      Scope and safety rules:
-       - Never created unless SITE_CONFIG holds the verified Play Store URL.
        - Never created off the Family Path Locator routes, so the root
          showcase, BINKOD ABC (no approved listing) and the 404 page are
          excluded by construction.
@@ -236,9 +236,8 @@
          so the two fixed controls never overlap.
        - Scroll state arrives through the same single shared listener used
          by the scroll-to-top button; no second listener is added.
-       - The CTA carries data-play-link, so setupPlayLinks() stamps the
-         verified URL, target="_blank" and rel="noopener noreferrer" on it
-         exactly like every other Play button on the site.
+       - The CTA is a static span because no public Play Store URL is
+         configured. It stays visible without navigating anywhere.
      ----------------------------------------------------------------------- */
 
   /* Official Google Play icon — identical markup to the existing Play
@@ -251,10 +250,6 @@
     '<path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>';
 
   function setupInstallBar() {
-    /* No verified listing URL -> no bar is created at all. */
-    if (!SITE_CONFIG.googlePlayUrl) {
-      return;
-    }
     /* Family Path Locator site only: excludes the root showcase, BINKOD
        ABC and the 404 page. */
     if (!/^\/family-path-locator(\/|$)/.test(window.location.pathname)) {
@@ -274,10 +269,9 @@
       '<span class="install-bar__name">Family Path Locator</span>' +
       '<span class="install-bar__label">Install on Android</span>' +
       '</span>' +
-      '<a class="install-bar__cta btn btn--play btn--sm" data-play-link' +
-      ' aria-label="Get Family Path Locator on Google Play">' +
+      '<span class="install-bar__cta btn btn--play btn--sm" aria-disabled="true">' +
       PLAY_ICON_SVG +
-      'Install</a>';
+      'Install</span>';
     document.body.appendChild(bar);
 
     /* Static marker: CSS uses it to reserve the bar's height inside the
@@ -315,8 +309,8 @@
     update(currentScrollY());
   }
 
-  /* setupInstallBar must run before setupPlayLinks so the injected CTA
-     receives the verified URL, target and rel like every static button. */
+  /* Build the install bar before wiring any [data-play-link] elements; the
+     bar's CTA is intentionally static. */
   setupInstallBar();
   setupPlayLinks();
   setupNavigation();

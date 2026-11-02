@@ -365,6 +365,11 @@ main[id] {
   pointer-events: none;
 }
 
+/* Static Play buttons: visible, but not links while no store URL is set. */
+.btn[aria-disabled="true"] {
+  cursor: default;
+}
+
 /* --------------------------------------------------------------------------
    Chips
    -------------------------------------------------------------------------- */
