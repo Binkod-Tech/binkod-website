@@ -559,6 +559,12 @@ html[data-mode="light"] .bk-badge--dev {
   border-color: #fecaca;
 }
 
+html[data-mode="light"] .bk-badge--available {
+  color: #067647;
+  background-color: #ecfdf3;
+  border-color: #a6f4c5;
+}
+
 html[data-mode="light"] .bk-header .nav-toggle {
   background-color: #f4f8ff;
   border-color: #d5e2f2;
@@ -664,6 +670,10 @@ html[data-mode="light"] .bk-footer__soon {
   color: #75859c;
 }
 
+html[data-mode="light"] .bk-footer__soon--available {
+  color: #15803d;
+}
+
 html[data-mode="light"] .bk-footer__bottom {
   border-top-color: #dce5f2;
   color: #6a7b94;
@@ -706,6 +716,13 @@ html[data-mode="light"] .hero {
     radial-gradient(40rem 26rem at 56% 112%, rgba(8, 145, 178, 0.07), transparent 65%),
     linear-gradient(180deg, #fafcff 0%, #f2f7fe 100%);
   color: var(--hero-ink);
+}
+
+html[data-mode="light"] .hero__testing--available {
+  --hero-testing-border: rgba(8, 145, 178, 0.24);
+  --hero-testing-bg: rgba(6, 182, 212, 0.08);
+  --hero-testing-title: #0b1728;
+  --hero-testing-text: #0e7490;
 }
 
 html[data-mode="light"] .hero h1 span {

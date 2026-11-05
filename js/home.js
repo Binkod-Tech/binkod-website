@@ -8,8 +8,8 @@
       off-screen, in a hidden tab and for reduced-motion visitors.
    4. Randomised technology labels on the hero technology orbit.
    5. The root-only Device Matrix promotion: a floating app icon and a
-      ticket popup that opens by default until dismissed, after which it
-      stays available from the icon.
+      ticket popup that opens by default each browser session until dismissed,
+      after which it stays available from the icon.
    ========================================================================== */
 (function () {
   'use strict';
@@ -319,10 +319,31 @@
   var DEVICE_MATRIX_PLAY_URL =
     'https://play.google.com/store/apps/details?id=com.binkod.devicematrix';
   var DM_PROMO_SEEN_KEY = 'binkod-device-matrix-promo-seen';
+  var DM_PROMO_SESSION_KEY = 'binkod-device-matrix-promo-session';
+
+  /* The dismissal is remembered in localStorage, but tied to the current
+     browser session. A new visit therefore opens the ticket by default while
+     navigation within the same session still respects the earlier close. */
+  function getDeviceMatrixPromoSession() {
+    try {
+      var session = window.sessionStorage.getItem(DM_PROMO_SESSION_KEY);
+      if (!session) {
+        session = String(Date.now()) + '-' + Math.random().toString(36).slice(2);
+        window.sessionStorage.setItem(DM_PROMO_SESSION_KEY, session);
+      }
+      return session;
+    } catch (error) {
+      return null;
+    }
+  }
 
   function hasSeenDeviceMatrixPromo() {
     try {
-      return window.localStorage.getItem(DM_PROMO_SEEN_KEY) === '1';
+      var session = getDeviceMatrixPromoSession();
+      return (
+        session !== null &&
+        window.localStorage.getItem(DM_PROMO_SEEN_KEY) === session
+      );
     } catch (error) {
       return false;
     }
@@ -330,7 +351,8 @@
 
   function rememberDeviceMatrixPromo() {
     try {
-      window.localStorage.setItem(DM_PROMO_SEEN_KEY, '1');
+      var session = getDeviceMatrixPromoSession();
+      window.localStorage.setItem(DM_PROMO_SEEN_KEY, session || '1');
     } catch (error) {
       /* Storage can be unavailable in private modes; the popup still works. */
     }
@@ -362,6 +384,23 @@
     '<rect x="3" y="4" width="18" height="7" rx="2"></rect>' +
     '<rect x="3" y="13" width="18" height="7" rx="2"></rect>' +
     '<path d="M7 7.5h.01M7 16.5h.01"></path></svg>';
+
+  var DM_ICON_NETWORK =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+    '<path d="M1.8 8.8a15 15 0 0 1 20.4 0"></path>' +
+    '<path d="M5.2 12.2a10 10 0 0 1 13.6 0"></path>' +
+    '<path d="M8.6 15.6a5 5 0 0 1 6.8 0"></path>' +
+    '<path d="M12 19h.01"></path></svg>';
+
+  var DM_ICON_DISPLAY =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+    '<rect x="3" y="4" width="18" height="13" rx="2"></rect>' +
+    '<path d="M8 21h8M12 17v4"></path></svg>';
+
+  var DM_ICON_CHECKS =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+    '<path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6l7-3z"></path>' +
+    '<path d="M9 12l2 2 4-4"></path></svg>';
 
   function setupDeviceMatrixPromo() {
     /* Initialization guard: one trigger and one popup per page. */
@@ -411,6 +450,18 @@
       '<span class="dm-promo__feature-icon">' + DM_ICON_STORAGE + '</span>' +
       '<strong class="dm-promo__feature-label">Storage</strong>' +
       '</li>' +
+      '<li class="dm-promo__feature">' +
+      '<span class="dm-promo__feature-icon">' + DM_ICON_NETWORK + '</span>' +
+      '<strong class="dm-promo__feature-label">Network</strong>' +
+      '</li>' +
+      '<li class="dm-promo__feature">' +
+      '<span class="dm-promo__feature-icon">' + DM_ICON_DISPLAY + '</span>' +
+      '<strong class="dm-promo__feature-label">Display</strong>' +
+      '</li>' +
+      '<li class="dm-promo__feature">' +
+      '<span class="dm-promo__feature-icon">' + DM_ICON_CHECKS + '</span>' +
+      '<strong class="dm-promo__feature-label">Guided checks</strong>' +
+      '</li>' +
       '</ul>' +
       '</div>' +
       '<div class="dm-promo__footer">' +
@@ -455,7 +506,7 @@
       popup.classList.remove('is-open');
       trigger.setAttribute('aria-expanded', 'false');
       /* Closing the ticket is an explicit dismissal: remember it so the
-         ticket does not reopen during later navigation. */
+         ticket does not reopen during later navigation in this session. */
       rememberDeviceMatrixPromo();
       if (returnFocus) {
         trigger.focus({ preventScroll: true });
@@ -484,8 +535,9 @@
       });
     }
 
-    /* The ticket is shown by default. Only the close button or the install
-       link closes it; outside clicks and Escape do not dismiss it. */
+    /* Each browser session starts with the ticket open. Only the close button
+       or the install link closes it; outside clicks and Escape do not dismiss
+       it. */
     if (!hasSeenDeviceMatrixPromo()) {
       window.setTimeout(function () {
         if (!isOpen && !hasSeenDeviceMatrixPromo()) {

@@ -77,7 +77,7 @@ pages.
 
 | Route | Page |
 | --- | --- |
-| `/` | Root — **BINKOD Tech homepage**. Light-first design with a light/dark switcher in the header (light default; choice saved in `localStorage` under `binkod.theme`). Sections in order: hero ("Building useful products with intelligent technology.") with a rotating product card; **Products** (Family Path Locator and Device Matrix cards marked *Internal testing*, BINKOD ABC and Disk Matrix cards marked *Under development*, and a **General smart applications** panel for custom digital-productivity work — CRM, SaaS, tools for shopkeepers, schools and organisations); **Technology** (five cards: mobile — Flutter / React Native / Android; backend & API — .NET, Python, Node.js, REST, one unified API & MCP integrations tile; web — a single .NET section covering ASP.NET MVC / Razor Pages / Blazor; cloud & infrastructure — only Azure / AWS / Cloudflare / Firebase, shown with logos; AI & emerging technologies); **AI Engineering Lab** (language models, RAG, embeddings/vector search, agents & MCP, evaluation — general education); **AI architecture** (six-layer reference with the AI layers marked optional); **Product engineering** (general principles); contact section + footer. The contact email `binkodtech@gmail.com` is displayed in the contact section and the footer Support column. Only the Products section names products; everything else is general engineering education. |
+| `/` | Root — **BINKOD Tech homepage**. Light-first design with a light/dark switcher in the header (light default; choice saved in `localStorage` under `binkod.theme`). Sections in order: hero ("Building useful products with intelligent technology.") with a rotating product card; **Products** (Device Matrix available on Google Play, the Family Path Locator card marked *Internal testing*, BINKOD ABC and Disk Matrix cards marked *Under development*, and a **General smart applications** panel for custom digital-productivity work — CRM, SaaS, tools for shopkeepers, schools and organisations); **Technology** (five cards: mobile — Flutter / React Native / Android; backend & API — .NET, Python, Node.js, REST, one unified API & MCP integrations tile; web — a single .NET section covering ASP.NET MVC / Razor Pages / Blazor; cloud & infrastructure — only Azure / AWS / Cloudflare / Firebase, shown with logos; AI & emerging technologies); **AI Engineering Lab** (language models, RAG, embeddings/vector search, agents & MCP, evaluation — general education); **AI architecture** (six-layer reference with the AI layers marked optional); **Product engineering** (general principles); contact section + footer. The contact email `binkodtech@gmail.com` is displayed in the contact section and the footer Support column. Only the Products section names products; everything else is general engineering education. |
 | `/binkod-abc/` | BINKOD ABC — upcoming-product page (in development) |
 | `/family-path-locator/` | Family Path Locator homepage |
 | `/family-path-locator/privacy-policy` | Family Path Locator Privacy Policy |
@@ -292,7 +292,7 @@ New application sections are added independently:
 
 - `/family-path-locator/` — Family Path Locator (live)
 - `/device-matrix/` — Device Matrix: System Info (public site live; Android app
-  listed as internal testing)
+  available on Google Play)
 - `/binkod-abc/` — BINKOD ABC (upcoming; public product page live, app still
   in development)
 
