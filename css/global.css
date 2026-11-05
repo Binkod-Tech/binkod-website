@@ -1033,6 +1033,14 @@ main[id] {
   max-width: 24rem;
 }
 
+.footer-company__text {
+  max-width: 24rem;
+  margin: 0;
+  color: var(--c-muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
 .footer__title {
   font-size: var(--fs-xs);
   font-weight: 700;
