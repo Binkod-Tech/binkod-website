@@ -103,6 +103,13 @@
       return;
     }
 
+    /* The Device Matrix homepage presents the ticket on a light surface, so
+       its logo tile is used there; the root homepage keeps the transparent
+       mark designed for the dark ticket. */
+    var promoLogoSrc = document.body.classList.contains('dm-home')
+      ? '/public/assets/device-matrix/logo/logo-mark.png'
+      : '/public/assets/device-matrix/logo/dm-logo-transparent.svg';
+
     var trigger = document.createElement('button');
     trigger.id = 'dm-promo-fab';
     trigger.className = 'dm-promo-fab';
@@ -126,7 +133,7 @@
       '<div class="dm-promo__ticket">' +
       '<div class="dm-promo__head">' +
       '<span class="dm-promo__logo">' +
-      '<img src="/public/assets/device-matrix/logo/dm-logo-transparent.svg" alt="" width="64" height="64" decoding="async">' +
+      '<img src="' + promoLogoSrc + '" alt="" width="64" height="64" decoding="async">' +
       '</span>' +
       '<span class="dm-promo__kicker">Install Device Matrix. Know your phone.</span>' +
       '</div>' +

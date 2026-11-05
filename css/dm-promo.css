@@ -535,6 +535,11 @@
   opacity: 0.07;
 }
 
+.dm-home .dm-promo__logo img {
+  filter: drop-shadow(0 3px 6px rgba(12, 25, 48, 0.18));
+  transform: none;
+}
+
 .dm-home .dm-promo__kicker {
   color: #1e4fd1;
 }
