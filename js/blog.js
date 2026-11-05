@@ -1,6 +1,6 @@
 /* ==========================================================================
-   BINKOD Tech — blog.js
-   Shared behaviour for the BINKOD Tech blog pages:
+   BINKOD TECH — blog.js
+   Shared behaviour for the BINKOD TECH blog pages:
    1. Sequential steppers (an AI-assisted software development flow).
    2. Selectable, animated architecture maps (the MCP request path).
    3. A reading-progress indicator for article pages.

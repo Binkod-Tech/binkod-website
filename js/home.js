@@ -1,8 +1,8 @@
 /* ==========================================================================
-   BINKOD Tech — home.js
+   BINKOD TECH — home.js
    Homepage-only behaviour:
    1. Scroll reveal (content stays visible if JavaScript fails).
-   2. The BINKOD Tech blog rail: native horizontal scrolling, touch swipe,
+   2. The BINKOD TECH blog rail: native horizontal scrolling, touch swipe,
       arrow controls and keyboard support. No autoplay and no dependencies.
    3. The decorative hero phone slider: one app screen at a time, paused
       off-screen, in a hidden tab and for reduced-motion visitors.
