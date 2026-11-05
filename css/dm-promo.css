@@ -1,0 +1,696 @@
+/* --------------------------------------------------------------------------
+   Device Matrix promotion — shared by the root homepage and the Device Matrix
+   homepage. js/dm-promo.js injects the floating app icon above the shared
+   scroll-to-top control and the tall, movie-ticket-style popup. The ticket
+   opens by default until the visitor dismisses it from the close button or
+   the install link; both are fixed overlays, so page layout, scrolling and
+   the existing scroll-to-top behaviour stay untouched.
+   -------------------------------------------------------------------------- */
+.dm-promo-fab,
+.dm-promo {
+  --dm-fab-size: 2.5rem;
+  --dm-fab-gap: 0.7rem;
+}
+
+.dm-promo-fab {
+  position: fixed;
+  right: var(--gutter);
+  bottom: calc(
+    var(--gutter) + env(safe-area-inset-bottom, 0px) + var(--dm-fab-size) +
+      var(--dm-fab-gap)
+  );
+  z-index: 66;
+  display: grid;
+  place-items: center;
+  width: var(--dm-fab-size);
+  height: var(--dm-fab-size);
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background-color: #eef4fb;
+  box-shadow: var(--sh-2);
+  cursor: pointer;
+  animation: dm-fab-in 520ms cubic-bezier(0.2, 0.8, 0.25, 1) 450ms backwards;
+  transition: box-shadow var(--t), transform var(--t-fast);
+}
+
+.dm-promo-fab img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  border-radius: 50%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.dm-promo-fab::after {
+  content: "";
+  position: absolute;
+  inset: -0.18rem;
+  border: 1.5px solid rgba(125, 178, 255, 0.55);
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  animation: dm-fab-pulse 4.6s cubic-bezier(0.2, 0.7, 0.3, 1) 1.6s infinite;
+}
+
+.dm-promo-fab[aria-expanded="true"] {
+  box-shadow: var(--sh-3);
+}
+
+.dm-promo-fab[aria-expanded="true"]::after {
+  animation: none;
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .dm-promo-fab:hover {
+    box-shadow: var(--sh-3);
+    transform: translateY(-2px);
+  }
+}
+
+.dm-promo-fab:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.dm-promo-fab:focus-visible {
+  outline: 3px solid #9cc4ff;
+  outline-offset: 3px;
+}
+
+.dm-promo {
+  position: fixed;
+  right: var(--gutter);
+  bottom: calc(
+    var(--gutter) + env(safe-area-inset-bottom, 0px) + (var(--dm-fab-size) * 2) +
+      var(--dm-fab-gap) + 0.55rem
+  );
+  z-index: 70;
+  width: min(17.25rem, calc(100% - (var(--gutter) * 2)));
+  min-height: min(25rem, calc(100vh - 9.5rem - env(safe-area-inset-bottom, 0px)));
+  min-height: min(25rem, calc(100dvh - 9.5rem - env(safe-area-inset-bottom, 0px)));
+  max-height: calc(100vh - 9.5rem - env(safe-area-inset-bottom, 0px));
+  max-height: calc(100dvh - 9.5rem - env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(125, 178, 255, 0.22);
+  border-radius: 1.15rem;
+  background:
+    radial-gradient(
+      120% 90% at 100% 0%,
+      rgba(59, 130, 246, 0.38) 0%,
+      rgba(59, 130, 246, 0) 55%
+    ),
+    radial-gradient(
+      100% 80% at 0% 100%,
+      rgba(6, 182, 212, 0.12) 0%,
+      rgba(6, 182, 212, 0) 60%
+    ),
+    linear-gradient(165deg, #0b203b 0%, #061022 78%);
+  color: #eaf1ff;
+  box-shadow: 0 5px 14px rgba(4, 11, 22, 0.22),
+    0 34px 70px -28px rgba(4, 11, 22, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  /* Two punched notches turn the dashed tear line into a ticket stub. */
+  --dm-stub-height: 5.42rem;
+  --dm-notch-y: calc(100% - var(--dm-stub-height));
+  -webkit-mask-image: radial-gradient(
+      circle 0.5rem at 0 var(--dm-notch-y),
+      transparent 97%,
+      #000 100%
+    ),
+    radial-gradient(
+      circle 0.5rem at 100% var(--dm-notch-y),
+      transparent 97%,
+      #000 100%
+    );
+  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(
+      circle 0.5rem at 0 var(--dm-notch-y),
+      transparent 97%,
+      #000 100%
+    ),
+    radial-gradient(
+      circle 0.5rem at 100% var(--dm-notch-y),
+      transparent 97%,
+      #000 100%
+    );
+  mask-composite: intersect;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.75rem) scale(0.97);
+  transform-origin: 100% 100%;
+  transition: opacity var(--t), transform 250ms cubic-bezier(0.2, 0.8, 0.25, 1),
+    visibility 0s linear 250ms;
+}
+
+.dm-promo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(125, 178, 255, 0.5) 1px,
+    transparent 1.2px
+  );
+  background-size: 16px 16px;
+  opacity: 0.1;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(155deg, #000 0%, transparent 58%);
+  mask-image: linear-gradient(155deg, #000 0%, transparent 58%);
+}
+
+.dm-promo.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.dm-promo__ticket {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 0.9rem 1rem 0.8rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 178, 255, 0.4) transparent;
+}
+
+.dm-promo__ticket::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dm-promo__ticket::-webkit-scrollbar-thumb {
+  border-radius: var(--r-pill);
+  background-color: rgba(125, 178, 255, 0.28);
+}
+
+.dm-promo__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-right: 1.75rem;
+}
+
+.dm-promo__logo {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  flex: none;
+}
+
+.dm-promo__logo img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.38));
+  transform: scale(1.22);
+}
+
+.dm-promo__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #9cc4ff;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.dm-promo__kicker::before {
+  content: "";
+  width: 0.38rem;
+  height: 0.38rem;
+  flex: none;
+  border-radius: 50%;
+  background-color: #67e8f9;
+  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.12);
+}
+
+.dm-promo .dm-promo__title {
+  margin-top: 0.65rem;
+  color: #f7faff;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.dm-promo__desc {
+  margin-top: 0.4rem;
+  color: #b9c8e4;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.dm-promo__features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.dm-promo__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.42rem;
+  border: 1px solid rgba(148, 180, 255, 0.13);
+  border-radius: 0.58rem;
+  background-color: rgba(125, 178, 255, 0.055);
+  opacity: 0;
+  transform: translateY(0.3rem);
+  transition: opacity 240ms ease, transform 280ms ease;
+}
+
+.dm-promo.is-open .dm-promo__feature {
+  opacity: 1;
+  transform: none;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(1) {
+  transition-delay: 60ms;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(4) {
+  transition-delay: 180ms;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(5) {
+  transition-delay: 220ms;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(6) {
+  transition-delay: 260ms;
+}
+
+.dm-promo__feature-icon {
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: none;
+  border: 1px solid rgba(125, 178, 255, 0.2);
+  border-radius: 0.42rem;
+  background: linear-gradient(
+    145deg,
+    rgba(37, 99, 235, 0.32),
+    rgba(6, 182, 212, 0.1)
+  );
+  color: #9cc4ff;
+}
+
+.dm-promo__feature-icon svg {
+  width: 0.78rem;
+  height: 0.78rem;
+}
+
+/* A soft pulse travels through the feature icons while the ticket is open. */
+.dm-promo.is-open .dm-promo__feature-icon {
+  animation: dm-feature-glow 6s ease-in-out infinite;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(1) .dm-promo__feature-icon {
+  animation-delay: 0.6s;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(2) .dm-promo__feature-icon {
+  animation-delay: 1.6s;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(3) .dm-promo__feature-icon {
+  animation-delay: 2.6s;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(4) .dm-promo__feature-icon {
+  animation-delay: 3.6s;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(5) .dm-promo__feature-icon {
+  animation-delay: 4.6s;
+}
+
+.dm-promo.is-open .dm-promo__feature:nth-child(6) .dm-promo__feature-icon {
+  animation-delay: 5.6s;
+}
+
+.dm-promo__feature-label {
+  color: #f1f6ff;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+
+.dm-promo__footer {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  min-height: var(--dm-stub-height);
+  padding: 0.75rem 1rem 0.9rem;
+  border-top: 1px dashed rgba(148, 180, 255, 0.26);
+}
+
+.dm-promo__footer::before {
+  content: "";
+  display: block;
+  width: 68%;
+  height: 0.4rem;
+  margin: 0 auto 0.55rem;
+  border-radius: 1px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(189, 214, 255, 0.8) 0 1px,
+    transparent 1px 3px,
+    rgba(148, 180, 255, 0.5) 3px 4px,
+    transparent 4px 7px,
+    rgba(210, 229, 255, 0.68) 7px 9px,
+    transparent 9px 12px
+  );
+  opacity: 0.65;
+}
+
+.dm-promo__cta {
+  width: 100%;
+  min-height: 2.7rem;
+  padding-inline: 0.9rem;
+  gap: 0.5rem;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(180deg, #ffffff 0%, #e8f0fb 100%);
+  color: #08172c;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: -0.005em;
+  box-shadow: 0 14px 28px -16px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 #ffffff;
+}
+
+.dm-promo__cta:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #dde9f9 100%);
+  color: #08172c;
+  box-shadow: 0 18px 32px -16px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 #ffffff;
+}
+
+.dm-promo__cta .btn__play-icon {
+  height: 1rem;
+}
+
+.dm-promo__cta:focus-visible {
+  outline: 3px solid #9cc4ff;
+  outline-offset: 3px;
+}
+
+.dm-promo__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid rgba(148, 180, 255, 0.2);
+  border-radius: 50%;
+  background-color: rgba(6, 16, 34, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #c5d7f8;
+  cursor: pointer;
+  transition: background-color var(--t-fast), color var(--t-fast),
+    transform var(--t-fast);
+}
+
+.dm-promo__close:hover {
+  background-color: rgba(125, 178, 255, 0.18);
+  color: #ffffff;
+}
+
+.dm-promo__close:active {
+  transform: scale(0.94);
+}
+
+.dm-promo__close svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.dm-promo__close:focus-visible {
+  outline: 3px solid #9cc4ff;
+  outline-offset: 2px;
+}
+
+@keyframes dm-feature-glow {
+  0% {
+    border-color: rgba(125, 178, 255, 0.6);
+    box-shadow: 0 0 0 0 rgba(103, 232, 249, 0.38);
+    color: #d9edff;
+  }
+
+  9% {
+    border-color: rgba(125, 178, 255, 0.22);
+    box-shadow: 0 0 0 0.3rem rgba(103, 232, 249, 0);
+    color: #9cc4ff;
+  }
+
+  100% {
+    border-color: rgba(125, 178, 255, 0.2);
+    box-shadow: 0 0 0 0 rgba(103, 232, 249, 0);
+    color: #9cc4ff;
+  }
+}
+
+@keyframes dm-fab-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.55rem) scale(0.84);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes dm-fab-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  12% {
+    opacity: 0.45;
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.32);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Light ticket for the Device Matrix homepage. Its hero is already a deep
+   navy, so the promotion uses a light surface there while the root homepage
+   keeps the original dark ticket. Everything below is scoped to .dm-home.
+   -------------------------------------------------------------------------- */
+.dm-home .dm-promo {
+  border-color: rgba(37, 99, 235, 0.16);
+  background:
+    radial-gradient(
+      120% 90% at 100% 0%,
+      rgba(59, 130, 246, 0.16) 0%,
+      rgba(59, 130, 246, 0) 55%
+    ),
+    radial-gradient(
+      100% 80% at 0% 100%,
+      rgba(6, 182, 212, 0.09) 0%,
+      rgba(6, 182, 212, 0) 60%
+    ),
+    linear-gradient(165deg, #ffffff 0%, #edf4ff 78%);
+  color: #0b1728;
+  box-shadow: 0 5px 14px rgba(4, 11, 22, 0.14),
+    0 34px 70px -28px rgba(4, 11, 22, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.dm-home .dm-promo::before {
+  background-image: radial-gradient(
+    rgba(37, 99, 235, 0.38) 1px,
+    transparent 1.2px
+  );
+  opacity: 0.07;
+}
+
+.dm-home .dm-promo__kicker {
+  color: #1e4fd1;
+}
+
+.dm-home .dm-promo__kicker::before {
+  background-color: #0891b2;
+  box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.12);
+}
+
+.dm-home .dm-promo .dm-promo__title {
+  color: #0b1728;
+}
+
+.dm-home .dm-promo__desc {
+  color: #52627b;
+}
+
+.dm-home .dm-promo__feature {
+  border-color: rgba(37, 99, 235, 0.14);
+  background-color: rgba(255, 255, 255, 0.72);
+}
+
+.dm-home .dm-promo__feature-label {
+  color: #16233a;
+}
+
+.dm-home .dm-promo__feature-icon {
+  border-color: rgba(37, 99, 235, 0.18);
+  background: linear-gradient(
+    145deg,
+    rgba(37, 99, 235, 0.14),
+    rgba(6, 182, 212, 0.08)
+  );
+  color: #1e4fd1;
+}
+
+.dm-home .dm-promo.is-open .dm-promo__feature-icon {
+  animation-name: dm-feature-glow-light;
+}
+
+.dm-home .dm-promo__footer {
+  border-top-color: rgba(37, 99, 235, 0.2);
+}
+
+.dm-home .dm-promo__footer::before {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(15, 45, 90, 0.62) 0 1px,
+    transparent 1px 3px,
+    rgba(37, 99, 235, 0.38) 3px 4px,
+    transparent 4px 7px,
+    rgba(15, 45, 90, 0.5) 7px 9px,
+    transparent 9px 12px
+  );
+  opacity: 0.55;
+}
+
+.dm-home .dm-promo__cta {
+  border-color: #0b1728;
+  background: linear-gradient(180deg, #13263f 0%, #08172c 100%);
+  color: #ffffff;
+  box-shadow: 0 14px 28px -16px rgba(4, 11, 22, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.dm-home .dm-promo__cta:hover {
+  background: linear-gradient(180deg, #1d3055 0%, #0b203b 100%);
+  color: #ffffff;
+  box-shadow: 0 18px 32px -16px rgba(4, 11, 22, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.dm-home .dm-promo__close {
+  border-color: rgba(37, 99, 235, 0.18);
+  background-color: rgba(255, 255, 255, 0.72);
+  color: #52627b;
+}
+
+.dm-home .dm-promo__close:hover {
+  background-color: #e6effc;
+  color: #0b1728;
+}
+
+@keyframes dm-feature-glow-light {
+  0% {
+    border-color: rgba(37, 99, 235, 0.55);
+    box-shadow: 0 0 0 0 rgba(8, 145, 178, 0.32);
+    color: #0b4aa2;
+  }
+
+  9% {
+    border-color: rgba(37, 99, 235, 0.18);
+    box-shadow: 0 0 0 0.3rem rgba(8, 145, 178, 0);
+    color: #1e4fd1;
+  }
+
+  100% {
+    border-color: rgba(37, 99, 235, 0.18);
+    box-shadow: 0 0 0 0 rgba(8, 145, 178, 0);
+    color: #1e4fd1;
+  }
+}
+
+@media (max-width: 25em) {
+  .dm-promo__ticket {
+    padding: 0.8rem;
+  }
+
+  .dm-promo__footer {
+    padding: 0.7rem 0.8rem 0.85rem;
+  }
+
+  .dm-promo__title {
+    font-size: 1.12rem;
+  }
+
+  .dm-promo__logo {
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  .dm-promo__desc {
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dm-promo-fab {
+    animation: none;
+  }
+
+  .dm-promo-fab::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .dm-promo,
+  .dm-promo__feature,
+  .dm-promo__close {
+    transition: none;
+  }
+
+  .dm-promo {
+    transform: none;
+  }
+
+  .dm-promo.is-open .dm-promo__feature-icon {
+    animation: none;
+  }
+
+  .dm-promo__feature {
+    opacity: 1;
+    transform: none;
+  }
+
+  .dm-home .dm-promo.is-open .dm-promo__feature-icon {
+    animation: none;
+  }
+}
