@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BINKOD Tech Web — global.css
+   BINKOD TECH Web — global.css
    Site-wide foundation: design tokens, reset, typography, buttons, layout,
    header/navigation, footer, accessibility helpers, root page, and 404 page.
 
@@ -818,7 +818,7 @@ main[id] {
 }
 
 /* --------------------------------------------------------------------------
-   Root header — BINKOD wordmark + Applications dropdown
+   Root header — BINKOD TECH wordmark + Applications dropdown
    -------------------------------------------------------------------------- */
 .root-header .header-inner {
   justify-content: space-between;
@@ -1092,7 +1092,7 @@ main[id] {
 }
 
 /* --------------------------------------------------------------------------
-   BINKOD wordmark link (footers, contact, about)
+   BINKOD TECH wordmark link (footers, contact, about)
    -------------------------------------------------------------------------- */
 .binkod-link {
   display: inline-flex;

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BINKOD Tech — dm-promo.js
+   BINKOD TECH — dm-promo.js
    Shared Device Matrix promotion for the root homepage and the Device
    Matrix homepage: a floating app icon and a ticket popup that opens by
    default each browser session until dismissed, after which it stays

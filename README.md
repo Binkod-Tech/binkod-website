@@ -1,17 +1,17 @@
-# BINKOD Tech Web
+# BINKOD TECH Web
 
-Static public websites for **BINKOD Tech** — the brand and company behind
+Static public websites for **BINKOD TECH** — the brand and company behind
 Family Path Locator and upcoming applications.
 
 ## Purpose
 
-This repository hosts BINKOD Tech's public web presence: the overall BINKOD
-Tech homepage at the site root, plus a dedicated section for each application.
+This repository hosts BINKOD TECH's public web presence: the overall BINKOD TECH
+homepage at the site root, plus a dedicated section for each application.
 New applications can be added independently without restructuring existing
 pages.
 
-- Brand / company: **BINKOD Tech** (Binkod)
-- BINKOD website: <https://www.binkod.in/>
+- Brand / company: **BINKOD TECH**
+- BINKOD TECH website: <https://app.binkod.in/>
 - Contact email: `binkodtech@gmail.com` — displayed on the root homepage
   (contact section + footer, as a `mailto:` link), on
   `/family-path-locator/contact/` (plain text) and on
@@ -77,7 +77,7 @@ pages.
 
 | Route | Page |
 | --- | --- |
-| `/` | Root — **BINKOD Tech homepage**. Light-first design with a light/dark switcher in the header (light default; choice saved in `localStorage` under `binkod.theme`). Sections in order: hero ("Building useful products with intelligent technology.") with a rotating product card; **Products** (Device Matrix available on Google Play, the Family Path Locator card marked *Internal testing*, BINKOD ABC and Disk Matrix cards marked *Under development*, and a **General smart applications** panel for custom digital-productivity work — CRM, SaaS, tools for shopkeepers, schools and organisations); **Technology** (five cards: mobile — Flutter / React Native / Android; backend & API — .NET, Python, Node.js, REST, one unified API & MCP integrations tile; web — a single .NET section covering ASP.NET MVC / Razor Pages / Blazor; cloud & infrastructure — only Azure / AWS / Cloudflare / Firebase, shown with logos; AI & emerging technologies); **AI Engineering Lab** (language models, RAG, embeddings/vector search, agents & MCP, evaluation — general education); **AI architecture** (six-layer reference with the AI layers marked optional); **Product engineering** (general principles); contact section + footer. The contact email `binkodtech@gmail.com` is displayed in the contact section and the footer Support column. Only the Products section names products; everything else is general engineering education. |
+| `/` | Root — **BINKOD TECH homepage**. Light-first design with a light/dark switcher in the header (light default; choice saved in `localStorage` under `binkod.theme`). Sections in order: hero ("Building useful products with intelligent technology.") with a rotating product card; **Products** (Device Matrix available on Google Play, the Family Path Locator card marked *Internal testing*, BINKOD ABC and Disk Matrix cards marked *Under development*, and a **General smart applications** panel for custom digital-productivity work — CRM, SaaS, tools for shopkeepers, schools and organisations); **Technology** (five cards: mobile — Flutter / React Native / Android; backend & API — .NET, Python, Node.js, REST, one unified API & MCP integrations tile; web — a single .NET section covering ASP.NET MVC / Razor Pages / Blazor; cloud & infrastructure — only Azure / AWS / Cloudflare / Firebase, shown with logos; AI & emerging technologies); **AI Engineering Lab** (language models, RAG, embeddings/vector search, agents & MCP, evaluation — general education); **AI architecture** (six-layer reference with the AI layers marked optional); **Product engineering** (general principles); contact section + footer. The contact email `binkodtech@gmail.com` is displayed in the contact section and the footer Support column. Only the Products section names products; everything else is general engineering education. |
 | `/binkod-abc/` | BINKOD ABC — upcoming-product page (in development) |
 | `/family-path-locator/` | Family Path Locator homepage |
 | `/family-path-locator/privacy-policy` | Family Path Locator Privacy Policy |
@@ -105,7 +105,7 @@ binkod-tech-web/
 ├── public/
 │   ├── assets/
 │   │   ├── shared/
-│   │   │   ├── binkod-wordmark-473x135.png  # BINKOD Tech wordmark (links to binkod.in)
+│   │   │   ├── binkod-wordmark-473x135.png  # BINKOD TECH wordmark (links to app.binkod.in)
 │   │   │   ├── binkod-header-1600x639.jpeg  # social preview image (og:image)
 │   │   │   └── binkod.png            # previous wordmark (kept, no longer referenced)
 │   │   ├── tech/                     # brand icons for the homepage Technology section
@@ -146,7 +146,7 @@ binkod-tech-web/
 │   ├── home.js                       # Homepage behavior (header, reveal, spotlight, theme switcher)
 │   ├── family-path.js                # Scroll-reveal enhancement (Family Path homepage)
 │   └── binkod-abc.js                 # Scroll-reveal enhancement (BINKOD ABC page)
-├── index.html                        # Root — BINKOD Tech homepage
+├── index.html                        # Root — BINKOD TECH homepage
 ├── 404.html                          # Not-found page
 ├── robots.txt                        # Crawler policy + sitemap reference
 ├── app-ads.txt                       # AdMob app-ads.txt authorization file
@@ -158,9 +158,9 @@ binkod-tech-web/
 
 Important asset locations:
 
-- **BINKOD Tech wordmark:** `public/assets/shared/binkod-wordmark-473x135.png`
-  — use for every BINKOD Tech logo appearance; always link it to
-  <https://www.binkod.in/>. The square company logo (favicon source) is
+- **BINKOD TECH wordmark:** `public/assets/shared/binkod-wordmark-473x135.png`
+  — use for every BINKOD TECH logo appearance; always link it to
+  <https://app.binkod.in/>. The square company logo (favicon source) is
   `public/assets/shared/binkod-logo-500x500.png`.
 - **BINKOD ABC icon:** `public/assets/binkod-abc/icons/app-icon.png`.
 - **Family Path icon:** `public/assets/family-path/icons/familypath.png`.
@@ -235,9 +235,9 @@ such as `/family-path-locator/privacy-policy`.
 ## Content Rules
 
 - Product pages stay **product-first**: their main content covers only the
-  product itself. Do not add "About BINKOD" / company-description / blog
-  sections to product pages. BINKOD Tech branding (wordmark, "by BINKOD
-  Tech", binkod.in links) belongs only in the navigation brand, product
+  product itself. Do not add "About BINKOD TECH" / company-description / blog
+  sections to product pages. BINKOD TECH branding (wordmark, "by BINKOD TECH",
+  app.binkod.in links) belongs only in the navigation brand, product
   footers, and the footer — never in product-page content flow.
 - The **root homepage** is the one place general engineering topics are
   allowed (Technology, AI Engineering Lab, AI architecture, Product

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BINKOD Tech Web — global.js
+   BINKOD TECH Web — global.js
    Shared site behavior: mobile navigation, the scroll-to-top control, the
    mobile install bar (Family Path Locator), and public link config.
    No libraries, no tracking, no external requests.
@@ -250,7 +250,7 @@
     '<path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>';
 
   function setupInstallBar() {
-    /* Family Path Locator site only: excludes the root showcase, BINKOD
+    /* Family Path Locator site only: excludes the root showcase, BINKOD TECH
        ABC and the 404 page. */
     if (!/^\/family-path-locator(\/|$)/.test(window.location.pathname)) {
       return;

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BINKOD Tech — theme.js
+   BINKOD TECH — theme.js
    Light and dark appearance for the main website.
    The small inline script in each page applies the saved preference before
    CSS paints; this file adds the two controls, persists explicit choices and
