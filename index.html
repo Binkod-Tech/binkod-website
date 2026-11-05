@@ -109,6 +109,16 @@
                 <svg class="bk-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
               </summary>
               <div class="bk-dropdown__panel">
+                <a class="bk-menu-item" href="/device-matrix/">
+                  <img class="bk-menu-item__icon" src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="38" height="38">
+                  <span class="bk-menu-item__meta">
+                    <span class="bk-menu-item__name">
+                      Device Matrix
+                      <span class="bk-badge bk-badge--testing">Internal testing</span>
+                    </span>
+                    <span class="bk-menu-item__desc">System Info · Android utility</span>
+                  </span>
+                </a>
                 <a class="bk-menu-item" href="/family-path-locator/">
                   <img class="bk-menu-item__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="38" height="38">
                   <span class="bk-menu-item__meta">
@@ -127,16 +137,6 @@
                       <span class="bk-badge bk-badge--dev">Under development</span>
                     </span>
                     <span class="bk-menu-item__desc">Pre-primary learning &amp; practice</span>
-                  </span>
-                </a>
-                <a class="bk-menu-item" href="/device-matrix/">
-                  <img class="bk-menu-item__icon" src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="38" height="38">
-                  <span class="bk-menu-item__meta">
-                    <span class="bk-menu-item__name">
-                      Device Matrix
-                      <span class="bk-badge bk-badge--testing">Internal testing</span>
-                    </span>
-                    <span class="bk-menu-item__desc">System Info · Android utility</span>
                   </span>
                 </a>
                 <div class="bk-menu-item">
@@ -305,9 +305,10 @@
                         <span>Family Path</span>
                       </span>
                     </div>
-                    <div class="hero-device__slide" data-hero-slide>
-                      <img src="/public/assets/device-matrix/screenshots/light/01-home.webp" alt="" width="720" height="1532" loading="lazy" decoding="async">
-                      <span class="hero-device__shade"></span>
+                    <div class="hero-device__slide hero-device__slide--dm" data-hero-slide>
+                      <span class="hero-device__dm-mark">
+                        <img src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="160" height="160" loading="lazy" decoding="async">
+                      </span>
                       <span class="hero-device__app">
                         <img src="/public/assets/device-matrix/logo/dm-logo-transparent.svg" alt="" width="16" height="16">
                         <span>Device Matrix</span>
@@ -354,6 +355,47 @@
           <article class="app-card" data-home-reveal>
             <div class="app-card__head">
               <span class="app-card__icon">
+                <img src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="64" height="64" loading="lazy">
+              </span>
+              <div class="app-card__identity">
+                <h3 class="app-card__name">Device Matrix</h3>
+                <p class="app-card__tagline">System Info</p>
+              </div>
+            </div>
+            <span class="bk-status bk-status--testing">
+              <span class="bk-status__dot" aria-hidden="true"></span>
+              Internal testing
+            </span>
+            <p class="app-card__desc">
+              An Android utility that helps people understand their phone's
+              hardware and system information, including processor, memory,
+              storage, battery and device specifications.
+            </p>
+            <ul class="app-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>
+                Processor, memory and storage details
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>
+                Battery and device specifications
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>
+                Clearer system information in one place
+              </li>
+            </ul>
+            <div class="app-card__footer">
+              <a class="app-card__link" href="/device-matrix/">
+                View app details <span aria-hidden="true">→</span>
+              </a>
+              <span class="app-card__platform">Android</span>
+            </div>
+          </article>
+
+          <article class="app-card" data-home-reveal>
+            <div class="app-card__head">
+              <span class="app-card__icon">
                 <img src="/public/assets/family-path/icons/familypath.png" alt="" width="64" height="64" loading="lazy">
               </span>
               <div class="app-card__identity">
@@ -396,47 +438,6 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="2.8" width="10" height="18.4" rx="2.4"/><path d="M10.4 5.6h3.2"/><path d="M12 18.4h.01"/></svg>
                 Android
               </span>
-            </div>
-          </article>
-
-          <article class="app-card" data-home-reveal>
-            <div class="app-card__head">
-              <span class="app-card__icon">
-                <img src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="64" height="64" loading="lazy">
-              </span>
-              <div class="app-card__identity">
-                <h3 class="app-card__name">Device Matrix</h3>
-                <p class="app-card__tagline">System Info</p>
-              </div>
-            </div>
-            <span class="bk-status bk-status--testing">
-              <span class="bk-status__dot" aria-hidden="true"></span>
-              Internal testing
-            </span>
-            <p class="app-card__desc">
-              An Android utility that helps people understand their phone's
-              hardware and system information, including processor, memory,
-              storage, battery and device specifications.
-            </p>
-            <ul class="app-features">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>
-                Processor, memory and storage details
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>
-                Battery and device specifications
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.6 2.6L16.2 9"/></svg>
-                Clearer system information in one place
-              </li>
-            </ul>
-            <div class="app-card__footer">
-              <a class="app-card__link" href="/device-matrix/">
-                View app details <span aria-hidden="true">→</span>
-              </a>
-              <span class="app-card__platform">Android</span>
             </div>
           </article>
 
@@ -757,9 +758,9 @@
         <div>
           <h2 class="bk-footer__title">Applications</h2>
           <ul class="bk-footer__links">
+            <li><a href="/device-matrix/">Device Matrix <span class="bk-footer__soon">Internal testing</span></a></li>
             <li><a href="/family-path-locator/">Family Path Locator</a></li>
             <li><a href="/binkod-abc/">BINKOD ABC</a></li>
-            <li><a href="/device-matrix/">Device Matrix <span class="bk-footer__soon">Internal testing</span></a></li>
             <li><span>Disk Matrix <span class="bk-footer__soon">Under development</span></span></li>
             <li><a href="/#applications">All applications</a></li>
           </ul>
