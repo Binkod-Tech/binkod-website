@@ -278,8 +278,11 @@ such as `/family-path-locator/privacy-policy`.
 ## Security
 
 - No secrets, API keys, or credentials may be committed to this repository.
-- The website has **no backend**, no database, no authentication, no
-  analytics, and no server-side code.
+- The website has **no backend**, no database, no authentication, and no
+  server-side code.
+- Google Tag Manager (`GTM-TXD678MR`) is the only analytics integration. Its
+  container snippet is included in the `<head>` of every tracked HTML page;
+  analytics data is handled client-side by Google Tag Manager.
 - `.env` files are ignored by `.gitignore` as a safeguard, even though none
   are used.
 

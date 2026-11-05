@@ -7,8 +7,9 @@
    3. The decorative hero phone slider: one app screen at a time, paused
       off-screen, in a hidden tab and for reduced-motion visitors.
    4. Randomised technology labels on the hero technology orbit.
-   5. The root-only Device Matrix promotion: a floating app icon and an
-      on-demand ticket popup, both injected here so no other page is affected.
+   5. The root-only Device Matrix promotion: a floating app icon and a
+      ticket popup that opens by default until dismissed, after which it
+      stays available from the icon.
    ========================================================================== */
 (function () {
   'use strict';
@@ -317,6 +318,23 @@
   /* ------------------------------------------------------------------ */
   var DEVICE_MATRIX_PLAY_URL =
     'https://play.google.com/store/apps/details?id=com.binkod.devicematrix';
+  var DM_PROMO_SEEN_KEY = 'binkod-device-matrix-promo-seen';
+
+  function hasSeenDeviceMatrixPromo() {
+    try {
+      return window.localStorage.getItem(DM_PROMO_SEEN_KEY) === '1';
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function rememberDeviceMatrixPromo() {
+    try {
+      window.localStorage.setItem(DM_PROMO_SEEN_KEY, '1');
+    } catch (error) {
+      /* Storage can be unavailable in private modes; the popup still works. */
+    }
+  }
 
   /* Official Google Play icon, identical to the Play buttons rendered in
      the site's HTML. */
@@ -360,7 +378,7 @@
     trigger.setAttribute('aria-controls', 'dm-promo');
     trigger.setAttribute('aria-expanded', 'false');
     trigger.innerHTML =
-      '<img src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="64" height="64" decoding="async">';
+      '<img src="/public/assets/device-matrix/logo/app-icon.png" alt="" width="128" height="128" decoding="async">';
 
     var popup = document.createElement('div');
     popup.id = 'dm-promo';
@@ -374,24 +392,24 @@
       '<div class="dm-promo__ticket">' +
       '<div class="dm-promo__head">' +
       '<span class="dm-promo__logo">' +
-      '<img src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="64" height="64" decoding="async">' +
+      '<img src="/public/assets/device-matrix/logo/dm-logo-transparent.svg" alt="" width="64" height="64" decoding="async">' +
       '</span>' +
-      '<span class="dm-promo__kicker">New on Google Play</span>' +
+      '<span class="dm-promo__kicker">Install Device Matrix. Know your phone.</span>' +
       '</div>' +
       '<h2 class="dm-promo__title" id="dm-promo-title">Device Matrix is Now Available!</h2>' +
       '<p class="dm-promo__desc" id="dm-promo-desc">Get detailed device information, hardware insights, battery health and more, right on your phone.</p>' +
       '<ul class="dm-promo__features">' +
       '<li class="dm-promo__feature">' +
       '<span class="dm-promo__feature-icon">' + DM_ICON_HARDWARE + '</span>' +
-      '<span class="dm-promo__feature-copy"><strong>Hardware insights</strong><span>Processor, memory and display</span></span>' +
+      '<strong class="dm-promo__feature-label">Hardware</strong>' +
       '</li>' +
       '<li class="dm-promo__feature">' +
       '<span class="dm-promo__feature-icon">' + DM_ICON_BATTERY + '</span>' +
-      '<span class="dm-promo__feature-copy"><strong>Battery health</strong><span>Charge status and usage</span></span>' +
+      '<strong class="dm-promo__feature-label">Battery health</strong>' +
       '</li>' +
       '<li class="dm-promo__feature">' +
       '<span class="dm-promo__feature-icon">' + DM_ICON_STORAGE + '</span>' +
-      '<span class="dm-promo__feature-copy"><strong>Storage at a glance</strong><span>Used and free space</span></span>' +
+      '<strong class="dm-promo__feature-label">Storage</strong>' +
       '</li>' +
       '</ul>' +
       '</div>' +
@@ -413,7 +431,7 @@
     var ticket = popup.querySelector('.dm-promo__ticket');
     var isOpen = false;
 
-    function openPromo() {
+    function openPromo(focusCloseButton) {
       if (isOpen) {
         return;
       }
@@ -424,7 +442,9 @@
       popup.setAttribute('aria-hidden', 'false');
       popup.classList.add('is-open');
       trigger.setAttribute('aria-expanded', 'true');
-      closeButton.focus({ preventScroll: true });
+      if (focusCloseButton) {
+        closeButton.focus({ preventScroll: true });
+      }
     }
 
     function closePromo(returnFocus) {
@@ -434,6 +454,9 @@
       isOpen = false;
       popup.classList.remove('is-open');
       trigger.setAttribute('aria-expanded', 'false');
+      /* Closing the ticket is an explicit dismissal: remember it so the
+         ticket does not reopen during later navigation. */
+      rememberDeviceMatrixPromo();
       if (returnFocus) {
         trigger.focus({ preventScroll: true });
       }
@@ -442,9 +465,9 @@
 
     trigger.addEventListener('click', function () {
       if (isOpen) {
-        closePromo(true);
+        closeButton.focus({ preventScroll: true });
       } else {
-        openPromo();
+        openPromo(true);
       }
     });
 
@@ -461,21 +484,15 @@
       });
     }
 
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && isOpen) {
-        closePromo(true);
-      }
-    });
-
-    document.addEventListener('click', function (event) {
-      if (
-        isOpen &&
-        !popup.contains(event.target) &&
-        !trigger.contains(event.target)
-      ) {
-        closePromo(false);
-      }
-    });
+    /* The ticket is shown by default. Only the close button or the install
+       link closes it; outside clicks and Escape do not dismiss it. */
+    if (!hasSeenDeviceMatrixPromo()) {
+      window.setTimeout(function () {
+        if (!isOpen && !hasSeenDeviceMatrixPromo()) {
+          openPromo(false);
+        }
+      }, 650);
+    }
   }
 
   setupReveal();
