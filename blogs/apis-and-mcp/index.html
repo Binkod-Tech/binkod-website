@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (GTM-TXD678MR) -->
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TXD678MR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
   <title>How Applications, APIs, and AI Tools Work Together | BINKOD Tech</title>
   <meta name="description" content="Understand how apps talk to other services through APIs, and how the Model Context Protocol (MCP) lets compatible AI applications use approved tools and information.">
   <meta name="theme-color" content="#f3f6fb">
@@ -128,6 +135,16 @@
                 <svg class="bk-dropdown__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
               </summary>
               <div class="bk-dropdown__panel">
+                <a class="bk-menu-item" href="/device-matrix/">
+                  <img class="bk-menu-item__icon" src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="38" height="38">
+                  <span class="bk-menu-item__meta">
+                    <span class="bk-menu-item__name">
+                      Device Matrix
+                      <span class="bk-badge bk-badge--available">Available on Play Store</span>
+                    </span>
+                    <span class="bk-menu-item__desc">System Info · Android utility</span>
+                  </span>
+                </a>
                 <a class="bk-menu-item" href="/family-path-locator/">
                   <img class="bk-menu-item__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="38" height="38">
                   <span class="bk-menu-item__meta">
@@ -146,16 +163,6 @@
                       <span class="bk-badge bk-badge--dev">Under development</span>
                     </span>
                     <span class="bk-menu-item__desc">Pre-primary learning &amp; practice</span>
-                  </span>
-                </a>
-                <a class="bk-menu-item" href="/device-matrix/">
-                  <img class="bk-menu-item__icon" src="/public/assets/device-matrix/logo/dm-logo.svg" alt="" width="38" height="38">
-                  <span class="bk-menu-item__meta">
-                    <span class="bk-menu-item__name">
-                      Device Matrix
-                      <span class="bk-badge bk-badge--testing">Internal testing</span>
-                    </span>
-                    <span class="bk-menu-item__desc">System Info · Android utility</span>
                   </span>
                 </a>
                 <div class="bk-menu-item">
@@ -628,9 +635,9 @@
         <div>
           <h2 class="bk-footer__title">Applications</h2>
           <ul class="bk-footer__links">
-            <li><a href="/family-path-locator/">Family Path Locator</a></li>
-            <li><a href="/binkod-abc/">BINKOD ABC</a></li>
-            <li><span>Device Matrix <span class="bk-footer__soon">Internal testing</span></span></li>
+            <li><a href="/device-matrix/">Device Matrix <span class="bk-footer__soon bk-footer__soon--available">Available on Play Store</span></a></li>
+            <li><a href="/family-path-locator/">Family Path Locator <span class="bk-footer__soon">Internal testing</span></a></li>
+            <li><a href="/binkod-abc/">BINKOD ABC <span class="bk-footer__soon">Under development</span></a></li>
             <li><span>Disk Matrix <span class="bk-footer__soon">Under development</span></span></li>
             <li><a href="/#applications">All applications</a></li>
           </ul>

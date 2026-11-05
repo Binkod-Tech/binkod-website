@@ -46,6 +46,20 @@ pages.
 - Design system: `css/family-path.css`; reveal animation logic in
   `js/family-path.js`
 
+### Device Matrix: System Info (Android utility)
+
+- Tagline: *System Info*
+- An Android utility for understanding a phone's hardware and system
+  information: processor, memory, storage, battery and device specifications.
+- Public site: <https://app.binkod.in/device-matrix/>
+- Pages: `/device-matrix/` (overview), `/device-matrix/features/`,
+  `/device-matrix/plans/`, `/device-matrix/contact/` and
+  `/device-matrix/privacy-policy/`
+- Design system: `device-matrix/css/device-matrix.css`; behavior in
+  `device-matrix/js/device-matrix.js`; public settings in
+  `device-matrix/config.js`
+- Version manifest: `device-matrix/latest-version.json` (see below)
+
 ### BINKOD ABC (upcoming)
 
 - Status: **Upcoming / in development — not yet released.** Has a dedicated
@@ -63,7 +77,7 @@ pages.
 
 | Route | Page |
 | --- | --- |
-| `/` | Root — **BINKOD Tech homepage**. Light-first design with a light/dark switcher in the header (light default; choice saved in `localStorage` under `binkod.theme`). Sections in order: hero ("Building useful products with intelligent technology.") with a rotating product card; **Products** (Family Path Locator feature card, BINKOD ABC card marked *In development*, one *Concept* card, and a **General smart applications** panel for custom digital-productivity work — CRM, SaaS, tools for shopkeepers, schools and organisations); **Technology** (five cards: mobile — Flutter / React Native / Android; backend & API — .NET, Python, Node.js, REST, one unified API & MCP integrations tile; web — a single .NET section covering ASP.NET MVC / Razor Pages / Blazor; cloud & infrastructure — only Azure / AWS / Cloudflare / Firebase, shown with logos; AI & emerging technologies); **AI Engineering Lab** (language models, RAG, embeddings/vector search, agents & MCP, evaluation — general education); **AI architecture** (six-layer reference with the AI layers marked optional); **Product engineering** (general principles); contact section + footer. The contact email `binkodtech@gmail.com` is displayed in the contact section and the footer Support column. Only the Products section names products; everything else is general engineering education. |
+| `/` | Root — **BINKOD Tech homepage**. Light-first design with a light/dark switcher in the header (light default; choice saved in `localStorage` under `binkod.theme`). Sections in order: hero ("Building useful products with intelligent technology.") with a rotating product card; **Products** (Device Matrix available on Google Play, the Family Path Locator card marked *Internal testing*, BINKOD ABC and Disk Matrix cards marked *Under development*, and a **General smart applications** panel for custom digital-productivity work — CRM, SaaS, tools for shopkeepers, schools and organisations); **Technology** (five cards: mobile — Flutter / React Native / Android; backend & API — .NET, Python, Node.js, REST, one unified API & MCP integrations tile; web — a single .NET section covering ASP.NET MVC / Razor Pages / Blazor; cloud & infrastructure — only Azure / AWS / Cloudflare / Firebase, shown with logos; AI & emerging technologies); **AI Engineering Lab** (language models, RAG, embeddings/vector search, agents & MCP, evaluation — general education); **AI architecture** (six-layer reference with the AI layers marked optional); **Product engineering** (general principles); contact section + footer. The contact email `binkodtech@gmail.com` is displayed in the contact section and the footer Support column. Only the Products section names products; everything else is general engineering education. |
 | `/binkod-abc/` | BINKOD ABC — upcoming-product page (in development) |
 | `/family-path-locator/` | Family Path Locator homepage |
 | `/family-path-locator/privacy-policy` | Family Path Locator Privacy Policy |
@@ -71,11 +85,18 @@ pages.
 | `/family-path-locator/disclaimer` | Family Path Locator Disclaimer |
 | `/family-path-locator/contact` | Contact & Support — heading **"Help Center / Support"**: App Support, one prominent **Account & Data Deletion** card linking to the deletion page ("Learn More About Account Deletion"), "Before you write" topic links, Support & Privacy document cards. Displays `binkodtech@gmail.com` as plain text (no `mailto:`). |
 | `/family-path-locator/delete-account` | **Account & Data Deletion** — the public page intended as the *Delete account URL* in Google Play Console: in-app deletion steps (Profile → scroll to bottom → Delete Account, no Settings step), the family-administrator restriction, email deletion request (`mailto:` with a pre-filled subject), request processing, and a contact CTA. No company name is used in user-facing instructions. |
+| `/device-matrix/` | Device Matrix: System Info homepage — overview, screenshots, features and FAQ, with links to Features, Plans, Contact and the privacy policy. |
+| `/device-matrix/features/` | Device Matrix feature guide — readings, hardware checks, apps and permissions, reports and widgets. |
+| `/device-matrix/plans/` | Device Matrix plan comparison — Free, Remove ads and Pro. |
+| `/device-matrix/contact/` | Device Matrix support and contact page. |
+| `/device-matrix/privacy-policy/` | Device Matrix privacy policy — draft with `noindex` until legal review. |
 | `/404.html` | Not-found page |
 
-The legal pages are **product-specific to Family Path Locator** and live only
-inside the `/family-path-locator/` structure. They are not linked from the root
-homepage, its navigation, or the BINKOD ABC page.
+The Family Path Locator legal pages are **product-specific to Family Path
+Locator** and live only inside the `/family-path-locator/` structure. They are
+not linked from the root homepage, its navigation, or the BINKOD ABC page. The
+Device Matrix privacy policy lives at `/device-matrix/privacy-policy/` and is
+linked only from the Device Matrix footer, contact page and support areas.
 
 ## Project Structure
 
@@ -90,6 +111,7 @@ binkod-tech-web/
 │   │   ├── tech/                     # brand icons for the homepage Technology section
 │   │   ├── binkod-abc/
 │   │   │   └── icons/app-icon.png    # BINKOD ABC project icon (upcoming)
+│   │   ├── device-matrix/            # Device Matrix logos, icons and screenshots
 │   │   └── family-path/              # Family Path visual assets
 │   │       ├── images/               # Illustrations (filenames may contain spaces)
 │   │       ├── screenshots/          # Reserved for real app screenshots
@@ -104,6 +126,16 @@ binkod-tech-web/
 │   └── delete-account/index.html      # Public deletion page (Google Play delete URL)
 ├── binkod-abc/                       # BINKOD ABC upcoming-product page
 │   └── index.html
+├── device-matrix/                    # Device Matrix: System Info pages
+│   ├── index.html                    # Overview, screenshots, features, FAQ
+│   ├── config.js                     # Play Store URL + privacy noindex flag
+│   ├── latest-version.json           # App version manifest
+│   ├── features/index.html
+│   ├── plans/index.html
+│   ├── contact/index.html
+│   ├── privacy-policy/index.html     # Draft privacy policy (noindex)
+│   ├── css/                          # device-matrix.css, screenshot-showcase.css
+│   └── js/device-matrix.js           # Device Matrix page behavior
 ├── css/
 │   ├── global.css                    # Design tokens + site-wide styles (nav, buttons, footer)
 │   ├── home.css                      # Homepage styles (dark base tokens, light default, light theme block)
@@ -174,6 +206,16 @@ such as `/family-path-locator/privacy-policy`.
   It must contain the exact authorization record supplied by AdMob (Apps →
   app-ads.txt), and the public URL is listed in `sitemap.xml`.
 
+## App Version Manifest
+
+- **File:** `device-matrix/latest-version.json` — served at
+  <https://app.binkod.in/device-matrix/latest-version.json>.
+- **Purpose:** the Device Matrix Android app reads this file to check for
+  updates. `version` is the public version name and `versionCode` is the
+  integer Play Store version code; keep both in sync with each release.
+- Keep the file at this exact path and filename. The app requests this URL
+  directly, so do not add a redirect or rename the directory.
+
 ## Pending Items (tracked TODOs in the code)
 
 1. **Canonical / Open Graph URLs** — the root homepage now carries
@@ -236,8 +278,11 @@ such as `/family-path-locator/privacy-policy`.
 ## Security
 
 - No secrets, API keys, or credentials may be committed to this repository.
-- The website has **no backend**, no database, no authentication, no
-  analytics, and no server-side code.
+- The website has **no backend**, no database, no authentication, and no
+  server-side code.
+- Google Tag Manager (`GTM-TXD678MR`) is the only analytics integration. Its
+  container snippet is included in the `<head>` of every tracked HTML page;
+  analytics data is handled client-side by Google Tag Manager.
 - `.env` files are ignored by `.gitignore` as a safeguard, even though none
   are used.
 
@@ -246,6 +291,8 @@ such as `/family-path-locator/privacy-policy`.
 New application sections are added independently:
 
 - `/family-path-locator/` — Family Path Locator (live)
+- `/device-matrix/` — Device Matrix: System Info (public site live; Android app
+  available on Google Play)
 - `/binkod-abc/` — BINKOD ABC (upcoming; public product page live, app still
   in development)
 
