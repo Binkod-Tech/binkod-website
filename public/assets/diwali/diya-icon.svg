@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="iconFlame" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0" stop-color="#ff7a18"/>
+      <stop offset="0.55" stop-color="#ffc14a"/>
+      <stop offset="1" stop-color="#fff6cf"/>
+    </linearGradient>
+    <linearGradient id="iconBowl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d96a32"/>
+      <stop offset="1" stop-color="#7c250e"/>
+    </linearGradient>
+  </defs>
+  <path d="M48 12 C55 26 63 35 63 48 C63 61 56 70 48 70 C40 70 33 61 33 48 C33 35 41 26 48 12 Z" fill="url(#iconFlame)"/>
+  <path d="M48 30 C52 39 56 45 56 52 C56 61 52 66 48 66 C44 66 40 61 40 52 C40 45 44 39 48 30 Z" fill="#fff7d6"/>
+  <path d="M16 60 C20 78 32 88 48 88 C64 88 76 78 80 60 C68 67 28 67 16 60 Z" fill="url(#iconBowl)"/>
+  <ellipse cx="48" cy="60" rx="32" ry="7" fill="#e08a3c"/>
+  <ellipse cx="48" cy="60" rx="24" ry="4.5" fill="#7d2a10"/>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150">
+  <defs>
+    <linearGradient id="clay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e2693a"/>
+      <stop offset="0.5" stop-color="#b23a16"/>
+      <stop offset="1" stop-color="#7a2008"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c98a2e"/>
+      <stop offset="0.5" stop-color="#ffe6a1"/>
+      <stop offset="1" stop-color="#b8731f"/>
+    </linearGradient>
+    <radialGradient id="oil" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#fff3c4"/>
+      <stop offset="0.6" stop-color="#ffca5c"/>
+      <stop offset="1" stop-color="#e78a22"/>
+    </radialGradient>
+    <radialGradient id="inner" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#7f2a0e"/>
+      <stop offset="1" stop-color="#461405"/>
+    </radialGradient>
+  </defs>
+  <path d="M22 62 C30 110 70 136 120 136 C170 136 210 110 218 62 C176 78 64 78 22 62 Z" fill="url(#clay)"/>
+  <path d="M22 62 C10 60 3 67 8 75 C12 82 22 82 30 76 Z" fill="url(#clay)"/>
+  <ellipse cx="120" cy="62" rx="104" ry="19" fill="url(#gold)"/>
+  <ellipse cx="120" cy="62" rx="88" ry="13" fill="url(#inner)"/>
+  <ellipse cx="120" cy="63" rx="64" ry="8" fill="url(#oil)"/>
+  <path d="M118 62 C116 52 119 46 123 40" stroke="#3e1a0b" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <circle cx="123" cy="39" r="3" fill="#ffe6a1"/>
+  <path d="M54 79 C78 95 162 95 186 79" stroke="#ffd98a" stroke-width="2.6" fill="none" opacity="0.55" stroke-linecap="round"/>
+  <path d="M62 100 C88 112 152 112 178 100" stroke="#ffd98a" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+  <g fill="#ffd98a" opacity="0.9">
+    <circle cx="70" cy="94" r="3.2"/>
+    <circle cx="94" cy="110" r="3.2"/>
+    <circle cx="146" cy="110" r="3.2"/>
+    <circle cx="170" cy="94" r="3.2"/>
+  </g>
+  <g fill="#ffcf7a" opacity="0.85">
+    <path d="M120 86 l5 6 -5 6 -5 -6 z"/>
+    <path d="M88 106 l4 5 -4 5 -4 -5 z"/>
+    <path d="M152 106 l4 5 -4 5 -4 -5 z"/>
+  </g>
+</svg>

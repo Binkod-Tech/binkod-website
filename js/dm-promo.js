@@ -184,6 +184,28 @@
     var ticket = popup.querySelector('.dm-promo__ticket');
     var isOpen = false;
 
+    /* Temporary Diwali coordination: while the root-page Diwali widget is
+       active, keep this ticket collapsed instead of auto-opening. When the
+       Diwali widget expires, restore the normal open-by-default behaviour. */
+    var isRootPage = document.body.classList.contains('home-page');
+    var diwaliActive =
+      isRootPage && window.BINKOD_DIWALI_ACTIVE === true;
+
+    function onDiwaliExpired() {
+      document.removeEventListener('binkod:diwali-expired', onDiwaliExpired);
+      if (!isOpen && !hasSeenDeviceMatrixPromo()) {
+        window.setTimeout(function () {
+          if (!isOpen && !hasSeenDeviceMatrixPromo()) {
+            openPromo(false);
+          }
+        }, 650);
+      }
+    }
+
+    if (diwaliActive) {
+      document.addEventListener('binkod:diwali-expired', onDiwaliExpired);
+    }
+
     function openPromo(focusCloseButton) {
       if (isOpen) {
         return;
@@ -246,9 +268,10 @@
       });
     }
 
-    /* Each browser session starts with the ticket open. The close button, the
-       install link or Escape closes it; outside clicks do not dismiss it. */
-    if (!hasSeenDeviceMatrixPromo()) {
+    /* Each browser session starts with the ticket open, except on the root
+       page while the Diwali widget is active. The close button, the install
+       link or Escape closes it; outside clicks do not dismiss it. */
+    if (!hasSeenDeviceMatrixPromo() && !diwaliActive) {
       window.setTimeout(function () {
         if (!isOpen && !hasSeenDeviceMatrixPromo()) {
           openPromo(false);
