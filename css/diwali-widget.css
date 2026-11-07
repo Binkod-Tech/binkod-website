@@ -1,0 +1,711 @@
+/* ==========================================================================
+   BINKOD TECH — Diwali widget (root home page only)
+
+   TEMPORARY FESTIVE FEATURE.
+   A transparent Diwali scene: a lit diya floats in a soft, low-opacity smoke
+   haze while decorated crackers slowly orbit it in a 3D ellipse. Items behind
+   the diya shrink, dim and blur; items in front grow, brighten and sharpen.
+   A single canvas adds embers, fountains, sparkler trails and layered
+   fireworks. The panel has no background, border or box; only the close
+   button and the floating diya button accept pointer events.
+
+   The Device Matrix icon is stacked above the diya button by the
+   `html.diwali-active` rule at the end of this file.
+
+   To remove the festive feature completely after the festival:
+   1. Delete this file, /js/diwali-widget.js and /public/assets/diwali/.
+   2. Remove the two tagged lines (stylesheet + script) from index.html.
+   3. Remove the block marked "Temporary Diwali coordination" in js/dm-promo.js.
+   Nothing else depends on these files.
+   ========================================================================== */
+
+html.diwali-active {
+  /* Bottom edge of the Diwali panel: clear of the 44px scroll-to-top button
+     and its gutter. js/diwali-widget.js updates --diwali-dock with the
+     measured height of the panel (or of the closed diya button). */
+  --diwali-bottom: calc(
+    var(--gutter) + env(safe-area-inset-bottom, 0px) + 3.45rem
+  );
+  --diwali-dock: 2.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   1. Greeting panel — no background, border or visible edge
+   -------------------------------------------------------------------------- */
+.diwali {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--diwali-bottom);
+  z-index: 68;
+  width: min(21rem, calc(100vw - (2 * var(--gutter))));
+  height: clamp(15rem, 41vh, 22rem);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.75rem) scale(0.94);
+  transform-origin: 100% 100%;
+  transition: opacity 200ms ease,
+    transform 240ms cubic-bezier(0.2, 0.8, 0.25, 1),
+    visibility 0s linear 240ms;
+  pointer-events: none;
+}
+
+.diwali.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.diwali__scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. Smoke haze and wisps
+   -------------------------------------------------------------------------- */
+.diwali__haze {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.22;
+  background:
+    radial-gradient(
+      ellipse at 48% 58%,
+      rgba(255, 153, 51, 0.8) 0%,
+      rgba(255, 109, 31, 0.42) 30%,
+      rgba(255, 109, 31, 0) 62%
+    ),
+    radial-gradient(
+      ellipse at 68% 42%,
+      rgba(255, 194, 71, 0.58) 0%,
+      rgba(255, 194, 71, 0) 56%
+    ),
+    radial-gradient(
+      ellipse at 32% 70%,
+      rgba(255, 138, 31, 0.4) 0%,
+      rgba(255, 138, 31, 0) 48%
+    ),
+    radial-gradient(
+      ellipse at 64% 30%,
+      rgba(255, 214, 120, 0.32) 0%,
+      rgba(255, 214, 120, 0) 50%
+    );
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 55%,
+    #000 0%,
+    #000 46%,
+    rgba(0, 0, 0, 0.5) 68%,
+    transparent 86%
+  );
+  mask-image: radial-gradient(
+    ellipse at 50% 55%,
+    #000 0%,
+    #000 46%,
+    rgba(0, 0, 0, 0.5) 68%,
+    transparent 86%
+  );
+}
+
+html[data-mode="dark"] .diwali__haze {
+  opacity: 0.25;
+}
+
+.diwali__smoke {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 55%,
+    #000 0%,
+    #000 54%,
+    rgba(0, 0, 0, 0.5) 74%,
+    transparent 90%
+  );
+  mask-image: radial-gradient(
+    ellipse at 50% 55%,
+    #000 0%,
+    #000 54%,
+    rgba(0, 0, 0, 0.5) 74%,
+    transparent 90%
+  );
+}
+
+.diwali__smoke span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(18px);
+  opacity: 0.15;
+  will-change: transform;
+}
+
+.diwali__smoke span:nth-child(1) {
+  top: 38%;
+  left: 2%;
+  width: 62%;
+  height: 48%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 153, 51, 0.8) 0%,
+    rgba(255, 153, 51, 0) 68%
+  );
+  animation: diwali-smoke-a 34s ease-in-out infinite alternate;
+}
+
+.diwali__smoke span:nth-child(2) {
+  top: 44%;
+  right: 0;
+  width: 58%;
+  height: 44%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 194, 71, 0.7) 0%,
+    rgba(255, 194, 71, 0) 70%
+  );
+  animation: diwali-smoke-b 28s ease-in-out -8s infinite alternate;
+}
+
+.diwali__smoke span:nth-child(3) {
+  bottom: 0;
+  left: 24%;
+  width: 52%;
+  height: 40%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 109, 31, 0.62) 0%,
+    rgba(255, 109, 31, 0) 70%
+  );
+  animation: diwali-smoke-a 40s ease-in-out -15s infinite alternate-reverse;
+}
+
+.diwali__smoke span:nth-child(4) {
+  top: 8%;
+  left: 18%;
+  width: 64%;
+  height: 46%;
+  opacity: 0.11;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 233, 168, 0.6) 0%,
+    rgba(255, 233, 168, 0) 72%
+  );
+  animation: diwali-smoke-b 32s ease-in-out -21s infinite alternate-reverse;
+}
+
+.diwali__halo {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  z-index: 1;
+  width: 78%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 214, 120, 0.55) 0%,
+    rgba(255, 153, 51, 0.28) 34%,
+    rgba(255, 109, 31, 0.1) 56%,
+    rgba(255, 109, 31, 0) 70%
+  );
+  animation: diwali-halo 2.8s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   3. Centre diya and flame
+   -------------------------------------------------------------------------- */
+.diwali__diya {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  z-index: 3;
+  width: 48%;
+  height: auto;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 9px 16px rgba(86, 28, 4, 0.3));
+}
+
+.diwali__flame {
+  position: absolute;
+  bottom: 31%;
+  left: 50%;
+  z-index: 5;
+  width: 11.5%;
+  height: auto;
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 0 14px rgba(255, 176, 54, 0.9));
+  animation: diwali-flicker 1.9s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   4. Orbiting crackers — JS drives transform, opacity, blur and z-order
+   -------------------------------------------------------------------------- */
+.diwali__orbit-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  transform-origin: 50% 100%;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+}
+
+.diwali__orbit-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.diwali__orbit-item--chakri .diwali__spin {
+  transform-origin: 50% 50%;
+  animation: diwali-spin 5.5s linear infinite;
+}
+
+.diwali__orbit-item--star img,
+.diwali__orbit-item--star-two img {
+  transform-origin: 50% 50%;
+  animation: diwali-twinkle 3.6s ease-in-out infinite;
+}
+
+/* Pause CSS motion when the panel is closed, the tab is hidden or the
+   visitor prefers reduced motion (handled again at the end of the file). */
+.diwali:not(.is-open) .diwali__flame,
+.diwali:not(.is-open) .diwali__halo,
+.diwali:not(.is-open) .diwali__smoke span,
+.diwali:not(.is-open) .diwali__orbit-item--chakri .diwali__spin,
+.diwali:not(.is-open) .diwali__orbit-item--star img,
+.diwali:not(.is-open) .diwali__orbit-item--star-two img,
+.diwali.is-paused .diwali__flame,
+.diwali.is-paused .diwali__halo,
+.diwali.is-paused .diwali__smoke span,
+.diwali.is-paused .diwali__orbit-item--chakri .diwali__spin,
+.diwali.is-paused .diwali__orbit-item--star img,
+.diwali.is-paused .diwali__orbit-item--star-two img {
+  animation-play-state: paused;
+}
+
+/* --------------------------------------------------------------------------
+   5. Canvas particles / fireworks
+   -------------------------------------------------------------------------- */
+.diwali__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Greeting — soft golden glow, never a box
+   -------------------------------------------------------------------------- */
+.diwali__message {
+  position: absolute;
+  top: 4%;
+  right: 0;
+  left: 0;
+  z-index: 7;
+  padding: 0 2.6rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* A feathered halo (not a card) keeps the greeting legible over busy page
+   content while staying fully transparent at the edges. */
+.diwali__message::before {
+  content: "";
+  position: absolute;
+  top: -55%;
+  bottom: -75%;
+  left: 50%;
+  z-index: -1;
+  width: min(19rem, 120%);
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(255, 250, 236, 0.92) 0%,
+    rgba(255, 244, 214, 0.7) 34%,
+    rgba(255, 235, 186, 0.28) 58%,
+    rgba(255, 232, 178, 0) 78%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 48%,
+    #000 0%,
+    #000 40%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse at 50% 48%,
+    #000 0%,
+    #000 40%,
+    transparent 78%
+  );
+  pointer-events: none;
+}
+
+html[data-mode="dark"] .diwali__message::before {
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(34, 16, 4, 0.74) 0%,
+    rgba(34, 16, 4, 0.4) 40%,
+    rgba(34, 16, 4, 0) 76%
+  );
+}
+
+.diwali__greeting-hi {
+  margin: 0;
+  color: #7a1e0c;
+  font-family: "Nirmala UI", "Noto Sans Devanagari", "Mangal",
+    "Kohinoor Devanagari", sans-serif;
+  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 0 6px rgba(255, 250, 235, 0.95), 0 0 18px rgba(255, 214, 120, 0.75),
+    0 0 34px rgba(255, 153, 51, 0.35), 0 2px 10px rgba(90, 25, 5, 0.2);
+}
+
+.diwali__greeting {
+  margin: 0.2rem 0 0;
+  color: #8a2c0f;
+  font-family: "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman",
+    serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 0 10px rgba(255, 214, 120, 0.65), 0 0 20px rgba(255, 153, 51, 0.3);
+}
+
+html[data-mode="dark"] .diwali__greeting-hi {
+  color: #ffe2a0;
+  text-shadow: 0 1px 0 #4a1d00, 0 0 10px rgba(255, 196, 90, 0.8),
+    0 0 26px rgba(255, 150, 40, 0.5), 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+html[data-mode="dark"] .diwali__greeting {
+  color: #ffd58a;
+  text-shadow: 0 1px 0 #4a1d00, 0 0 14px rgba(255, 174, 60, 0.7),
+    0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   7. Close button
+   -------------------------------------------------------------------------- */
+.diwali__close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  z-index: 8;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(176, 78, 22, 0.32);
+  border-radius: 50%;
+  background-color: rgba(255, 252, 245, 0.82);
+  color: #7a1e0c;
+  box-shadow: 0 4px 14px rgba(80, 26, 4, 0.18);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color var(--t-fast), transform var(--t-fast),
+    box-shadow var(--t-fast);
+}
+
+.diwali__close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+html[data-mode="dark"] .diwali__close {
+  border-color: rgba(255, 207, 122, 0.4);
+  background-color: rgba(24, 15, 6, 0.82);
+  color: #ffe2a0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.diwali__close:hover {
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(80, 26, 4, 0.26);
+}
+
+html[data-mode="dark"] .diwali__close:hover {
+  background-color: #2a1a08;
+}
+
+.diwali__close:active {
+  transform: scale(0.94);
+}
+
+.diwali__close:focus-visible,
+.diwali-fab:focus-visible {
+  outline: 3px solid #f7b733;
+  outline-offset: 3px;
+}
+
+/* theme.css recolours focus rings inside .shell; keep the festive gold on the
+   two Diwali controls while leaving every other control untouched. */
+html[data-mode="dark"] .shell .diwali__close:focus-visible,
+html[data-mode="dark"] .shell .diwali-fab:focus-visible {
+  outline-color: #f7b733;
+}
+
+/* --------------------------------------------------------------------------
+   8. Closed-state floating diya button
+   Matches the Device Matrix icon: 40px circle, soft light surface, shadow.
+   -------------------------------------------------------------------------- */
+.diwali-fab {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--diwali-bottom);
+  z-index: 68;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid rgba(255, 196, 96, 0.8);
+  border-radius: 50%;
+  background-color: #fff8e9;
+  box-shadow: var(--sh-2);
+  cursor: pointer;
+  animation: diwali-fab-in 420ms cubic-bezier(0.2, 0.8, 0.25, 1) backwards;
+  transition: box-shadow var(--t), transform var(--t-fast),
+    background-color var(--t-fast);
+}
+
+.diwali-fab[hidden] {
+  display: none;
+}
+
+.diwali-fab img {
+  width: 72%;
+  height: 72%;
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.diwali-fab::after {
+  content: "";
+  position: absolute;
+  inset: -0.18rem;
+  border: 1.5px solid rgba(255, 179, 71, 0.7);
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  animation: diwali-fab-pulse 4.2s cubic-bezier(0.2, 0.7, 0.3, 1) 1.4s
+    infinite;
+}
+
+@media (hover: hover) {
+  .diwali-fab:hover {
+    background-color: #ffffff;
+    box-shadow: var(--sh-3);
+    transform: translateY(-2px);
+  }
+}
+
+.diwali-fab:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* --------------------------------------------------------------------------
+   9. Device Matrix collapsed icon — stacked above the Diwali widget
+   -------------------------------------------------------------------------- */
+html.diwali-active .dm-promo-fab {
+  bottom: calc(var(--diwali-bottom) + var(--diwali-dock) + 0.75rem);
+}
+
+/* --------------------------------------------------------------------------
+   10. Small screens and short viewports
+   -------------------------------------------------------------------------- */
+@media (max-width: 30em) {
+  .diwali {
+    width: 12.5rem;
+    height: clamp(11.5rem, 33vh, 14rem);
+  }
+
+  .diwali__message {
+    top: 3%;
+    padding: 0 2.75rem;
+  }
+
+  .diwali__greeting-hi {
+    font-size: 1.05rem;
+  }
+
+  .diwali__greeting {
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+  }
+
+  .diwali__close {
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .diwali__diya {
+    width: 50%;
+  }
+
+  .diwali__smoke span {
+    filter: blur(14px);
+  }
+}
+
+/* Landscape phones and other short landscape viewports: keep the whole
+   scene on screen and move the Device Matrix icon to the free bottom-left
+   corner. Portrait phones use the compact layout above. */
+@media (max-height: 36em) and (orientation: landscape) {
+  .diwali {
+    width: min(16rem, calc(100vw - (2 * var(--gutter))));
+    height: 12.5rem;
+  }
+
+  .diwali__message {
+    top: 2%;
+  }
+
+  .diwali__greeting-hi {
+    font-size: 0.95rem;
+  }
+
+  .diwali__greeting {
+    font-size: 0.5rem;
+  }
+
+  .diwali__diya {
+    width: 46%;
+  }
+
+  .diwali__flame {
+    bottom: 30%;
+  }
+
+  html.diwali-active .dm-promo-fab {
+    right: auto;
+    bottom: calc(var(--gutter) + env(safe-area-inset-bottom, 0px));
+    left: var(--gutter);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Motion
+   -------------------------------------------------------------------------- */
+@keyframes diwali-flicker {
+  0%,
+  100% {
+    opacity: 0.96;
+    transform: translateX(-50%) scale(1) rotate(-1.2deg);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.04, 0.97) rotate(0.8deg);
+  }
+  50% {
+    opacity: 0.92;
+    transform: translateX(-50%) scale(0.97, 1.05) rotate(-0.6deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.02, 1.01) rotate(1.1deg);
+  }
+}
+
+@keyframes diwali-halo {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+@keyframes diwali-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes diwali-twinkle {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: scale(0.92) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08) rotate(8deg);
+  }
+}
+
+@keyframes diwali-smoke-a {
+  from {
+    transform: translate3d(-5%, 3%, 0) rotate(-8deg) scale(1);
+  }
+  to {
+    transform: translate3d(6%, -4%, 0) rotate(10deg) scale(1.08);
+  }
+}
+
+@keyframes diwali-smoke-b {
+  from {
+    transform: translate3d(4%, -3%, 0) rotate(6deg) scale(1.05);
+  }
+  to {
+    transform: translate3d(-6%, 4%, 0) rotate(-9deg) scale(0.96);
+  }
+}
+
+@keyframes diwali-fab-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.9);
+  }
+}
+
+@keyframes diwali-fab-pulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diwali,
+  .diwali-fab {
+    animation: none;
+    transition: none;
+  }
+
+  .diwali__halo,
+  .diwali__flame,
+  .diwali__smoke span,
+  .diwali__orbit-item--chakri .diwali__spin,
+  .diwali__orbit-item--star img,
+  .diwali__orbit-item--star-two img,
+  .diwali-fab::after {
+    animation: none;
+  }
+}
