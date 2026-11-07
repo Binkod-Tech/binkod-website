@@ -756,23 +756,6 @@
     window.addEventListener('resize', handleResize);
     window.addEventListener('orientationchange', handleResize);
 
-    function preloadLightScreens() {
-      var p;
-      for (p = 0; p < total; p++) {
-        var image = new Image();
-        image.decoding = 'async';
-        image.src = shotSource(SCREENSHOTS[p], 'light');
-      }
-    }
-
-    if (document.readyState === 'complete') {
-      window.setTimeout(preloadLightScreens, 400);
-    } else {
-      window.addEventListener('load', function () {
-        window.setTimeout(preloadLightScreens, 400);
-      });
-    }
-
     measure();
     setTransform(physical, false);
     updateDots();

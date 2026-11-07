@@ -228,6 +228,15 @@
       closePromo(true);
     });
 
+    /* Escape closes the ticket and returns focus to the floating trigger. */
+    document.addEventListener('keydown', function (event) {
+      if (!isOpen || event.key !== 'Escape') {
+        return;
+      }
+      event.preventDefault();
+      closePromo(true);
+    });
+
     /* Following the Play listing also dismisses the ticket. The link keeps
        its normal new-tab behaviour and verified destination. */
     var playLink = popup.querySelector('.dm-promo__cta');
@@ -237,9 +246,8 @@
       });
     }
 
-    /* Each browser session starts with the ticket open. Only the close button
-       or the install link closes it; outside clicks and Escape do not dismiss
-       it. */
+    /* Each browser session starts with the ticket open. The close button, the
+       install link or Escape closes it; outside clicks do not dismiss it. */
     if (!hasSeenDeviceMatrixPromo()) {
       window.setTimeout(function () {
         if (!isOpen && !hasSeenDeviceMatrixPromo()) {
