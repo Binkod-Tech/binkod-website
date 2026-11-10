@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://app.binkod.in/blogs/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-10</lastmod>
   </url>
   <url>
     <loc>https://app.binkod.in/blogs/device-matrix-explained/</loc>
@@ -63,5 +63,25 @@
   <url>
     <loc>https://app.binkod.in/blogs/apis-and-mcp/</loc>
     <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/blogs/android-hardware-test-guide/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/blogs/used-android-phone-checklist/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/blogs/android-ram-monitor-performance/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/blogs/android-network-wifi-privacy/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/blogs/android-app-permissions-storage/</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
 </urlset>
