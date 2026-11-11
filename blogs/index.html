@@ -164,6 +164,45 @@
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/blogs.css">
   <link rel="stylesheet" href="/css/theme.css">
+  <style>
+    /* Device Matrix cards use portrait app screenshots. Show the whole screen
+       instead of turning each one into a narrow top-only crop. */
+    .blog-index .post-card__media--shot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1rem;
+    }
+
+    .blog-index .post-card__media--shot img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 0.55rem;
+      box-shadow:
+        0 16px 34px -18px rgba(2, 8, 23, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.14);
+    }
+
+    .blog-index .post-card:hover .post-card__media--shot img {
+      transform: scale(1.015);
+    }
+
+    @media (max-width: 44em) {
+      .blog-index .post-card__media--shot {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .blog-index .post-card:hover .post-card__media--shot img {
+        transform: none;
+      }
+    }
+  </style>
   <script src="/js/global.js" defer></script>
   <script src="/js/theme.js" defer></script>
 </head>
@@ -398,7 +437,7 @@
 
           <article class="post-card">
             <div class="post-card__media post-card__media--shot">
-              <img src="/public/assets/device-matrix/website/img/dm-tests-hub-dark-1080.webp" alt="Device Matrix Hardware tests screen listing 14 guided checks with pass, fail and untested counts." width="1080" height="2274" loading="lazy">
+              <img src="/public/assets/device-matrix/screenshots/dark/02-hardware.webp" alt="Device Matrix Hardware screen in dark mode showing Device &amp; OS, CPU &amp; GPU, thermal, memory, storage, battery, display, camera and sensor summaries." width="720" height="1532" loading="lazy">
             </div>
             <div class="post-card__body">
               <span class="post-card__cat">Apps &amp; Android</span>
@@ -413,7 +452,7 @@
 
           <article class="post-card">
             <div class="post-card__media post-card__media--shot">
-              <img src="/public/assets/device-matrix/website/app-screenshots/Dark/13-export-report.png" alt="Device Matrix Export Report screen with 15 sections and a sensitive-information switch." width="720" height="1604" loading="lazy">
+              <img src="/public/assets/device-matrix/screenshots/dark/10-battery.webp" alt="Device Matrix Battery screen in dark mode showing charge, reported health, temperature, voltage and cycle count readings." width="720" height="1532" loading="lazy">
             </div>
             <div class="post-card__body">
               <span class="post-card__cat">Apps &amp; Android</span>
@@ -428,7 +467,7 @@
 
           <article class="post-card">
             <div class="post-card__media post-card__media--shot">
-              <img src="/public/assets/device-matrix/website/img/dm-home-dashboard-dark-1080.webp" alt="Device Matrix Home dashboard with health score, memory, storage and battery readings." width="1080" height="2274" loading="lazy">
+              <img src="/public/assets/device-matrix/screenshots/dark/01-home.webp" alt="Device Matrix Home dashboard in dark mode with health score, memory, storage and battery readings." width="720" height="1602" loading="lazy">
             </div>
             <div class="post-card__body">
               <span class="post-card__cat">Apps &amp; Android</span>
@@ -443,7 +482,7 @@
 
           <article class="post-card">
             <div class="post-card__media post-card__media--shot">
-              <img src="/public/assets/device-matrix/website/img/dm-network-overview-dark-1080.webp" alt="Device Matrix Network screen with connection details and masked IP addresses." width="1080" height="2274" loading="lazy">
+              <img src="/public/assets/device-matrix/screenshots/dark/03-network.webp" alt="Device Matrix Network screen in dark mode showing connection details and masked network values." width="720" height="1532" loading="lazy">
             </div>
             <div class="post-card__body">
               <span class="post-card__cat">Apps &amp; Android</span>
@@ -458,7 +497,7 @@
 
           <article class="post-card">
             <div class="post-card__media post-card__media--shot">
-              <img src="/public/assets/device-matrix/website/img/dm-apps-permissions-dark-1080.webp" alt="Device Matrix Permission analyzer listing apps requesting camera access with granted states." width="1080" height="2274" loading="lazy">
+              <img src="/public/assets/device-matrix/screenshots/dark/04-apps.webp" alt="Device Matrix Apps screen in dark mode with search, filters, an Usage Access notice and installed app entries." width="720" height="1532" loading="lazy">
             </div>
             <div class="post-card__body">
               <span class="post-card__cat">Apps &amp; Android</span>
