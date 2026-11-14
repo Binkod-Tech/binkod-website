@@ -4,6 +4,23 @@
   "trailingSlash": true,
   "headers": [
     {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
       "source": "/public/assets/(.*)",
       "headers": [
         {
@@ -23,6 +40,21 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/device-matrix/plans",
+      "destination": "/device-matrix/remove-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/device-matrix/plans/",
+      "destination": "/device-matrix/remove-ads/",
+      "permanent": true
+    },
+    {
+      "source": "/device-matrix/plans/:path*",
+      "destination": "/device-matrix/remove-ads/",
+      "permanent": true
+    },
     {
       "source": "/family-path",
       "destination": "/family-path-locator/",

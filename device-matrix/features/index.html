@@ -137,7 +137,7 @@
         <ul class="site-nav__list">
           <li><a class="site-nav__link" href="/device-matrix/">Home</a></li>
           <li><a class="site-nav__link" href="/device-matrix/features/" aria-current="page">Features</a></li>
-          <li><a class="site-nav__link" href="/device-matrix/plans/">Plans</a></li>
+          <li><a class="site-nav__link" href="/device-matrix/remove-ads/">Remove Ads</a></li>
           <li><a class="site-nav__link" href="/device-matrix/#faq">FAQ</a></li>
           <li><a class="site-nav__link" href="/device-matrix/contact/">Contact</a></li>
         </ul>
@@ -164,11 +164,123 @@
           Device Matrix is a set of small, connected tools: a live dashboard,
           detailed hardware screens, network and app insight, guided checks,
           local reports and home-screen widgets. Here is what each part covers
-          in version 1.0.0.
+          in version 1.1.0.
         </p>
         <p class="note">
           The app is Android-only. Values vary by device and by what the
           manufacturer exposes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="app-shortcuts" aria-labelledby="app-shortcuts-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">App shortcuts</span>
+          <h2 id="app-shortcuts-title">Open a feature directly in the app.</h2>
+          <p class="lead">
+            Each shortcut uses the same Android App Link as the matching screen
+            page. If Device Matrix is installed and Android has verified the
+            link, the screen opens in the app. If it is not installed, the link
+            opens the matching Device Matrix page on this website.
+          </p>
+        </div>
+        <div class="feature-grid" data-reveal-group>
+          <article class="feature-card">
+            <h3>CPU</h3>
+            <p>Processor clusters, reported clock speeds, GPU renderer and graphics API versions.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/cpu" data-dm-deep-link>Open CPU in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Battery</h3>
+            <p>Charge level, charging state, temperature, current, voltage and estimated capacity.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/battery" data-dm-deep-link>Open Battery in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Memory</h3>
+            <p>Used, available and total RAM, low-memory state and swap details where reported.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/memory" data-dm-deep-link>Open Memory in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Thermal</h3>
+            <p>Android thermal status, load, headroom and battery temperature.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/thermal" data-dm-deep-link>Open Thermal in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Storage</h3>
+            <p>Internal capacity, used and free space, volumes and app usage where access allows.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/storage" data-dm-deep-link>Open Storage in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Display</h3>
+            <p>Resolution, density, refresh rate, HDR support, display modes and cutout details.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/display" data-dm-deep-link>Open Display in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Network</h3>
+            <p>Active connection, operator, Private DNS, masked addresses and data usage.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/network" data-dm-deep-link>Open Network in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Sensors</h3>
+            <p>Searchable sensor list with live values where Android supports them.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/sensors" data-dm-deep-link>Open Sensors in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Camera</h3>
+            <p>Camera and lens characteristics reported by Android; no photos are taken.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/camera" data-dm-deep-link>Open Camera in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Connectivity</h3>
+            <p>Bluetooth and NFC state and reported radio capabilities.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/connectivity" data-dm-deep-link>Open Connectivity in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Hardware</h3>
+            <p>The hub for Device, CPU, Heat, RAM, Storage, Battery, Display, Camera and Sensors.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/hardware" data-dm-deep-link>Open Hardware in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Apps</h3>
+            <p>Launcher apps, search, details, analyzers and screen time where Usage Access is granted.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/apps" data-dm-deep-link>Open Apps in the app</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <h3>Tools</h3>
+            <p>Alarm and timer hand-off, flashlight, vibration patterns and screen or touch checks.</p>
+            <div class="actions">
+              <a class="btn btn--outline btn--sm" href="https://app.binkod.in/device-matrix/tools" data-dm-deep-link>Open Tools in the app</a>
+            </div>
+          </article>
+        </div>
+        <p class="note">
+          Android performs App Links verification after the Play-signed app is
+          installed. This website cannot confirm that device-side check.
         </p>
       </div>
     </section>
@@ -189,7 +301,7 @@
             <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Readings refresh while the screen is focused.</li>
             <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>No background monitoring and no stored timeline.</li>
             <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Health is a local summary of readable checks, not a diagnosis.</li>
-            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Pro owners can rearrange, hide and reorder tiles and carousels.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Every owner can rearrange, hide and reorder tiles and carousels.</li>
           </ul>
         </div>
         <div class="privacy__art" data-reveal>
@@ -255,7 +367,7 @@
             <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Masking is on by default for network identifiers.</li>
             <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Data usage: Today, 7 days and 30 days, split by Wi-Fi and mobile.</li>
             <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Connectivity combines Bluetooth and NFC state; there is no separate screen for either.</li>
-            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>Pro adds the Wi-Fi analyzer. It starts no scan and asks for no permission until Pro ownership is verified.</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>The Wi-Fi analyzer lists nearby networks and keeps the results on the phone.</li>
           </ul>
         </div>
         <div class="privacy__art" data-reveal>
@@ -415,31 +527,31 @@
           <h2 id="f-reports-title">A complete report, a clear preview and your choice of destination.</h2>
           <p class="lead">
             Pick report sections, build a preview, then copy the text, share it,
-            create a PDF or &mdash; with Pro &mdash; export a custom PDF and a
-            sanitised JSON file. The preview is the same content the export will
-            use.
+            create a PDF or download sanitised JSON. The preview is the same
+            content the export will use, and every export option is available
+            without a purchase.
           </p>
         </div>
         <div class="feature-grid" data-reveal-group>
           <article class="feature-card">
-            <h3>Standard PDF</h3>
-            <p>Includes every available section and always hides identifying details.</p>
+            <h3>Selectable sections</h3>
+            <p>Fifteen sections, from device and CPU to network and test results.</p>
           </article>
           <article class="feature-card">
-            <h3>Free PDF</h3>
-            <p>An optional rewarded video; if it cannot load, the PDF proceeds after a short fallback.</p>
+            <h3>Preview first</h3>
+            <p>The preview uses the same content as the export, so you can inspect it before sharing.</p>
           </article>
           <article class="feature-card">
-            <h3>Remove ads and Pro</h3>
-            <p>Skip the video gate.</p>
+            <h3>PDF and JSON</h3>
+            <p>Copy or share the report text, generate a PDF locally, or download sanitised JSON.</p>
           </article>
           <article class="feature-card">
-            <h3>Pro custom export</h3>
-            <p>Follows the &ldquo;Include identifying details&rdquo; switch and can add sanitised JSON.</p>
+            <h3>Optional rewarded video</h3>
+            <p>A free user may watch one rewarded video before the PDF is generated. Remove Ads skips it; a failed video exports nothing and offers a retry.</p>
           </article>
           <article class="feature-card">
             <h3>Local only</h3>
-            <p>No upload and no cloud report.</p>
+            <p>Reports are generated on the phone. There is no upload and no cloud report.</p>
           </article>
         </div>
       </div>
@@ -452,14 +564,15 @@
           <h2 id="f-widgets-title">Widgets that fit the home screen.</h2>
           <p class="lead">
             RAM, storage, battery and device health widgets use the readings
-            already on the phone. Free includes 2&times;1 and 4&times;1 layouts.
-            Pro adds the 2&times;2 standard layouts and the 4&times;2 Device
-            Health Check. The launcher owns refresh timing and widget placement.
+            already on the phone. Ten layouts are available without a purchase:
+            2&times;1 Compact, 2&times;2 Standard and 4&times;1 Detailed for RAM,
+            storage and battery, plus the 4&times;2 Device Health Check. The
+            launcher owns refresh timing and widget placement.
           </p>
         </div>
         <div class="notes-grid" data-reveal-group>
-          <article class="note-card"><h3>Free</h3><p>2&times;1 Compact and 4&times;1 Detailed for RAM, storage and battery.</p></article>
-          <article class="note-card"><h3>Pro</h3><p>2&times;2 Standard for RAM, storage and battery, plus 4&times;2 Device Health Check.</p></article>
+          <article class="note-card"><h3>Compact and detailed</h3><p>2&times;1 Compact and 4&times;1 Detailed for RAM, storage and battery.</p></article>
+          <article class="note-card"><h3>Standard and health</h3><p>2&times;2 Standard for RAM, storage, battery and the 4&times;2 Device Health Check.</p></article>
           <article class="note-card"><h3>Appearance</h3><p>Theme, accent and units carry through to widgets.</p></article>
           <article class="note-card"><h3>Add from the launcher</h3><p>Use the launcher&rsquo;s widget picker; the app cannot place widgets for you.</p></article>
         </div>
@@ -475,14 +588,14 @@
             Choose System, Dark or Light; choose an accent palette or follow the
             system colour. Change units for temperature, storage and memory,
             frequency, network speed, screen size, distance, acceleration,
-            pressure, time and power. Pro adds the extra palettes, dashboard
-            layout editing and Animations Off option.
+            pressure, time and power. Accent palettes, dashboard layout editing
+            and the Animations Off option are available to every user.
           </p>
         </div>
         <div class="notes-grid" data-reveal-group>
-          <article class="note-card"><h3>Standard palettes</h3><p>A choice of accent palettes, plus Follow system colours.</p></article>
-          <article class="note-card"><h3>More with Pro</h3><p>Additional accent palettes alongside the standard choices.</p></article>
-          <article class="note-card"><h3>Motion</h3><p>Android&rsquo;s Reduce motion setting is respected; with Pro, Animations Off for battery save is also available.</p></article>
+          <article class="note-card"><h3>Palettes</h3><p>A choice of accent palettes, plus Follow system colours.</p></article>
+          <article class="note-card"><h3>Layout</h3><p>Rearrange, hide and reorder dashboard tiles, and keep the layout on the phone.</p></article>
+          <article class="note-card"><h3>Motion</h3><p>Android&rsquo;s Reduce motion setting is respected; Animations Off for battery save is also available.</p></article>
           <article class="note-card"><h3>Stored locally</h3><p>Theme, units and layout stay in private app storage.</p></article>
         </div>
       </div>
@@ -543,10 +656,10 @@
       <div class="container">
         <div class="section-head" data-reveal>
           <h2 id="features-cta-title">See which parts fit your phone.</h2>
-          <p>Start with the free information screens and the guided checks. Add Remove ads or Pro only if you want more.</p>
+          <p>Every information screen, guided check, report, analyzer and widget layout is free. Remove Ads is only for a quieter app.</p>
         </div>
         <div class="actions" data-reveal>
-          <a class="btn btn--light" href="/device-matrix/plans/">See plans</a>
+          <a class="btn btn--light" href="/device-matrix/remove-ads/">Remove Ads details</a>
           <a class="dm-cta-link" href="/device-matrix/#faq">Read the FAQ</a>
         </div>
       </div>
@@ -580,7 +693,7 @@
           <ul class="footer-links">
             <li><a href="/device-matrix/">Home</a></li>
             <li><a href="/device-matrix/features/">Features</a></li>
-            <li><a href="/device-matrix/plans/">Plans</a></li>
+            <li><a href="/device-matrix/remove-ads/">Remove Ads</a></li>
             <li><a href="/device-matrix/#faq">FAQ</a></li>
           </ul>
         </div>
@@ -588,7 +701,7 @@
           <h2 class="footer__title">Support</h2>
           <ul class="footer-links">
             <li><a href="/device-matrix/privacy-policy/">Privacy Policy</a></li>
-            <li><a href="/device-matrix/contact/">Contact</a></li>
+            <li><a href="/device-matrix/privacy-policy/#terms">Terms of Service</a></li>
           </ul>
         </div>
         <div class="footer-col footer-cta">

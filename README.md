@@ -53,8 +53,15 @@ pages.
   information: processor, memory, storage, battery and device specifications.
 - Public site: <https://app.binkod.in/device-matrix/>
 - Pages: `/device-matrix/` (overview), `/device-matrix/features/`,
-  `/device-matrix/plans/`, `/device-matrix/contact/` and
-  `/device-matrix/privacy-policy/`
+  `/device-matrix/remove-ads/`, `/device-matrix/contact/`,
+  `/device-matrix/privacy-policy/`, and 19 deep-link landing pages
+  (`cpu`, `battery`, `memory`, `thermal`, `storage`, `display`, `network`,
+  `sensors`, `camera`, `connectivity`, `hardware`, `apps`, `tools`,
+  `hardware-test`, `export-report`, `app-analyzer`, `wifi-analyzer`,
+  `widgets`, `about`)
+- Android App Links: `/.well-known/assetlinks.json` for
+  `com.binkod.devicematrix` (website declaration only; device-side
+  verification depends on the Play-signed build)
 - Design system: `device-matrix/css/device-matrix.css`; behavior in
   `device-matrix/js/device-matrix.js`; public settings in
   `device-matrix/config.js`
@@ -85,11 +92,12 @@ pages.
 | `/family-path-locator/disclaimer` | Family Path Locator Disclaimer |
 | `/family-path-locator/contact` | Contact & Support — heading **"Help Center / Support"**: App Support, one prominent **Account & Data Deletion** card linking to the deletion page ("Learn More About Account Deletion"), "Before you write" topic links, Support & Privacy document cards. Displays `binkodtech@gmail.com` as plain text (no `mailto:`). |
 | `/family-path-locator/delete-account` | **Account & Data Deletion** — the public page intended as the *Delete account URL* in Google Play Console: in-app deletion steps (Profile → scroll to bottom → Delete Account, no Settings step), the family-administrator restriction, email deletion request (`mailto:` with a pre-filled subject), request processing, and a contact CTA. No company name is used in user-facing instructions. |
-| `/device-matrix/` | Device Matrix: System Info homepage — overview, screenshots, features and FAQ, with links to Features, Plans, Contact and the privacy policy. |
+| `/device-matrix/` | Device Matrix: System Info homepage — overview, screenshots, features and FAQ, with links to Features, Remove Ads, Contact and the privacy policy. |
 | `/device-matrix/features/` | Device Matrix feature guide — readings, hardware checks, apps and permissions, reports and widgets. |
-| `/device-matrix/plans/` | Device Matrix plan comparison — Free, Remove ads and Pro. |
+| `/device-matrix/remove-ads/` | Device Matrix Remove Ads page — every feature is free; the optional one-time purchase only turns advertising off. |
+| `/device-matrix/<slug>/` | 19 Device Matrix deep-link landing pages (App Links), one per app screen. |
 | `/device-matrix/contact/` | Device Matrix support and contact page. |
-| `/device-matrix/privacy-policy/` | Device Matrix privacy policy — draft with `noindex` until legal review. |
+| `/device-matrix/privacy-policy/` | Device Matrix privacy policy, refunds and cancellation, and terms of service — draft with `noindex` until legal review. |
 | `/404.html` | Not-found page |
 
 The Family Path Locator legal pages are **product-specific to Family Path
@@ -131,10 +139,11 @@ binkod-tech-web/
 │   ├── config.js                     # Play Store URL + privacy noindex flag
 │   ├── latest-version.json           # App version manifest
 │   ├── features/index.html
-│   ├── plans/index.html
+│   ├── remove-ads/index.html
 │   ├── contact/index.html
-│   ├── privacy-policy/index.html     # Draft privacy policy (noindex)
-│   ├── css/                          # device-matrix.css, screenshot-showcase.css
+│   ├── privacy-policy/index.html     # Privacy, refunds and terms (noindex draft)
+│   ├── <deep-link-slug>/index.html   # 19 App Links landing pages
+│   ├── css/                          # device-matrix.css, deep-links.css, screenshot-showcase.css
 │   └── js/device-matrix.js           # Device Matrix page behavior
 ├── css/
 │   ├── global.css                    # Design tokens + site-wide styles (nav, buttons, footer)
