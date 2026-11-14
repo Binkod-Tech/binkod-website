@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.binkod.devicematrix",
+      "sha256_cert_fingerprints": [
+        "95:D9:DE:8E:C1:26:83:D7:98:00:61:CB:44:01:62:6A:B7:99:88:02:D0:52:77:C9:D2:BE:61:9D:54:4C:28:FD"
+      ]
+    }
+  }
+]

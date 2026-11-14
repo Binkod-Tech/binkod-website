@@ -16,10 +16,67 @@
     <loc>https://app.binkod.in/device-matrix/features/</loc>
   </url>
   <url>
-    <loc>https://app.binkod.in/device-matrix/plans/</loc>
+    <loc>https://app.binkod.in/device-matrix/remove-ads/</loc>
   </url>
   <url>
     <loc>https://app.binkod.in/device-matrix/contact/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/cpu/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/battery/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/memory/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/thermal/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/storage/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/display/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/network/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/sensors/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/camera/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/connectivity/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/hardware/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/apps/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/tools/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/hardware-test/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/export-report/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/app-analyzer/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/wifi-analyzer/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/widgets/</loc>
+  </url>
+  <url>
+    <loc>https://app.binkod.in/device-matrix/about/</loc>
   </url>
   <url>
     <loc>https://app.binkod.in/family-path-locator/contact/</loc>
