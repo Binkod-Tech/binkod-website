@@ -1128,6 +1128,52 @@
   font-weight: 600;
 }
 
+/* Device Matrix bottom CTAs - root homepage app card only. */
+.app-card__actions {
+  display: grid;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.app-card__actions .app-card__play {
+  align-self: stretch;
+  width: 100%;
+}
+
+.apps .app-card .dm-ph-embed__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background-color: #ff6154;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 180ms ease, box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.apps .app-card .dm-ph-embed__cta:hover {
+  background-color: #ef5043;
+  box-shadow: 0 10px 22px -16px rgba(255, 97, 84, 0.8);
+  transform: translateY(-2px);
+}
+
+.apps .app-card .dm-ph-embed__cta:focus-visible {
+  outline: 2px solid var(--s-blue-strong);
+  outline-offset: 3px;
+}
+
+.dm-ph-embed__arrow {
+  white-space: nowrap;
+}
+
 .apps__note {
   max-width: 54rem;
   margin-top: 1.6rem;
