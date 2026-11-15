@@ -4689,6 +4689,52 @@ ol.del-list {
   font-size: 0.76rem;
 }
 
+/* Product Hunt featured badge - Device Matrix footer only. Keep the supplied
+   artwork at 250 x 54 and let it shrink proportionally on narrow screens. */
+.site-footer .footer-producthunt {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+  max-width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 8px;
+}
+
+.site-footer .footer-producthunt__label {
+  margin: 0;
+  color: #536b87;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.site-footer .footer-producthunt a {
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 0.35rem;
+  line-height: 0;
+}
+
+.site-footer .footer-producthunt a:focus-visible {
+  outline: 2px solid #1d4ed8;
+  outline-offset: 3px;
+}
+
+.site-footer .footer-producthunt img {
+  display: block;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+@media (min-width: 60em) {
+  /* Reserve the badge's full width inside the Android utility column. */
+  .site-footer .footer-cta {
+    min-width: 250px;
+  }
+}
+
 .site-footer .footer-bottom {
   margin-top: clamp(1.8rem, 1.4rem + 1.4vw, 2.5rem);
   padding-top: 1.15rem;
