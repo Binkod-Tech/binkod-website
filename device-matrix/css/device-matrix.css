@@ -4689,49 +4689,75 @@ ol.del-list {
   font-size: 0.76rem;
 }
 
-/* Product Hunt featured badge - Device Matrix footer only. Keep the supplied
-   artwork at 250 x 54 and let it shrink proportionally on narrow screens. */
-.site-footer .footer-producthunt {
-  display: grid;
-  gap: 0.5rem;
-  justify-items: start;
-  max-width: 100%;
-  margin-top: 1.5rem;
-  padding-top: 8px;
+/* Featured-on badge strip - Device Matrix footer only. */
+.site-footer .footer-featured {
+  margin-top: clamp(1.8rem, 1.45rem + 1vw, 2.4rem);
 }
 
-.site-footer .footer-producthunt__label {
+.site-footer .footer-featured__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.site-footer .footer-featured__title {
   margin: 0;
-  color: #536b87;
-  font-size: 0.76rem;
-  font-weight: 600;
-  line-height: 1.45;
 }
 
-.site-footer .footer-producthunt a {
-  display: inline-block;
+.site-footer .footer-featured__note {
+  margin: 0;
+  color: #667c96;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.site-footer .footer-featured__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .footer-featured__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.site-footer .footer-featured__item a {
+  display: inline-flex;
   max-width: 100%;
-  border-radius: 0.35rem;
+  border-radius: 8px;
   line-height: 0;
+  transition: transform 180ms ease;
 }
 
-.site-footer .footer-producthunt a:focus-visible {
+.site-footer .footer-featured__item a:hover {
+  transform: translateY(-2px);
+}
+
+.site-footer .footer-featured__item a:focus-visible {
   outline: 2px solid #1d4ed8;
   outline-offset: 3px;
 }
 
-.site-footer .footer-producthunt img {
+.site-footer .footer-featured__item img {
   display: block;
-  width: 250px;
-  max-width: 100%;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 46px;
   border: 0;
 }
 
-@media (min-width: 60em) {
-  /* Reserve the badge's full width inside the Android utility column. */
-  .site-footer .footer-cta {
-    min-width: 250px;
+@media (min-width: 64em) {
+  .site-footer .footer-featured__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
