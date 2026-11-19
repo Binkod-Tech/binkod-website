@@ -21,7 +21,6 @@ node_modules/
 package-lock.json
 public/assets/device-matrix/website
 public/assets/device-matrix/Play Console
-festival-assets/
 
 # Internal AdSense/analytics reference (local only; never commit or deploy)
 ADSENSE-INTERNAL.md
