@@ -405,6 +405,13 @@
   max-width: 47rem;
 }
 
+/* Keep in-article ad units inside the article column and in normal flow. */
+.article-main .ad-container {
+  clear: both;
+  max-width: 100%;
+  break-inside: avoid;
+}
+
 .article-side {
   display: grid;
   gap: 1rem;
